@@ -1306,8 +1306,8 @@ a:hover {
 }
 /* Navbar: логотип влево, иконки вправо */
 .navbar {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 /* Стрелка ближе к глобусу */
