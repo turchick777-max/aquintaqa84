@@ -1304,5 +1304,20 @@ a:hover {
   font-size: 2.2rem !important;
   line-height: 1.3 !important;
 }
+/* Navbar: логотип влево, иконки вправо */
+.navbar {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* Стрелка ближе к глобусу */
+.navbar .w-dropdown .w-dropdown-toggle {
+  gap: 5px !important;
+}
+
+/* Меньше расстояние между глобусом и бургером */
+.navbar .w-dropdown {
+  margin-right: 15px !important;
+}
 
 
