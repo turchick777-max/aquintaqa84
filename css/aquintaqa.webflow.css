@@ -1306,18 +1306,18 @@ a:hover {
 }
 /* Navbar: логотип влево, иконки вправо */
 .navbar {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 /* Стрелка ближе к глобусу */
 .navbar .w-dropdown .w-dropdown-toggle {
-  gap: 5px !important;
+  gap: 3px !important;
 }
 
 /* Меньше расстояние между глобусом и бургером */
 .navbar .w-dropdown {
-  margin-right: 15px !important;
+  margin-right: 10px !important;
 }
 
 
