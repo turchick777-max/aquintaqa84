@@ -1173,8 +1173,8 @@ a:hover {
 /* "Planet of 8+ billion people." - вверху слева под логотипом */
 .se1 .content-img > .text-block {
   position: absolute !important;
-  top: 0.1px !important;
-  left: 40px !important;
+  top: 0px !important;
+  left: 30px !important;
   width: auto !important;
   max-width: 500px !important;
   text-align: left !important;
@@ -1190,7 +1190,7 @@ a:hover {
 .se1 .content-img > .text-block._2 {
   position: absolute !important;
   top: 10px !important;
-  left: 50px !important;
+  left: 40px !important;
   width: auto !important;
   max-width: 500px !important;
   text-align: left !important;
