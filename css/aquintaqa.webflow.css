@@ -1293,21 +1293,7 @@ a:hover {
 /* Порядок: глобус слева, стрелка справа */
 .navbar .w-dropdown-toggle .icon-lang { order: 1 !important; }
 .navbar .w-dropdown-toggle .w-icon-dropdown-toggle { order: 2 !important; }
-/* ===== HERO TITLE: выше и крупнее ===== */
 
-/* Поднимаем весь заголовок выше */
-.se1 .h1 {
-  margin-top: -50px !important;   /* ↑ поднимаем */
-  font-size: 3.8rem !important;   /* ↑ общий размер */
-  line-height: 1.15 !important;
-}
-
-/* Усиливаем сам акцентный текст */
-.se1 .h1 .spa {
-  font-size: 4.4rem !important;   /* ещё крупнее */
-  font-weight: 700 !important;
-  letter-spacing: 1px;
-}
 /* Сфера: больше и правее */
 .spline-scene {
   transform: scale(1.15) translateX(-10%) translateY(5%) !important;
