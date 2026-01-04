@@ -1310,7 +1310,7 @@ a:hover {
 }
 /* Сфера: больше и правее */
 .spline-scene {
-  transform: scale(1.3) translateX(10%) !important;
+  transform: scale(1.3) translateX(-10%) !important;
 }
 
 
