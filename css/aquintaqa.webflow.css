@@ -1750,7 +1750,7 @@ html, body {
 /* ТОНКАЯ ЮСТИРОВКА под заголовок */
 .se1 .colum-r .text {
   position: relative !important;
-  transform: translateX(3px) !important;
+  transform: translateX(2px) !important;
 }
 
 
