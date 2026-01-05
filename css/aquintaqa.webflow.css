@@ -1390,3 +1390,43 @@ a:hover {
   box-shadow: none !important;
   background-color: rgba(66, 207, 242, 0.14) !important;
 }
+/* ===== LANGUAGE DROPDOWN: clean + under globe ===== */
+
+/* Контейнер дропдауна */
+.navbar .dropdown-list-lang {
+  background: rgba(0, 0, 0, 0.92) !important; /* чёрный как фон */
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+
+  position: absolute !important;
+  top: calc(100% + 8px) !important; /* ⬇️ ниже глобуса */
+  right: 0 !important;
+  left: auto !important;
+
+  padding: 6px 0 !important;
+  min-width: 80px !important;
+}
+
+/* Убрать Webflow-рамки/фон в открытом состоянии */
+.dropdown-list-lang.w--open {
+  background: rgba(0, 0, 0, 0.92) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Ссылки языков */
+.navbar .dropdown-list-lang .w-dropdown-link {
+  color: #ffffff !important;
+  background: transparent !important;
+  padding: 8px 14px !important;
+  font-size: 0.85rem !important;
+  text-align: center !important;
+}
+
+/* Hover — лёгкая подсветка */
+.navbar .dropdown-list-lang .w-dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
