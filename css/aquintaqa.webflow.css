@@ -1344,24 +1344,21 @@ a:hover {
 .se1 .content-img > .text-block._2 {
   opacity: 0.7 !important;
 }
-/* ===== HERO: TOP-LEFT MICROTEXT (same font + color as spec) ===== */
-.se1 .content-img > .text-block,
-.se1 .content-img > .text-block._2 {
-  font-family: Inter, "Suisse Int'l", Onest, Arial, sans-serif !important; /* как в ТЗ */
-  color: rgba(224, 230, 242, 0.78) !important; /* мягкий инженерный светлый */
-  text-align: left !important;
-  letter-spacing: 1.6px !important;
+/* ===== FORCE WHITE COLOR FOR LEFT HERO TEXT ===== */
+
+/* Верхние две строки */
+.se1 .content-img .text-block,
+.se1 .content-img .text-block._2 {
+  color: #ffffff !important;
+  font-family: Inter, Onest, Arial, sans-serif !important;
   font-weight: 400 !important;
-  text-transform: none !important;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  opacity: 1 !important;
 }
 
-/* Если хочешь одинаковый размер (одной строкой визуально) */
-.se1 .content-img > .text-block,
-.se1 .content-img > .text-block._2 {
-  font-size: 0.95rem !important;
-  line-height: 1.45 !important;
+/* <1% SHARE... */
+.se1 .div-block-17 .text-block-2 {
+  color: #ffffff !important;
+  opacity: 1 !important;
 }
 
 
