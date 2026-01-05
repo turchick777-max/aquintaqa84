@@ -1360,6 +1360,14 @@ a:hover {
   color: #ffffff !important;
   opacity: 1 !important;
 }
+/* ===== HERO SUBTITLE: make smaller ===== */
+
+.se1 .colum-r .text {
+  font-size: 0.95rem !important;   /* было ~1.4rem → стало аккуратнее */
+  line-height: 1.5 !important;
+  opacity: 0.9 !important;
+}
+
 
 
 
