@@ -1748,6 +1748,22 @@ html, body {
   margin-top: 12px !important;
   padding-left: 0 !important;
 }
+/* ===== FIX: Align "No RO..." under H1 (correct class: colum-r) ===== */
+
+.se1 .colum-r {
+  text-align: left !important;
+  align-items: flex-start !important;
+}
+
+.se1 .colum-r .h1,
+.se1 .colum-r .text {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+}
+
+
 
 
 
