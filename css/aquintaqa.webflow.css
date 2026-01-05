@@ -1539,5 +1539,62 @@ a:hover {
 .navbar > .w-dropdown .dropdown-list-lang .w-dropdown-link:hover {
   background: rgba(255,255,255,0.06) !important;
 }
+/* ===== BURGER MENU (Webflow Nav): half-screen, black, no borders ===== */
+
+/* Сам выезжающий контейнер меню */
+.w-nav-menu {
+  width: 50vw !important;                 /* пол экрана */
+  max-width: 520px !important;            /* чтобы не было огромным на 4K */
+  min-width: 320px !important;            /* чтобы не было слишком узким */
+  height: 100vh !important;
+
+  background: rgba(0, 0, 0, 0.97) !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  padding: 28px 22px !important;
+}
+
+/* Если Webflow добавляет рамку/тень в открытом состоянии */
+.w-nav-menu.w--open {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Пункты меню (сейчас они выглядят как "кнопки") — убираем рамки */
+.w-nav-menu .w-nav-link,
+.w-nav-menu .w-dropdown-toggle,
+.w-nav-menu .w-dropdown-link,
+.w-nav-menu .link {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+
+  color: #ffffff !important;
+  padding: 14px 8px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Hover — лёгкая подсветка, без рамок */
+.w-nav-menu .w-nav-link:hover,
+.w-nav-menu .w-dropdown-toggle:hover,
+.w-nav-menu .w-dropdown-link:hover,
+.w-nav-menu .link:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/* "Get Full Details" внутри меню — тоже без рамок, но можно чуть заметнее */
+.w-nav-menu .link.button {
+  border: none !important;
+  box-shadow: none !important;
+  background: rgba(66, 207, 242, 0.10) !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+}
+.w-nav-menu .link.button:hover {
+  background: rgba(66, 207, 242, 0.16) !important;
+}
 
 
