@@ -1477,5 +1477,67 @@ a:hover {
 .navbar .dropdown-list-lang .w-dropdown-link:hover {
   background: rgba(255, 255, 255, 0.06) !important;
 }
+/* ===== LANG DROPDOWN: anchor to globe icon precisely ===== */
+
+/* Языковой dropdown — это прямой дочерний .w-dropdown в .navbar (в отличие от "More" в меню) */
+.navbar > .w-dropdown {
+  position: relative !important;
+  width: 28px !important;              /* = ширина области под глобус */
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Кнопка-глобус: строго по центру */
+.navbar > .w-dropdown > .w-dropdown-toggle {
+  width: 28px !important;
+  height: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+/* Сам список: ровно под глобусом */
+.navbar > .w-dropdown .dropdown-list-lang {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+
+  background: rgba(0, 0, 0, 0.95) !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+
+  padding: 6px 0 !important;
+  min-width: 76px !important;
+}
+
+/* Убираем "пилюли/рамки" — они идут от класса .link */
+.navbar > .w-dropdown .dropdown-list-lang .link,
+.navbar > .w-dropdown .dropdown-list-lang .w-dropdown-link {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+
+  color: #fff !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 8px 12px !important;
+  text-align: center !important;
+  font-size: 0.85rem !important;
+}
+
+/* Hover без рамок */
+.navbar > .w-dropdown .dropdown-list-lang .link:hover,
+.navbar > .w-dropdown .dropdown-list-lang .w-dropdown-link:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
 
 
