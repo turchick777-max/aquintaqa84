@@ -1596,5 +1596,71 @@ a:hover {
 .w-nav-menu .link.button:hover {
   background: rgba(66, 207, 242, 0.16) !important;
 }
+/* ===== BURGER MENU: TRUE 50% SCREEN OVERLAY ===== */
+
+/* Само меню — делаем overlay относительно viewport */
+.w-nav-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 50vw !important;          /* РОВНО половина экрана */
+  height: 100vh !important;
+  max-width: none !important;
+
+  background: rgba(0, 0, 0, 0.97) !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  padding: 32px 28px !important;
+  overflow-y: auto !important;
+  z-index: 9999 !important;
+}
+
+/* Webflow open state */
+.w-nav-menu.w--open {
+  right: 0 !important;
+}
+
+/* ===== УБИРАЕМ СИНИЕ "КНОПКИ" У ПУНКТОВ ===== */
+
+.w-nav-menu .w-nav-link,
+.w-nav-menu .w-dropdown-toggle {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+
+  padding: 14px 6px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Hover — аккуратная подсветка */
+.w-nav-menu .w-nav-link:hover,
+.w-nav-menu .w-dropdown-toggle:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
+/* ===== "More" dropdown inside burger ===== */
+
+.w-nav-menu .w-dropdown-list {
+  background: rgba(0, 0, 0, 0.97) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Пункты внутри More */
+.w-nav-menu .w-dropdown-list .w-dropdown-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+
+  padding: 12px 10px !important;
+}
+
+/* Hover */
+.w-nav-menu .w-dropdown-list .w-dropdown-link:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
 
 
