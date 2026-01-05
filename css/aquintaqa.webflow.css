@@ -1677,8 +1677,8 @@ a:hover {
   top: 41%;        /* двигай вверх/вниз */
   left: 22%;       /* двигай влево/вправо */
 
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 
   /* Звезда с лучами */
   background:
