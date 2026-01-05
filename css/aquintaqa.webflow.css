@@ -1716,5 +1716,18 @@ a:hover {
     opacity: 0.6;
   }
 }
+/* ===== FORCE BLACK TOP BAR (NAVBAR) ===== */
+
+.navbar,
+.w-nav,
+.w-nav-overlay {
+  background: #000000 !important;
+  background-image: none !important;
+}
+/* ===== FORCE BLACK BODY BACKGROUND ===== */
+
+html, body {
+  background: #000000 !important;
+}
 
 
