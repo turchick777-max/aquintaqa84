@@ -1429,4 +1429,53 @@ a:hover {
   background: rgba(255, 255, 255, 0.06) !important;
   color: #ffffff !important;
 }
+/* ===== LANGUAGE DROPDOWN: centered under globe, no borders ===== */
+
+/* Родитель (кнопка-глобус) — якорь */
+.navbar .w-dropdown {
+  position: relative !important;
+}
+
+/* Сам выпадающий список */
+.navbar .dropdown-list-lang {
+  position: absolute !important;
+  top: calc(100% + 6px) !important;   /* строго вниз */
+  left: 50% !important;               /* центрируем */
+  transform: translateX(-50%) !important;
+
+  background: rgba(0, 0, 0, 0.95) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  padding: 6px 0 !important;
+  min-width: 72px !important;
+  border-radius: 10px !important;
+}
+
+/* Webflow open-state — тоже без рамок */
+.navbar .dropdown-list-lang.w--open {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Пункты языков */
+.navbar .dropdown-list-lang .w-dropdown-link {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  background: transparent !important;
+  color: #ffffff !important;
+  padding: 8px 12px !important;
+  font-size: 0.85rem !important;
+  text-align: center !important;
+}
+
+/* Hover — мягкий, без рамок */
+.navbar .dropdown-list-lang .w-dropdown-link:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
 
