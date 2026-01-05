@@ -1364,8 +1364,24 @@ a:hover {
 
 .se1 .colum-r .text {
   font-size: 1.1rem !important;   /* было ~1.4rem → стало аккуратнее */
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   opacity: 0.9 !important;
+}
+/* ===== HERO BUTTONS: no side borders + smaller ===== */
+
+/* Обе кнопки под No RO */
+.se1 .link.button {
+  border-left: none !important;
+  border-right: none !important;
+  padding: 10px 22px !important;   /* было больше → компактнее */
+  font-size: 0.9rem !important;    /* чуть меньше текста */
+  border-radius: 14px !important;  /* аккуратнее форма */
+}
+
+/* Hover — без возвращения рамок */
+.se1 .link.button:hover {
+  border-left: none !important;
+  border-right: none !important;
 }
 
 
