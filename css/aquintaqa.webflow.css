@@ -1296,7 +1296,7 @@ a:hover {
 
 /* Сфера: больше и правее */
 .spline-scene {
-  transform: scale(1.15) translateX(-10%) translateY(5%) !important;
+  transform: scale(1.2) translateX(-2%) translateY(4%) !important;
 }
 /* Уменьшить заголовок */
 .se1 .h1,
