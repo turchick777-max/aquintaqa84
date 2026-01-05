@@ -1752,41 +1752,6 @@ html, body {
   position: relative !important;
   transform: translateX(2px) !important;
 }
-@media (max-width: 768px) {
-  .se1 {
-    min-height: 100vh;
-    padding-top: 80px;
-  }
-}
-@media (max-width: 768px) {
-  .spline-scene {
-    transform: scale(0.9) translateX(-10%) translateY(15%) !important;
-  }
-}
-@media (max-width: 768px) {
-  .se1 h1 {
-    font-size: 2.1rem !important;
-    line-height: 1.15 !important;
-    text-align: left;
-  }
-}
-@media (max-width: 768px) {
-  .se1 .column-r .text {
-    font-size: 1rem !important;
-    margin-top: 10px !important;
-  }
-}
-@media (max-width: 768px) {
-  .se1 .button-group {
-    margin-top: 20px;
-    gap: 12px;
-  }
-
-  .se1 .button {
-    padding: 12px 18px !important;
-    font-size: 0.95rem !important;
-  }
-}
 
 /* =========================
    MOBILE HERO — SPACEX STYLE
@@ -1852,6 +1817,71 @@ html, body {
     text-align: center !important;
     padding: 14px 18px !important;
     font-size: 0.95rem !important;
+  }
+}
+/* =========================
+   MOBILE HERO — SPACEX STYLE
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Hero section */
+  .se1 {
+    min-height: 100vh !important;
+    padding-top: 90px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* One column layout */
+  .se1 .content-img {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Planet */
+  .spline-scene {
+    transform: scale(1.25) translateX(-18%) translateY(-10%) !important;
+    margin-bottom: -40px !important;
+  }
+
+  /* Text block */
+  .se1 .column-r {
+    width: 100% !important;
+    padding: 0 20px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Title */
+  .se1 .column-r h1,
+  .se1 .column-r .heading {
+    font-size: 2.1rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+  }
+
+  /* NO RO */
+  .se1 .column-r .text {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+    text-align: left !important;
+  }
+
+  /* Buttons */
+  .se1 .column-r .div-block,
+  .se1 .column-r .button-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .se1 .column-r a {
+    width: 100% !important;
+    padding: 14px 18px !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
   }
 }
 
