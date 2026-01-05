@@ -1884,6 +1884,94 @@ html, body {
     text-align: center !important;
   }
 }
+/* =========================
+   MOBILE HERO — SPACEX STYLE (AQUINTAQA)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* 1) Hero: в один столбец */
+  .se1 .div1{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap: 18px !important;
+  }
+
+  .se1 .colum-l,
+  .se1 .colum-r{
+    width:100% !important;
+  }
+
+  /* 2) Внутри левой колонки: переставляем порядок — сначала планета, потом маленькие тексты */
+  .se1 .content-img{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+
+  /* планета */
+  .se1 .content-img .sfera{
+    order:0 !important;
+    width: 120vw !important;
+    height: 120vw !important;
+    max-width:none !important;
+    margin-left: -22vw !important;
+    margin-top: -6vh !important;
+    margin-bottom: -6vh !important;
+  }
+
+  /* блоки текста слева сверху — уводим ПОД планету (как на SpaceX) */
+  .se1 .content-img .div-block-5{ order:1 !important; }
+  .se1 .content-img .text-block{ order:2 !important; }
+  .se1 .content-img .text-block._2{ order:3 !important; }
+  .se1 .content-img .div-block-17{ order:4 !important; }
+
+  /* делаем эти тексты аккуратными на мобиле */
+  .se1 .content-img .div-block-5,
+  .se1 .content-img .text-block,
+  .se1 .content-img .text-block._2,
+  .se1 .content-img .div-block-17{
+    text-align:left !important;
+    margin-left: 18px !important;
+    opacity: 0.9 !important;
+  }
+
+  /* 3) Правый блок с заголовком — тоже под планету */
+  .se1 .colum-r{
+    padding: 0 18px !important;
+  }
+
+  .se1 .colum-r h1,
+  .se1 .colum-r .h1{
+    font-size: 2.2rem !important;
+    line-height: 1.12 !important;
+    text-align:left !important;
+    margin: 0 0 12px 0 !important;
+  }
+
+  /* No RO ровно под заголовком */
+  .se1 .colum-r .text{
+    text-align:left !important;
+    margin: 0 0 22px 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 4) Кнопки — вертикально и на всю ширину */
+  .se1 .colum-r .div-block-4{
+    display:flex !important;
+    flex-direction:column !important;
+    gap: 12px !important;
+    width:100% !important;
+  }
+
+  .se1 .colum-r .div-block-4 a.link.button{
+    width:100% !important;
+    padding: 14px 16px !important;
+    font-size: 0.95rem !important;
+    text-align:center !important;
+  }
+}
 
 
 
