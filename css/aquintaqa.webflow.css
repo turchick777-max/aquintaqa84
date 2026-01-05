@@ -1729,39 +1729,30 @@ a:hover {
 html, body {
   background: #000000 !important;
 }
-/* ===== ALIGN HERO SUBTITLE EXACTLY UNDER TITLE ===== */
 
-.se1 .column-r {
-  align-items: flex-start !important;
-  text-align: left !important;
-}
-
-.se1 .column-r h1,
-.se1 .column-r .heading,
-.se1 .column-r .text {
-  text-align: left !important;
-  margin-left: 0 !important;
-}
-
-/* NO RO subtitle */
-.se1 .column-r .text {
-  margin-top: 12px !important;
-  padding-left: 0 !important;
-}
-/* ===== FIX: Align "No RO..." under H1 (correct class: colum-r) ===== */
+/* ===== FINAL FIX: NO RO exactly under H1 ===== */
 
 .se1 .colum-r {
-  text-align: left !important;
+  display: flex !important;
+  flex-direction: column !important;
   align-items: flex-start !important;
+  text-align: left !important;
 }
 
-.se1 .colum-r .h1,
+.se1 .colum-r h1,
 .se1 .colum-r .text {
   margin-left: 0 !important;
   padding-left: 0 !important;
   text-indent: 0 !important;
   text-align: left !important;
 }
+
+/* ТОНКАЯ ЮСТИРОВКА под заголовок */
+.se1 .colum-r .text {
+  position: relative !important;
+  transform: translateX(6px) !important;
+}
+
 
 
 
