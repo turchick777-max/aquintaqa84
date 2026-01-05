@@ -1334,45 +1334,4 @@ a:hover {
 .navbar.w-container {
   max-width: 100% !important;
 }
-/* ===== AQUINTAQA DESIGN SYSTEM (по ТЗ) ===== */
-
-/* Подключение шрифта Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* Базовые переменные */
-:root {
-  --color-aqua: #00E0FF;
-  --color-navy-dark: #0A1A2F;
-  --color-navy: #0C1E36;
-  --color-navy-light: #2D4A70;
-  --color-text: #E0E6F2;
-  --color-text-muted: #A0B0D0;
-  --font-main: 'Inter', sans-serif;
-}
-
-/* Применить ко всему сайту */
-body, 
-html {
-  font-family: var(--font-main) !important;
-  background-color: var(--color-navy-dark) !important;
-  color: var(--color-text) !important;
-}
-
-/* Все заголовки */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: var(--font-main) !important;
-  color: var(--color-aqua) !important;
-}
-
-/* Обычный текст */
-p, span, div, a, li {
-  font-family: var(--font-main) !important;
-}
-
-/* Акцентный цвет для ссылок и кнопок */
-a:hover,
-.link:hover {
-  color: var(--color-aqua) !important;
-}
 
