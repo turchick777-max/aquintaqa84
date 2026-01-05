@@ -1363,7 +1363,7 @@ a:hover {
 /* ===== HERO SUBTITLE: make smaller ===== */
 
 .se1 .colum-r .text {
-  font-size: 0.95rem !important;   /* было ~1.4rem → стало аккуратнее */
+  font-size: 1.2rem !important;   /* было ~1.4rem → стало аккуратнее */
   line-height: 1.5 !important;
   opacity: 0.9 !important;
 }
