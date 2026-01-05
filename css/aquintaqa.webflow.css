@@ -1367,51 +1367,26 @@ a:hover {
   line-height: 1.4 !important;
   opacity: 0.9 !important;
 }
-/* ===== HERO BUTTONS: no side borders + smaller ===== */
+/* ===== HERO BUTTONS: REMOVE ALL SIDE BORDERS ===== */
 
-/* Обе кнопки под No RO */
-.se1 .link.button {
-  border-left: none !important;
-  border-right: none !important;
-  padding: 10px 22px !important;   /* было больше → компактнее */
-  font-size: 0.9rem !important;    /* чуть меньше текста */
-  border-radius: 14px !important;  /* аккуратнее форма */
-}
-
-/* Hover — без возвращения рамок */
-.se1 .link.button:hover {
-  border-left: none !important;
-  border-right: none !important;
-}
-/* ===== HERO BUTTONS: remove outline border completely ===== */
+/* Кнопки под No RO */
 .se1 .div-block-4 .link.button,
 .se1 .div-block-4 .link.button._2 {
-  border: none !important;                 /* убирает рамку */
-  box-shadow: inset 0 0 0 1px rgba(66, 207, 242, 0.35) !important; /* тонкий контур без "рамки" */
-  padding: 10px 22px !important;           /* чуть меньше */
+  border: 0 !important;          /* убираем рамку */
+  outline: none !important;      /* убираем outline */
+  box-shadow: none !important;   /* убираем fake-рамки Webflow */
+  
+  padding: 10px 22px !important; /* делаем чуть меньше */
   font-size: 0.9rem !important;
   border-radius: 14px !important;
+  background-color: rgba(66, 207, 242, 0.08) !important; /* лёгкий фон */
 }
 
-/* Hover — тоже без border */
+/* Hover — тоже без рамок */
 .se1 .div-block-4 .link.button:hover,
 .se1 .div-block-4 .link.button._2:hover {
-  border: none !important;
-  box-shadow: inset 0 0 0 1px rgba(66, 207, 242, 0.55) !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: rgba(66, 207, 242, 0.14) !important;
 }
-/* ===== ALIGN "No RO..." EXACTLY UNDER H1 ===== */
-
-.se1 .colum-r {
-  align-items: flex-start !important; /* на всякий */
-}
-
-.se1 .colum-r .h1,
-.se1 .colum-r .text {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  text-align: left !important;
-}
-
-
-
-
