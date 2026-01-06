@@ -1782,4 +1782,9 @@ html, body {
 .se1 .column-r .text {
   opacity: 1 !important;
 }
+.se1 .content-img > .text-block._2 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
 
