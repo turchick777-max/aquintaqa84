@@ -1770,3 +1770,23 @@ html, body {
   text-align: right !important;
   width: auto !important;
 }
+/* Текст меню прижат к правому краю */
+.nav-menu-2 {
+  right: 0 !important;
+  left: auto !important;
+  width: 50% !important;
+  padding: 96px 30px 31px 40px !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
+}
+
+.nav-menu-2 .div-block-12 {
+  align-items: flex-end !important;
+  margin-left: auto !important;
+  padding-right: 0 !important;
+}
+
+.nav-menu-2 .link.menu {
+  text-align: right !important;
+  padding-right: 0 !important;
+}
