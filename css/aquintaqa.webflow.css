@@ -1752,6 +1752,21 @@ html, body {
   position: relative !important;
   transform: translateX(2px) !important;
 }
+/* ===== BURGER MENU: align items to the right like SpaceX ===== */
+
+.w-nav-overlay .nav-menu-2 {
+  display: flex !important;
+  justify-content: flex-end !important;   /* прижимаем всё вправо */
+}
+
+.w-nav-overlay .div-block-12 {
+  align-items: flex-end !important;        /* элементы внутри тоже вправо */
+  text-align: right !important;
+}
+
+.w-nav-overlay .link.menu {
+  text-align: right !important;
+}
 
 
   
