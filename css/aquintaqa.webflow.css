@@ -1752,3 +1752,17 @@ html, body {
   position: relative !important;
   transform: translateX(2px) !important;
 }
+/* Меню: пункты по правому краю */
+.nav-menu-2 {
+  align-items: flex-end !important;
+  text-align: right !important;
+  padding-right: 40px !important;
+}
+
+.nav-menu-2 .div-block-12 {
+  align-items: flex-end !important;
+}
+
+.nav-menu-2 .link.menu {
+  text-align: right !important;
+}
