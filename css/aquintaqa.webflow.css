@@ -1823,4 +1823,16 @@ html, body {
 .w-nav-menu .w-nav-link {
   text-align: left !important;
 }
+/* BURGER MENU: align items to LEFT edge (Word: Align Left) */
+.nav-menu-2 .div-block-12{
+  align-items: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+.nav-menu-2 .w-nav-link{
+  text-align: left !important;
+}
+
 
