@@ -1767,7 +1767,7 @@ html, body {
 }
 
 .nav-menu-2 .link.menu {
-  text-align: right !important;
+  text-align: center !important;
   width: auto !important;
 }
 /* Меню: тёмный фон на 50% экрана справа */
