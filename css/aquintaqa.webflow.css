@@ -1767,5 +1767,36 @@ html, body {
   color: #ffffffc9 !important;
   opacity: 1 !important;
 }
+/* ===== HERO CTA BUTTONS: inline row + thin white border + no fill ===== */
+.se1 .div-block-4{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 16px !important;
+  align-items: center !important;
+}
+
+.se1 .div-block-4 .link.button,
+.se1 .div-block-4 .link.button._2{
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+
+  border: 1px solid rgba(255,255,255,.55) !important; /* тонкая белая рамка */
+  border-radius: 999px !important;
+
+  padding: 10px 18px !important; /* меньше кнопка */
+  font-size: 0.95rem !important;
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+}
+
+.se1 .div-block-4 .link.button:hover,
+.se1 .div-block-4 .link.button._2:hover{
+  background: rgba(255,255,255,.06) !important; /* лёгкий ховер */
+  border-color: rgba(255,255,255,.85) !important;
+}
+
 
 
