@@ -1339,13 +1339,11 @@ a:hover {
   font-family: inherit !important;  /* вернет оригинальный шрифт Webflow */
   letter-spacing: 0.08em;
   font-weight: 300;
-  color: #E0E6F2 !important;
 }
 
 
 .se1 .content-img > .text-block._2 {
   opacity: 1 !important;
-  color: #E0E6F2 !important;
 }
 
 }
