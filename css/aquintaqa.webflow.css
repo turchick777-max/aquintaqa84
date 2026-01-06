@@ -1767,7 +1767,7 @@ html, body {
   color: #ffffffc9 !important;
   opacity: 1 !important;
 }
-/* ===== HERO CTA BUTTONS: inline row + thin white border + no fill ===== */
+/* ===== HERO CTA BUTTONS: clean SpaceX-like ===== */
 .se1 .div-block-4{
   display: flex !important;
   flex-direction: row !important;
@@ -1776,27 +1776,41 @@ html, body {
   align-items: center !important;
 }
 
+/* сами кнопки */
 .se1 .div-block-4 .link.button,
 .se1 .div-block-4 .link.button._2{
   background: transparent !important;
   background-color: transparent !important;
-  box-shadow: none !important;
 
-  border: 1px solid rgba(255,255,255,.55) !important; /* тонкая белая рамка */
-  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  border-radius: 8px !important; /* не пилюля */
 
-  padding: 10px 18px !important; /* меньше кнопка */
+  padding: 11px 20px !important;
   font-size: 0.95rem !important;
   line-height: 1 !important;
+
+  color: #fff !important;
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.25s ease !important;
 
   white-space: nowrap !important;
 }
 
+/* hover */
 .se1 .div-block-4 .link.button:hover,
 .se1 .div-block-4 .link.button._2:hover{
-  background: rgba(255,255,255,.06) !important; /* лёгкий ховер */
-  border-color: rgba(255,255,255,.85) !important;
+  background: rgba(255,255,255,.06) !important;
+  border-color: rgba(255,255,255,.9) !important;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.15) !important;
+  transform: translateY(-1px);
 }
 
-
-
+/* active (клик) */
+.se1 .div-block-4 .link.button:active,
+.se1 .div-block-4 .link.button._2:active{
+  transform: translateY(0px);
+}
