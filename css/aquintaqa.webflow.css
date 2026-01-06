@@ -1777,11 +1777,6 @@ html, body {
   text-align: right !important;
   padding-right: 0 !important;
 }
-/* FIX: make subtitle same brightness as title */
-.se1 .content-img > .text-block._2,
-.se1 .column-r .text {
-  opacity: 1 !important;
-}
 .se1 .content-img > .text-block._2 {
   color: #ffffffc9 !important;
   opacity: 1 !important;
