@@ -1342,7 +1342,8 @@ a:hover {
 }
 
 .se1 .content-img > .text-block._2 {
-  opacity: 0.7 !important;
+  opacity: 1 !important;
+  color: #E0E6F2 !important;
 }
 
 }
