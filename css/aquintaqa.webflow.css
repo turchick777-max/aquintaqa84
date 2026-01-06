@@ -1802,8 +1802,8 @@ html, body {
 /* Контейнер для звезды */
 .star-container {
   position: absolute;
-  top: 33%;
-  left: 28%;
+  top: 32.5%;
+  left: 26%;
   z-index: 100;
   pointer-events: none;
   transform: translate(-50%, -50%);
