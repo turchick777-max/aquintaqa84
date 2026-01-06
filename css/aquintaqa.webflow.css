@@ -1814,3 +1814,13 @@ html, body {
 .se1 .div-block-4 .link.button._2:active{
   transform: translateY(0px);
 }
+/* ===== Burger menu: align text to left ===== */
+
+.w-nav-menu {
+  text-align: left !important;
+}
+
+.w-nav-menu .w-nav-link {
+  text-align: left !important;
+}
+
