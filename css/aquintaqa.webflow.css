@@ -1782,5 +1782,17 @@ html, body {
   color: #ffffff !important;
   transform: translateX(-2px);
 }
+/* Planet overlay: make both lines identical */
+.se1 .content-img > .text-block,
+.se1 .content-img > .text-block._2{
+  color: #ffffffc9 !important;
+  opacity: 1 !important;
+
+  font-size: 1.3rem !important;     /* same size as "Planet of..." */
+  font-weight: 300 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 151% !important;
+}
+
 
 
