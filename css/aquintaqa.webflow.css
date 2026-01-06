@@ -1635,60 +1635,7 @@ a:hover {
 .w-nav-menu .w-dropdown-list .w-dropdown-link:hover {
   background: rgba(255,255,255,0.06) !important;
 }
-/* ===== STAR POINT ON SPHERE ===== */
 
-.spline-scene {
-  position: relative !important;
-}
-
-/* сама точка со "звездой" */
-.spline-scene::after {
-  content: "";
-  position: absolute;
-
-  /* 🔧 ПОЗИЦИЯ ТОЧКИ НА СФЕРЕ */
-  top: 41%;        /* двигай вверх/вниз */
-  left: 22%;       /* двигай влево/вправо */
-
-  width: 12px;
-  height: 12px;
-
-  /* Звезда с лучами */
-  background:
-    radial-gradient(circle, #ffffff 0%, #ffffff 20%, transparent 40%),
-    linear-gradient(0deg, transparent 45%, #9fe8ff 50%, transparent 55%),
-    linear-gradient(90deg, transparent 45%, #9fe8ff 50%, transparent 55%),
-    linear-gradient(45deg, transparent 46%, #6fdcff 50%, transparent 54%),
-    linear-gradient(-45deg, transparent 46%, #6fdcff 50%, transparent 54%);
-
-  border-radius: 50%;
-  pointer-events: none;
-
-  /* Свечение */
-  box-shadow:
-  0 0 16px rgba(180, 240, 255, 1),
-  0 0 40px rgba(120, 220, 255, 0.8);
-
-  /* Анимация мерцания */
-  animation: star-pulse 4s ease-in-out infinite;
-  z-index: 5;
-}
-
-/* Мерцание */
-@keyframes star-pulse {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.3);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-}
 /* ===== FORCE BLACK TOP BAR (NAVBAR) ===== */
 
 .navbar,
