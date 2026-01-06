@@ -1802,8 +1802,8 @@ html, body {
 /* Контейнер для звезды */
 .star-container {
   position: absolute;
-  top: 35%;
-  left: 22%;
+  top: 33%;
+  left: 28%;
   z-index: 100;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -1828,3 +1828,11 @@ html, body {
     transform: scale(1.05);
     filter: drop-shadow(0 0 15px rgba(255,255,255,1)) drop-shadow(0 0 30px rgba(0,224,255,0.8));
   }
+/* Увеличить шрифт текстов слева сверху */
+.se1 .content-img > .text-block {
+  font-size: 1.3rem !important;
+}
+
+.se1 .content-img > .text-block._2 {
+  font-size: 1rem !important;
+}
