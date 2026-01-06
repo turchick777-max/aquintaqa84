@@ -1354,20 +1354,6 @@ a:hover {
   line-height: 1.4 !important;
   opacity: 0.9 !important;
 }
-/* ===== HERO BUTTONS: REMOVE ALL SIDE BORDERS ===== */
-
-/* Кнопки под No RO */
-.se1 .div-block-4 .link.button,
-.se1 .div-block-4 .link.button._2 {
-  border: 0 !important;          /* убираем рамку */
-  outline: none !important;      /* убираем outline */
-  box-shadow: none !important;   /* убираем fake-рамки Webflow */
-  
-  padding: 10px 22px !important; /* делаем чуть меньше */
-  font-size: 0.9rem !important;
-  border-radius: 14px !important;
-  background-color: rgba(66, 207, 242, 0.08) !important; /* лёгкий фон */
-}
 
 /* Hover — тоже без рамок */
 .se1 .div-block-4 .link.button:hover,
