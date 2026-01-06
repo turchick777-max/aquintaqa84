@@ -1766,4 +1766,21 @@ html, body {
   top: 55% !important;
   left: 10% !important;
 }
+/* Burger menu = like Learn the Technology buttons */
+
+.nav-menu-2 .w-nav-link {
+  font-family: inherit !important;
+  font-weight: 300 !important;        /* тоньше чем Planet */
+  letter-spacing: 0.02em !important;  /* как у кнопок */
+  font-size: 16px !important;         /* аккуратный UI размер */
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.35s ease, transform 0.35s ease;
+}
+
+/* Hover effect */
+.nav-menu-2 .w-nav-link:hover {
+  color: #ffffff !important;
+  transform: translateX(-2px);
+}
+
 
