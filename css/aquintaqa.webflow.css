@@ -1777,7 +1777,7 @@ html, body {
   width: 50% !important;
   padding: 96px 30px 31px 40px !important;
   align-items: flex-end !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
 }
 
 .nav-menu-2 .div-block-12 {
