@@ -1766,4 +1766,60 @@ html, body {
   top: 55% !important;
   left: 10% !important;
 }
+/* =============================================
+   ЗВЕЗДА С ЛУЧАМИ + ЛИНИЯ К НАДПИСИ
+   ============================================= */
 
+/* Скрыть старую мерцающую точку */
+.se1 .podpis,
+.se1 ._1 {
+  display: none !important;
+}
+
+/* Контейнер для звезды */
+.star-container {
+  position: fixed;
+  top: 52%;
+  left: 15%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* SVG звезда */
+.star-svg {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 10px #00E0FF) drop-shadow(0 0 20px #00E0FF);
+  animation: star-pulse 3s ease-in-out infinite;
+}
+
+@keyframes star-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Линия от звезды к надписи */
+.star-line {
+  position: fixed;
+  top: 52%;
+  left: calc(15% + 40px);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(0,224,255,0.3), transparent);
+  z-index: 99;
+  transform-origin: left center;
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+/* Позиция надписи <1% SHARE... рядом с линией */
+.se1 .div-block-17 {
+  top: 58% !important;
+  left: 28% !important;
+}
