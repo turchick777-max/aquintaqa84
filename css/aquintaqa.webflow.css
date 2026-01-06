@@ -1829,3 +1829,6 @@ html, body {
     filter: drop-shadow(0 0 15px rgba(255,255,255,1)) drop-shadow(0 0 30px rgba(0,224,255,0.8));
   }
 }
+.se1 .colum-r h1 {
+  font-size: 115% !important;
+}
