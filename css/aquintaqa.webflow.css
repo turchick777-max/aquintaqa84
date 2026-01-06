@@ -1765,11 +1765,6 @@ html, body {
 .se1 .div-block-4 .link.button._2:active{
   transform: translateY(0px);
 }
-/* Текст <1% SHARE - ниже на сферу */
-.se1 .div-block-17 {
-  top: 55% !important;
-  left: 10% !important;
-}
 /* Burger menu = like Learn the Technology buttons */
 
 .nav-menu-2 .w-nav-link {
