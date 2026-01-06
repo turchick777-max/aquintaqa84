@@ -484,9 +484,9 @@ a:hover {
 }
 
 .text-block._2 {
-  color: #ffffffc9;
-  margin-bottom: 0;
-  font-size: .8rem;
+  color: inherit;
+}
+
 
 }
 
