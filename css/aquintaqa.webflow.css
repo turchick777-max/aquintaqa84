@@ -2051,3 +2051,54 @@ html, body {
     order: 20 !important;
   }
 }
+/* MOBILE - NAVBAR FIX */
+@media screen and (max-width: 767px) {
+  /* Navbar фиксируем сверху */
+  .w-nav, .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: #000 !important;
+    padding: 15px 20px !important;
+  }
+  
+  /* Логотип больше */
+  .logo {
+    width: 160px !important;
+    min-width: 160px !important;
+    padding-bottom: 45px !important;
+  }
+  
+  /* Отступ сверху для контента под navbar */
+  .se1 {
+    padding-top: 80px !important;
+  }
+  
+  /* Spline - после текстов */
+  .spline-content {
+    position: relative !important;
+    order: 50 !important;
+    width: 100% !important;
+    height: 350px !important;
+    margin: 20px 0 !important;
+  }
+  
+  .spline-scene {
+    transform: none !important;
+    height: 350px !important;
+  }
+  
+  /* Сфера по центру */
+  .se1 .colum-l {
+    order: 1 !important;
+    width: 100% !important;
+  }
+  
+  /* Заголовок после сферы */
+  .se1 .colum-r {
+    order: 100 !important;
+    width: 100% !important;
+  }
+}
