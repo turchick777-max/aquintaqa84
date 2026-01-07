@@ -1819,310 +1819,51 @@ html, body {
   filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(0,224,255,0.6));
   animation: star-pulse 3s ease-in-out infinite;
 }
-
-@keyframes star-pulse {
-  0%, 100% {
-    opacity: 0.85;
-    transform: scale(1);
-    filter: drop-shadow(0 0 8px rgba(255,255,255,0.7)) drop-shadow(0 0 15px rgba(0,224,255,0.5));
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 15px rgba(255,255,255,1)) drop-shadow(0 0 30px rgba(0,224,255,0.8));
-  }
-/* Увеличить шрифт текстов слева сверху */
-.se1 .content-img > .text-block {
-  font-size: 1.3rem !important;
-}
-
-.se1 .content-img > .text-block._2 {
-  font-size: 1rem !important;
-}
 /* =============================================
-   AQUINTAQA - АДАПТИВНАЯ ВЕРСТКА
-   ============================================= */
-
-/* =============================================
-   TABLET (768px - 991px) — СОХРАНЯЕМ DESKTOP LAYOUT
-   ============================================= */
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  /* Hero секция — сохраняем двухколоночный layout */
-  .se1 .div1 {
-    flex-direction: row !important;
-    display: flex !important;
-  }
-  
-  .se1 .colum-l {
-    width: 50% !important;
-    display: flex !important;
-  }
-  
-  .se1 .colum-r {
-    width: 50% !important;
-    display: flex !important;
-    padding-left: 5% !important;
-  }
-  
-  /* Заголовок чуть меньше на планшете */
-  .se1 .h1,
-  .se1 h1 {
-    font-size: 2.5rem !important;
-  }
-  
-  /* Navbar */
-  .navbar {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-  
-  /* Сфера */
-  .spline-scene {
-    transform: scale(0.85) translateX(-25%) translateY(10%) !important;
-  }
-  
-  /* Звезда */
-  .star-container {
-    top: 34% !important;
-    left: 22% !important;
-  }
-  
-  /* Текст <1% */
-  .se1 .div-block-17 {
-    top: 50px !important;
-    left: 300px !important;
-  }
-}
-
-/* =============================================
-   MOBILE (≤767px) — ВЕРТИКАЛЬНЫЙ LAYOUT КАК SPACEX
-   ============================================= */
-@media screen and (max-width: 767px) {
-  /* ===== NAVBAR ===== */
-  .navbar {
-    padding: 15px 20px !important;
-  }
-  
-  .logo {
-    width: 140px !important;
-    min-width: 140px !important;
-    padding-bottom: 40px !important;
-  }
-  
-  .navbar .w-dropdown,
-  .navbar .menu-button {
-    transform: none !important;
-  }
-  
-  /* ===== HERO SECTION ===== */
-  .se1 {
-    height: auto !important;
-    min-height: 100vh !important;
-    padding-bottom: 40px !important;
-  }
-  
-  .se1 .noize {
-    padding-top: 80px !important;
-  }
-  
-  /* Контейнер — вертикальный layout */
-  .se1 .div1 {
-    flex-direction: column !important;
-    align-items: center !important;
-    height: auto !important;
-    padding: 0 20px !important;
-  }
-  
-  /* ===== ЛЕВАЯ КОЛОНКА (тексты + сфера) ===== */
-  .se1 .colum-l {
-    width: 100% !important;
-    order: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  .se1 .content-img {
-    width: 100% !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  
-  /* Тексты по центру */
-  .se1 .content-img > .text-block,
-  .se1 .content-img > .text-block._2 {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .se1 .content-img > .text-block._2 {
-    font-size: 0.95rem !important;
-  }
-  
-  /* Текст <1% SHARE */
-  .se1 .div-block-17 {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin: 15px 0 !important;
-  }
-  
-  .se1 .div-block-17 .text-block-2 {
-    font-size: 0.85rem !important;
-    text-align: center !important;
-  }
-  
-  /* ===== СФЕРА ===== */
-  .spline-scene {
-    position: relative !important;
-    transform: scale(0.7) !important;
-    width: 100% !important;
-    height: 350px !important;
-    margin: 20px auto !important;
-  }
-  
-  /* Звезда - скрыть или переместить */
-  .star-container {
-    top: 35% !important;
-    left: 30% !important;
-    transform: translate(-50%, -50%) scale(0.7) !important;
-  }
-  
-  /* ===== ПРАВАЯ КОЛОНКА (заголовок + кнопка) — теперь снизу ===== */
-  .se1 .colum-r {
-    width: 100% !important;
-    order: 2 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    align-items: center !important;
-    text-align: center !important;
-    margin-top: 20px !important;
-  }
-  
-  /* Заголовок */
-  .se1 .h1,
-  .se1 h1 {
-    font-size: 2rem !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-  
-  /* Подзаголовок */
-  .se1 .colum-r .text {
-    text-align: center !important;
-    font-size: 1rem !important;
-  }
-  
-  /* Кнопка */
-  .se1 .div-block-4 {
-    justify-content: center !important;
-    width: 100% !important;
-  }
-  
-  .se1 .div-block-4 .link.button {
-    margin: 0 auto !important;
-  }
-  
-  /* ===== МЕНЮ (открытое) ===== */
-  .nav-menu-2 {
-    width: 100% !important;
-    padding: 80px 30px 30px 30px !important;
-  }
-  
-  .nav-menu-2 .div-block-12 {
-    align-items: center !important;
-  }
-  
-  .nav-menu-2 .link.menu {
-    text-align: center !important;
-    font-size: 1.2rem !important;
-  }
-}
-
-/* =============================================
-   SMALL MOBILE (≤479px) — ещё меньше
-   ============================================= */
-@media screen and (max-width: 479px) {
-  .logo {
-    width: 120px !important;
-    padding-bottom: 35px !important;
-  }
-  
-  .se1 .h1,
-  .se1 h1 {
-    font-size: 1.7rem !important;
-  }
-  
-  .se1 .content-img > .text-block {
-    font-size: 1rem !important;
-  }
-  
-  .se1 .content-img > .text-block._2 {
-    font-size: 0.85rem !important;
-  }
-  
-  .spline-scene {
-    height: 280px !important;
-    transform: scale(0.6) !important;
-  }
-  
-  .star-container {
-    transform: translate(-50%, -50%) scale(0.5) !important;
-  }
-/* =============================================
-   AQUINTAQA - MOBILE (≤767px) 
-   Добавить В САМЫЙ КОНЕЦ aquintaqa.webflow.css
+   AQUINTAQA - MOBILE ПОЛНЫЙ FIX
+   ДОБАВИТЬ В САМЫЙ КОНЕЦ aquintaqa.webflow.css
    ============================================= */
 
 @media screen and (max-width: 767px) {
-  /* ===== NAVBAR ===== */
-  .navbar {
-    padding: 15px 20px !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-  
-  .logo {
-    width: 140px !important;
-    min-width: 140px !important;
-    padding-bottom: 40px !important;
-    order: -1 !important;
-  }
   
   /* ===== HERO SECTION ===== */
   .se1 {
     height: auto !important;
     min-height: auto !important;
-    padding-bottom: 60px !important;
+    padding-bottom: 40px !important;
+    overflow: visible !important;
   }
   
   .se1 .noize {
-    padding-top: 20px !important;
+    padding-top: 10px !important;
+    height: auto !important;
   }
   
-  /* Контейнер — ВЕРТИКАЛЬНЫЙ */
+  /* ГЛАВНЫЙ КОНТЕЙНЕР — ВЕРТИКАЛЬНЫЙ */
   .se1 .div1 {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
     height: auto !important;
     width: 100% !important;
+    max-width: 100% !important;
     padding: 0 20px !important;
+    margin: 0 !important;
   }
   
-  /* ===== ЛЕВАЯ КОЛОНКА — теперь сверху ===== */
+  /* ===== ЛЕВАЯ КОЛОНКА (тексты) — ПЕРВАЯ СВЕРХУ ===== */
   .se1 .colum-l {
     width: 100% !important;
+    max-width: 100% !important;
     order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
     position: relative !important;
   }
   
@@ -2132,79 +1873,111 @@ html, body {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
-  /* Тексты слева */
+  /* Текст "Planet of 8+ billion" */
   .se1 .content-img > .text-block {
     position: relative !important;
     top: auto !important;
     left: auto !important;
-    font-size: 1.2rem !important;
-    margin-bottom: 5px !important;
+    transform: none !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 8px !important;
     text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
+  /* Текст "~97.5% of water" */
   .se1 .content-img > .text-block._2 {
     position: relative !important;
     top: auto !important;
     left: auto !important;
+    transform: none !important;
     font-size: 1rem !important;
     margin-bottom: 15px !important;
     text-align: left !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
-  /* Текст <1% SHARE */
+  /* Текст "<1% SHARE" */
   .se1 .div-block-17 {
     position: relative !important;
     top: auto !important;
     left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     transform: none !important;
     margin-bottom: 20px !important;
+    width: 100% !important;
   }
   
   .se1 .div-block-17 .text-block-2 {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
     white-space: normal !important;
+    text-align: left !important;
   }
   
-  /* ===== СФЕРА — по центру, большая ===== */
+  /* ===== СФЕРА — ПО ЦЕНТРУ, БОЛЬШАЯ ===== */
+  .spline-content {
+    position: relative !important;
+    width: 100% !important;
+    height: 380px !important;
+    margin: 0 auto 20px auto !important;
+    order: 2 !important;
+  }
+  
   .spline-scene {
     position: relative !important;
     transform: none !important;
     width: 100% !important;
-    height: 400px !important;
-    margin: 0 auto 30px auto !important;
+    height: 380px !important;
+    margin: 0 !important;
   }
   
-  /* Звезда */
+  /* Звезда на сфере */
   .star-container {
-    top: 25% !important;
-    left: 35% !important;
+    top: 30% !important;
+    left: 25% !important;
   }
   
   .star-svg {
-    width: 60px !important;
-    height: 60px !important;
+    width: 50px !important;
+    height: 50px !important;
   }
   
-  /* ===== ПРАВАЯ КОЛОНКА — теперь снизу ===== */
+  /* ===== ПРАВАЯ КОЛОНКА (заголовок + кнопка) — СНИЗУ ===== */
   .se1 .colum-r {
     width: 100% !important;
-    order: 2 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: 100% !important;
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
     align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
-  /* Заголовок */
+  /* Заголовок "NEXT-GENERATION DESALINATION" */
   .se1 .h1,
   .se1 h1 {
-    font-size: 2rem !important;
-    text-align: left !important;
+    font-size: 1.8rem !important;
     line-height: 1.2 !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
   }
   
-  /* Подзаголовок */
+  .se1 .h1 .spa,
+  .se1 h1 .spa {
+    font-size: 1.8rem !important;
+  }
+  
+  /* Подзаголовок "No RO. No thermal" */
   .se1 .colum-r .text {
     text-align: left !important;
     font-size: 1rem !important;
@@ -2213,24 +1986,24 @@ html, body {
   
   /* Кнопка */
   .se1 .div-block-4 {
+    display: flex !important;
     justify-content: flex-start !important;
+    width: 100% !important;
   }
   
   .se1 .div-block-4 .link.button {
-    padding: 15px 25px !important;
+    padding: 14px 24px !important;
+    font-size: 0.9rem !important;
   }
 }
 
-/* ===== SMALL MOBILE (≤479px) ===== */
+/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (≤479px) ===== */
 @media screen and (max-width: 479px) {
-  .logo {
-    width: 120px !important;
-    padding-bottom: 35px !important;
-  }
-  
   .se1 .h1,
-  .se1 h1 {
-    font-size: 1.6rem !important;
+  .se1 h1,
+  .se1 .h1 .spa,
+  .se1 h1 .spa {
+    font-size: 1.5rem !important;
   }
   
   .se1 .content-img > .text-block {
@@ -2241,11 +2014,8 @@ html, body {
     font-size: 0.9rem !important;
   }
   
-/* MOBILE FIX */
-@media screen and (max-width: 767px) {
-  .se1 { height: auto !important; }
-  .se1 .div1 { flex-direction: column !important; }
-  .se1 .colum-l { width: 100% !important; }
-  .se1 .colum-r { width: 100% !important; order: 2 !important; padding-left: 0 !important; }
-  .spline-scene { transform: none !important; height: 350px !important; }
+  .spline-content,
+  .spline-scene {
+    height: 320px !important;
+  }
 }
