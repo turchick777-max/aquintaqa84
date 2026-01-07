@@ -1842,8 +1842,8 @@ html, body {
 /* <1% SHARE... — поставить НАД планетой, на уровне белой линии */
 .se1 .div-block-8 .text-block-2,
 .se1 .content-img .text-block-2 {
-  left: 52% !important;   /* горизонталь — над точкой */
-  top: 18% !important;    /* ВЫШЕ планеты — на уровень линии */
+  left: 40% !important;   /* горизонталь — над точкой */
+  top: 12% !important;    /* ВЫШЕ планеты — на уровень линии */
   transform: none !important;
   white-space: nowrap !important;
 }
