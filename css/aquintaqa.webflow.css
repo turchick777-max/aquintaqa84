@@ -1839,3 +1839,11 @@ html, body {
 .se1 .content-img > .text-block._2 {
   font-size: 1rem !important;
 }
+/* <1% SHARE... — поставить НАД планетой, на уровне белой линии */
+.se1 .div-block-8 .text-block-2,
+.se1 .content-img .text-block-2 {
+  left: 52% !important;   /* горизонталь — над точкой */
+  top: 18% !important;    /* ВЫШЕ планеты — на уровень линии */
+  transform: none !important;
+  white-space: nowrap !important;
+}
