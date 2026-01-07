@@ -1341,7 +1341,7 @@ a:hover {
   letter-spacing: 0.08em;
   font-weight: 300;
 
-  margin-left: 60px !important;  /* ← ВОТ ЭТО СДВИГАЕТ ВПРАВО */
+  margin-left: 45px !important;  /* ← ВОТ ЭТО СДВИГАЕТ ВПРАВО */
 
 }
 .se1 .content-img > .text-block,
