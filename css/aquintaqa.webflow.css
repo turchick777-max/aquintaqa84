@@ -2241,20 +2241,6 @@ html, body {
     font-size: 0.9rem !important;
   }
   
-  .spline-scene {
-    height: 320px !important;
-  }
-  
-  .star-container {
-    top: 22% !important;
-    left: 30% !important;
-  }
-  
-  .star-svg {
-    width: 50px !important;
-    height: 50px !important;
-  }
-}
 /* MOBILE FIX */
 @media screen and (max-width: 767px) {
   .se1 { height: auto !important; }
