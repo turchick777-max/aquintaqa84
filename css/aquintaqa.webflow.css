@@ -1206,8 +1206,8 @@ a:hover {
 /* "<1% SHARE..." - справа от сферы, по центру */
 .se1 .div-block-17 {
   position: absolute !important;
-  top: 40px !important;
-  left: 420px !important;
+  top: 45px !important;
+  left: 300px !important;
   right: auto !important;
   bottom: auto !important;
   transform: translateY(-50%) !important;
