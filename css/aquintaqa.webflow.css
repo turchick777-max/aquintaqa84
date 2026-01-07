@@ -2255,3 +2255,11 @@ html, body {
     height: 50px !important;
   }
 }
+/* MOBILE FIX */
+@media screen and (max-width: 767px) {
+  .se1 { height: auto !important; }
+  .se1 .div1 { flex-direction: column !important; }
+  .se1 .colum-l { width: 100% !important; }
+  .se1 .colum-r { width: 100% !important; order: 2 !important; padding-left: 0 !important; }
+  .spline-scene { transform: none !important; height: 350px !important; }
+}
