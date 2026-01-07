@@ -1839,3 +1839,243 @@ html, body {
 .se1 .content-img > .text-block._2 {
   font-size: 1rem !important;
 }
+/* =============================================
+   AQUINTAQA - АДАПТИВНАЯ ВЕРСТКА
+   ============================================= */
+
+/* =============================================
+   TABLET (768px - 991px) — СОХРАНЯЕМ DESKTOP LAYOUT
+   ============================================= */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  /* Hero секция — сохраняем двухколоночный layout */
+  .se1 .div1 {
+    flex-direction: row !important;
+    display: flex !important;
+  }
+  
+  .se1 .colum-l {
+    width: 50% !important;
+    display: flex !important;
+  }
+  
+  .se1 .colum-r {
+    width: 50% !important;
+    display: flex !important;
+    padding-left: 5% !important;
+  }
+  
+  /* Заголовок чуть меньше на планшете */
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Navbar */
+  .navbar {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* Сфера */
+  .spline-scene {
+    transform: scale(0.85) translateX(-25%) translateY(10%) !important;
+  }
+  
+  /* Звезда */
+  .star-container {
+    top: 34% !important;
+    left: 22% !important;
+  }
+  
+  /* Текст <1% */
+  .se1 .div-block-17 {
+    top: 50px !important;
+    left: 300px !important;
+  }
+}
+
+/* =============================================
+   MOBILE (≤767px) — ВЕРТИКАЛЬНЫЙ LAYOUT КАК SPACEX
+   ============================================= */
+@media screen and (max-width: 767px) {
+  /* ===== NAVBAR ===== */
+  .navbar {
+    padding: 15px 20px !important;
+  }
+  
+  .logo {
+    width: 140px !important;
+    min-width: 140px !important;
+    padding-bottom: 40px !important;
+  }
+  
+  .navbar .w-dropdown,
+  .navbar .menu-button {
+    transform: none !important;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .se1 {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-bottom: 40px !important;
+  }
+  
+  .se1 .noize {
+    padding-top: 80px !important;
+  }
+  
+  /* Контейнер — вертикальный layout */
+  .se1 .div1 {
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+    padding: 0 20px !important;
+  }
+  
+  /* ===== ЛЕВАЯ КОЛОНКА (тексты + сфера) ===== */
+  .se1 .colum-l {
+    width: 100% !important;
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .se1 .content-img {
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  /* Тексты по центру */
+  .se1 .content-img > .text-block,
+  .se1 .content-img > .text-block._2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .se1 .content-img > .text-block._2 {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Текст <1% SHARE */
+  .se1 .div-block-17 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 15px 0 !important;
+  }
+  
+  .se1 .div-block-17 .text-block-2 {
+    font-size: 0.85rem !important;
+    text-align: center !important;
+  }
+  
+  /* ===== СФЕРА ===== */
+  .spline-scene {
+    position: relative !important;
+    transform: scale(0.7) !important;
+    width: 100% !important;
+    height: 350px !important;
+    margin: 20px auto !important;
+  }
+  
+  /* Звезда - скрыть или переместить */
+  .star-container {
+    top: 35% !important;
+    left: 30% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+  
+  /* ===== ПРАВАЯ КОЛОНКА (заголовок + кнопка) — теперь снизу ===== */
+  .se1 .colum-r {
+    width: 100% !important;
+    order: 2 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+  }
+  
+  /* Заголовок */
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* Подзаголовок */
+  .se1 .colum-r .text {
+    text-align: center !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Кнопка */
+  .se1 .div-block-4 {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .se1 .div-block-4 .link.button {
+    margin: 0 auto !important;
+  }
+  
+  /* ===== МЕНЮ (открытое) ===== */
+  .nav-menu-2 {
+    width: 100% !important;
+    padding: 80px 30px 30px 30px !important;
+  }
+  
+  .nav-menu-2 .div-block-12 {
+    align-items: center !important;
+  }
+  
+  .nav-menu-2 .link.menu {
+    text-align: center !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+/* =============================================
+   SMALL MOBILE (≤479px) — ещё меньше
+   ============================================= */
+@media screen and (max-width: 479px) {
+  .logo {
+    width: 120px !important;
+    padding-bottom: 35px !important;
+  }
+  
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.7rem !important;
+  }
+  
+  .se1 .content-img > .text-block {
+    font-size: 1rem !important;
+  }
+  
+  .se1 .content-img > .text-block._2 {
+    font-size: 0.85rem !important;
+  }
+  
+  .spline-scene {
+    height: 280px !important;
+    transform: scale(0.6) !important;
+  }
+  
+  .star-container {
+    transform: translate(-50%, -50%) scale(0.5) !important;
+  }
+}
