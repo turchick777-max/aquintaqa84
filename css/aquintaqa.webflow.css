@@ -2019,3 +2019,35 @@ html, body {
     height: 320px !important;
   }
 }
+/* MOBILE FIX - порядок элементов */
+@media screen and (max-width: 767px) {
+  /* Navbar наверху */
+  .navbar {
+    position: relative !important;
+    order: -1 !important;
+    z-index: 1000 !important;
+  }
+  
+  /* Spline контейнер - после текстов */
+  .spline-content {
+    order: 10 !important;
+    position: relative !important;
+    margin-top: 20px !important;
+  }
+  
+  /* Скрыть "Planet of 8+" если пропал - проверим */
+  .se1 .content-img > .text-block:first-of-type {
+    display: block !important;
+    order: 1 !important;
+  }
+  
+  /* Colum-l - тексты сверху */
+  .se1 .colum-l {
+    order: 1 !important;
+  }
+  
+  /* Colum-r - заголовок снизу */
+  .se1 .colum-r {
+    order: 20 !important;
+  }
+}
