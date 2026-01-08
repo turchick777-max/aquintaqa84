@@ -2002,18 +2002,27 @@ html, body {
     padding-bottom: 5.3% !important;
   }
   
-  /* Spline sphere - fixed positioning */
+  /* Spline sphere - fixed positioning, prevent cropping */
   .spline-content {
     position: fixed !important;
     inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     z-index: 0 !important;
+    overflow: visible !important;
   }
   
   .spline-scene {
     width: 100% !important;
+    height: 100vh !important;
+    transform: translateX(-20%) scale(0.85) !important;
+    transform-origin: center center !important;
+  }
+  
+  .spline-scene canvas {
+    width: 100% !important;
     height: 100% !important;
+    object-fit: contain !important;
   }
   
   /* Sphere marker - visible on tablets */
@@ -2027,12 +2036,11 @@ html, body {
 
 /* Extra insurance: block any unwanted changes at common tablet widths */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* iPad Portrait and Landscape */
-  .se1, .div1, .colum-l, .colum-r, .content-img, .navbar {
-    /* Inherit all desktop styles - no changes */
+  /* iPad Portrait and small tablets */
+  .spline-scene {
+    transform: translateX(-15%) scale(0.75) !important;
   }
   
-  /* Prevent any flex-direction changes */
   .div1 {
     flex-direction: row !important;
   }
@@ -2040,11 +2048,27 @@ html, body {
   .colum-l, .colum-r {
     width: 50% !important;
   }
+  
+  .h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  .text {
+    font-size: 1.2rem !important;
+  }
+  
+  .text-block {
+    font-size: 1.1rem !important;
+  }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px) {
-  /* iPad Pro and larger tablets */
-  .se1, .div1, .colum-l, .colum-r, .content-img, .navbar {
-    /* Same as desktop */
+@media screen and (min-width: 1025px) and (max-width: 1400px) {
+  /* iPad Pro landscape and larger tablets */
+  .spline-scene {
+    transform: translateX(-18%) scale(0.82) !important;
+  }
+  
+  .h1 {
+    font-size: 2.5rem !important;
   }
 }
