@@ -2190,3 +2190,29 @@ html, body {
   94% { opacity: 0.8; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
   97% { opacity: 0.3; transform: translate(-50%, -50%) rotate(45deg) scale(1.2); }
 }
+/* MOBILE - Navbar fix */
+@media screen and (max-width: 767px) {
+  .navbar {
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+  }
+  
+  .navbar .w-nav-brand,
+  .navbar .logo {
+    margin: 0 !important;
+  }
+  
+  /* Глобус и бургер на один уровень */
+  .navbar .w-dropdown,
+  .navbar .div-block-11,
+  .navbar .menu-button {
+    transform: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .navbar .menu-button {
+    transform: translateY(0) !important;
+  }
+}
