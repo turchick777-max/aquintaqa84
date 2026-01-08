@@ -1799,27 +1799,6 @@ html, body {
   margin-top: 2.5rem !important;
 }
 /* =============================================
-   МЕРЦАЮЩАЯ ЗВЕЗДА С ДЛИННЫМИ ОСТРЫМИ ЛУЧАМИ
-   ============================================= */
-
-/* Контейнер для звезды */
-.star-container {
-  position: absolute;
-  top: 36%;
-  left: 26%;
-  z-index: 100;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-}
-
-/* SVG звезда */
-.star-svg {
-  width: 100px;
-  height: 100px;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(0,224,255,0.6));
-  animation: star-pulse 3s ease-in-out infinite;
-}
-/* =============================================
    AQUINTAQA - MOBILE ПОЛНЫЙ FIX
    ДОБАВИТЬ В САМЫЙ КОНЕЦ aquintaqa.webflow.css
    ============================================= */
