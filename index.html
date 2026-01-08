@@ -128,41 +128,6 @@
   <div class="spline-content">
     <div class="spline-scene" data-w-id="9399c96b-cd7d-4fef-4d18-4d2d086db8ae" data-animation-type="spline" data-spline-url="https://prod.spline.design/8z6pBDvGF-zx6ta3/scene.splinecode"><canvas></canvas></div>
   </div>
-  
- <!-- Мерцающая звезда с длинными острыми лучами -->
-<div class="star-container">
-  <svg class="star-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-        <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-      <linearGradient id="rayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
-      </linearGradient>
-    </defs>
-    
-  <!-- 4 основных луча (короткие) -->
-<polygon points="100,50 101,94 100,100 99,94" fill="white" filter="url(#glow)" opacity="0.95"/>
-<polygon points="150,100 106,101 100,100 106,99" fill="white" filter="url(#glow)" opacity="0.95"/>
-<polygon points="100,150 99,106 100,100 101,106" fill="white" filter="url(#glow)" opacity="0.95"/>
-<polygon points="50,100 94,99 100,100 94,101" fill="white" filter="url(#glow)" opacity="0.95"/>
-
-<!-- 4 диагональных луча (короткие) -->
-<polygon points="135,65 104,96 100,100 96,96" fill="white" filter="url(#glow)" opacity="0.7"/>
-<polygon points="135,135 104,104 100,100 104,96" fill="white" filter="url(#glow)" opacity="0.7"/>
-<polygon points="65,135 96,104 100,100 96,96" fill="white" filter="url(#glow)" opacity="0.7"/>
-<polygon points="65,65 96,96 100,100 104,96" fill="white" filter="url(#glow)" opacity="0.7"/>
-    
-    <!-- Центральное свечение -->
-    <circle cx="100" cy="100" r="8" fill="white" filter="url(#glow)"/>
-    <circle cx="100" cy="100" r="4" fill="white"/>
-  </svg>
-</div>
   <div data-animation="over-right" class="menu w-nav" data-easing2="ease-out" data-easing="ease-in" data-collapse="all" style="opacity:0" data-w-id="98d6510c-f91b-7dee-6fcc-df3364ee5ebf" role="banner" data-duration="400">
     <div class="navbar w-container">
       <a href="#" class="logo w-inline-block"></a>
