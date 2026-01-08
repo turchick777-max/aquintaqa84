@@ -1908,3 +1908,143 @@ html, body {
   94% { opacity: 0.8; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
   97% { opacity: 0.3; transform: translate(-50%, -50%) rotate(45deg) scale(1.2); }
 }
+
+/* =====================================================
+   TABLET/IPAD FIX: Force desktop layout on all screens >= 768px
+   This ensures tablets and iPads show the same layout as desktop
+   ===================================================== */
+
+/* Override any Webflow tablet breakpoints (991px, 767px) */
+@media screen and (min-width: 768px) {
+  /* Force desktop layout for hero section */
+  .se1 {
+    height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .div1 {
+    width: 95% !important;
+    max-width: 1600px !important;
+    height: 97% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    position: relative !important;
+  }
+  
+  /* Left column - sphere and stats */
+  .colum-l {
+    width: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding-top: 1px !important;
+    position: relative !important;
+  }
+  
+  /* Right column - heading and button */
+  .colum-r {
+    width: 50% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding-left: 7% !important;
+  }
+  
+  /* Content image container */
+  .content-img {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 29px !important;
+  }
+  
+  /* Text blocks positioning */
+  .text-block {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .text-block-2 {
+    position: absolute !important;
+    top: 12% !important;
+    left: 70% !important;
+    width: 245px !important;
+    font-size: 1rem !important;
+  }
+  
+  /* H1 heading */
+  .h1 {
+    font-size: 2.9rem !important;
+    line-height: 150% !important;
+    margin-bottom: 22px !important;
+  }
+  
+  /* Subtext */
+  .text {
+    font-size: 1.4rem !important;
+    margin-bottom: 18px !important;
+  }
+  
+  /* Navbar - always horizontal desktop style */
+  .navbar {
+    flex-direction: row !important;
+    padding: 6px 32px !important;
+  }
+  
+  .logo {
+    width: 14% !important;
+    padding-bottom: 5.3% !important;
+  }
+  
+  /* Spline sphere - fixed positioning */
+  .spline-content {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+  }
+  
+  .spline-scene {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Sphere marker - visible on tablets */
+  .sphere-marker {
+    display: block !important;
+    position: absolute !important;
+    top: 38% !important;
+    left: 26% !important;
+  }
+}
+
+/* Extra insurance: block any unwanted changes at common tablet widths */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* iPad Portrait and Landscape */
+  .se1, .div1, .colum-l, .colum-r, .content-img, .navbar {
+    /* Inherit all desktop styles - no changes */
+  }
+  
+  /* Prevent any flex-direction changes */
+  .div1 {
+    flex-direction: row !important;
+  }
+  
+  .colum-l, .colum-r {
+    width: 50% !important;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  /* iPad Pro and larger tablets */
+  .se1, .div1, .colum-l, .colum-r, .content-img, .navbar {
+    /* Same as desktop */
+  }
+}
