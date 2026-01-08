@@ -1950,42 +1950,38 @@ html, body {
     padding-bottom: 38px !important;
   }
   
-  /* === SPLINE (сфера) - после текстов === */
-  .spline-content {
-    order: 3 !important;
-    position: relative !important;
-    width: 100% !important;
-    height: 320px !important;
-    margin: 20px 0 !important;
+  /* ============================================
+     SPACEX-STYLE MOBILE LAYOUT
+     Порядок: Хедер → 3 строки текста → Сфера → H1 → Кнопка
+     ============================================ */
+  
+  /* === BODY как flex-контейнер для управления порядком === */
+  body.body {
+    display: flex !important;
+    flex-direction: column !important;
   }
   
-  .spline-scene {
-    transform: none !important;
-    width: 100% !important;
-    height: 320px !important;
-  }
-  
-  /* === MARKER (точка) - вместе со сферой === */
+  /* === MARKER (точка) - скрыть на мобильных === */
   .sphere-marker {
-    order: 3 !important;
-    top: 25% !important;
-    left: 30% !important;
+    display: none !important;
   }
   
-  /* === HERO SECTION === */
+  /* === HERO SECTION - ПЕРВАЯ после хедера (содержит 3 строки текста) === */
   body > div:has(.se1) {
-    order: 2 !important;
+    order: 1 !important;
   }
   
   .se1 {
     height: auto !important;
     min-height: auto !important;
     padding: 0 !important;
+    margin: 0 !important;
   }
   
   .se1 .noize {
-    padding: 10px 0 !important;
+    padding: 0 !important;
     height: auto !important;
+    background: transparent !important;
   }
   
   .se1 .div1 {
@@ -1993,14 +1989,16 @@ html, body {
     flex-direction: column !important;
     width: 100% !important;
     height: auto !important;
-    padding: 0 20px !important;
+    padding: 0 24px !important;
+    gap: 0 !important;
   }
   
-  /* === ТЕКСТЫ (colum-l) - сверху === */
+  /* === 3 СТРОКИ ТЕКСТА (colum-l) - СВЕРХУ сферы === */
   .se1 .colum-l {
     width: 100% !important;
     order: 1 !important;
     padding: 0 !important;
+    margin: 0 0 16px 0 !important;
   }
   
   .se1 .content-img {
@@ -2008,91 +2006,189 @@ html, body {
     flex-direction: column !important;
     align-items: flex-start !important;
     margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px !important;
   }
   
+  /* Скрываем лишние элементы в content-img */
+  .se1 .content-img .div-block-5,
+  .se1 .content-img .podpis,
+  .se1 .content-img .sfera {
+    display: none !important;
+  }
+  
+  /* Строка 1: "Planet of 8+ billion people" */
   .se1 .content-img > .text-block {
     position: static !important;
     transform: none !important;
-    font-size: 1.4rem !important;
-    margin-bottom: 8px !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin: 0 !important;
+    padding: 0 !important;
     max-width: 100% !important;
+    text-transform: uppercase !important;
   }
   
+  /* Строка 2: "~97.5% of water..." */
   .se1 .content-img > .text-block._2 {
     position: static !important;
     transform: none !important;
-    font-size: 1.1rem !important;
-    margin-bottom: 12px !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin: 0 !important;
+    padding: 0 !important;
     max-width: 100% !important;
+    text-transform: uppercase !important;
   }
   
+  /* Контейнер для строки 3 */
   .se1 .div-block-17 {
     position: static !important;
     transform: none !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
+  /* Строка 3: "<1% share..." */
   .se1 .div-block-17 .text-block-2 {
-    font-size: 0.75rem !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
     white-space: normal !important;
+    text-transform: uppercase !important;
   }
   
-  /* === ЗАГОЛОВОК И КНОПКА (colum-r) - снизу === */
+  /* === SPLINE (сфера) - ПОСЛЕ текстов === */
+  .spline-content {
+    order: 2 !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 60vw !important;
+    min-height: 240px !important;
+    max-height: 360px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .spline-scene {
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .spline-scene canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  /* === ЗАГОЛОВОК И КНОПКА (colum-r) - ПОСЛЕ сферы === */
   .se1 .colum-r {
     width: 100% !important;
-    order: 2 !important;
-    padding: 20px 0 0 0 !important;
+    order: 3 !important;
+    padding: 24px 0 0 0 !important;
+    margin: 0 !important;
   }
   
+  /* Главный заголовок - как у SpaceX */
   .se1 .h1,
   .se1 h1 {
-    font-size: 2rem !important;
-    line-height: 1.15 !important;
+    font-size: 32px !important;
+    font-weight: 500 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 !important;
+    color: #fff !important;
   }
   
   .se1 .h1 .spa {
-    font-size: 2rem !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
   }
   
+  /* Подзаголовок */
   .se1 .colum-r .text {
-    font-size: 1rem !important;
-    margin-top: 15px !important;
-    margin-bottom: 20px !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin: 16px 0 0 0 !important;
   }
   
+  /* Кнопка - как у SpaceX */
   .se1 .div-block-4 {
+    margin-top: 28px !important;
     justify-content: flex-start !important;
   }
   
-  .se1 .div-block-4 .link.button {
-    font-size: 0.9rem !important;
-    padding: 14px 20px !important;
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    padding: 16px 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: transparent !important;
+    color: #fff !important;
+    border-radius: 0 !important;
   }
 }
 
 /* === МАЛЕНЬКИЕ ЭКРАНЫ (≤479px) === */
 @media screen and (max-width: 479px) {
   .logo {
-    width: 110px !important;
-    padding-bottom: 32px !important;
+    width: 100px !important;
+    padding-bottom: 28px !important;
   }
   
-  .se1 .content-img > .text-block {
-    font-size: 1.2rem !important;
+  .spline-content {
+    height: 50vw !important;
+    min-height: 180px !important;
+    max-height: 280px !important;
   }
   
-  .se1 .content-img > .text-block._2 {
-    font-size: 1rem !important;
+  .se1 .div1 {
+    padding: 0 20px !important;
+  }
+  
+  .se1 .content-img > .text-block,
+  .se1 .content-img > .text-block._2,
+  .se1 .div-block-17 .text-block-2 {
+    font-size: 10px !important;
+  }
+  
+  .se1 .colum-r {
+    padding-top: 24px !important;
   }
   
   .se1 .h1,
   .se1 h1,
   .se1 .h1 .spa {
-    font-size: 1.7rem !important;
+    font-size: 26px !important;
   }
   
-  .spline-content,
-  .spline-scene {
-    height: 280px !important;
+  .se1 .colum-r .text {
+    font-size: 14px !important;
+    margin-top: 12px !important;
+  }
+  
+  .se1 .div-block-4 {
+    margin-top: 24px !important;
+  }
+  
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: 12px !important;
+    padding: 14px 20px !important;
   }
 }
