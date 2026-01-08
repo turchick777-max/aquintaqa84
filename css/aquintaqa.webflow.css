@@ -2015,8 +2015,6 @@ html, body {
   .spline-scene {
     width: 100% !important;
     height: 100vh !important;
-    transform: translateX(-20%) scale(0.85) !important;
-    transform-origin: center center !important;
   }
   
   .spline-scene canvas {
@@ -2070,5 +2068,12 @@ html, body {
   
   .h1 {
     font-size: 2.5rem !important;
+  }
+}
+
+/* Large desktops - restore original transform */
+@media screen and (min-width: 1401px) {
+  .spline-scene {
+    transform: translateX(-20%) !important;
   }
 }
