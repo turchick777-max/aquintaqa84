@@ -1841,7 +1841,7 @@ html, body {
   height: var(--marker-outer-glow-size);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(0,180,220,0.15) 0%, rgba(0,180,220,0.05) 40%, transparent 70%);
-  opacity: 0.4;
+  opacity: 0;
   mix-blend-mode: screen;
   animation: marker-breath 4s ease-in-out infinite;
 }
@@ -1871,7 +1871,7 @@ html, body {
   height: var(--marker-core-size);
   border-radius: 50%;
   background: radial-gradient(circle, #b8e4f0 0%, rgba(0,200,240,0.9) 50%, rgba(0,180,220,0.5) 100%);
-  opacity: 0.95;
+  opacity: 1.2;
   mix-blend-mode: screen;
   box-shadow: 0 0 4px 1px rgba(0,212,255,0.8), 0 0 8px 2px rgba(0,180,220,0.4);
   animation: marker-breath-core 4s ease-in-out infinite;
@@ -1899,8 +1899,8 @@ html, body {
 }
 
 @keyframes marker-breath-core {
-  0%, 100% { opacity: 0.8; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
-  50% { opacity: 0.95; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
+0%, 100% { opacity: 0.95; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
+50% { opacity: 1; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
 }
 
 @keyframes marker-flare-appear {
