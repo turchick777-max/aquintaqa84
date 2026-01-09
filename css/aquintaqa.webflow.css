@@ -1908,3 +1908,9 @@ html, body {
   94% { opacity: 0.8; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
   97% { opacity: 0.3; transform: translate(-50%, -50%) rotate(45deg) scale(1.2); }
 }
+/* Ширина меню */
+.w-nav-menu,
+.nav-menu-2 {
+  width: 35vw !important;
+  min-width: 35vw !important;
+}
