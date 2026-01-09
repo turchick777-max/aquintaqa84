@@ -1894,3 +1894,6 @@ html, body {
   width: 48vw !important;
   min-width: 48vw !important;
 }
+.marker-outer-glow {
+  display: none !important;
+}
