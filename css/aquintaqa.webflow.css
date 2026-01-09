@@ -1801,7 +1801,7 @@ html, body {
 
 /* === EMBEDDED MARKER === */
 :root {
-  --marker-core-size: 6px;
+  --marker-core-size: 9px;
   --marker-inner-glow-size: 24px;
   --marker-outer-glow-size: 60px;
   --marker-occlusion-size: 16px;
@@ -1855,7 +1855,7 @@ html, body {
   height: var(--marker-core-size);
   border-radius: 50%;
   background: radial-gradient(circle, #b8e4f0 0%, rgba(0,200,240,0.9) 50%, rgba(0,180,220,0.5) 100%);
-  opacity: 0.95;
+  opacity: 1;
   mix-blend-mode: screen;
   box-shadow: 0 0 4px 1px rgba(0,212,255,0.8), 0 0 8px 2px rgba(0,180,220,0.4);
   animation: marker-breath-core 4s ease-in-out infinite;
