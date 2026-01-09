@@ -1806,7 +1806,6 @@ html, body {
   --marker-outer-glow-size: 60px;
   --marker-occlusion-size: 16px;
 }
-
 .sphere-marker {
   position: absolute;
   top: 38%;
@@ -1817,7 +1816,6 @@ html, body {
   width: var(--marker-outer-glow-size);
   height: var(--marker-outer-glow-size);
 }
-
 .marker-occlusion {
   position: absolute;
   top: 50%;
@@ -1831,9 +1829,6 @@ html, body {
   mix-blend-mode: multiply;
   filter: blur(2px);
 }
-
-}
-
 .marker-inner-glow {
   position: absolute;
   top: 50%;
@@ -1849,7 +1844,6 @@ html, body {
   animation: marker-breath 4s ease-in-out infinite;
   animation-delay: -1s;
 }
-
 .marker-core {
   position: absolute;
   top: 50%;
@@ -1858,15 +1852,15 @@ html, body {
   width: var(--marker-core-size);
   height: var(--marker-core-size);
   border-radius: 50%;
-  background: radial-gradient(circle, #b8e4f0 0%, rgba(0,200,240,0.9) 50%, rgba(0,180,220,0.5) 100%);
-  opacity: 1.2;
+  background: radial-gradient(circle, 
+#b8e4f0 0%, rgba(0,200,240,0.9) 50%, rgba(0,180,220,0.5) 100%);
+  opacity: 0.95;
   mix-blend-mode: screen;
   box-shadow: 0 0 4px 1px rgba(0,212,255,0.8), 0 0 8px 2px rgba(0,180,220,0.4);
   animation: marker-breath-core 4s ease-in-out infinite;
   margin-top: -1px;
   margin-left: 1px;
 }
-
 .marker-flare {
   position: absolute;
   top: 50%;
@@ -1880,17 +1874,14 @@ html, body {
   animation: marker-flare-appear 8s ease-in-out infinite;
   animation-delay: 3s;
 }
-
 @keyframes marker-breath {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.5; }
 }
-
 @keyframes marker-breath-core {
-0%, 100% { opacity: 0.95; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
-50% { opacity: 1; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
+  0%, 100% { opacity: 0.8; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
+  50% { opacity: 0.95; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
 }
-
 @keyframes marker-flare-appear {
   0%, 90%, 100% { opacity: 0; transform: translate(-50%, -50%) rotate(0deg) scale(0.5); }
   94% { opacity: 0.8; transform: translate(-50%, -50%) rotate(45deg) scale(1); }
