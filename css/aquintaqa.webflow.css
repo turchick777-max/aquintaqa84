@@ -1736,7 +1736,7 @@ html, body {
   background: transparent !important;
   background-color: transparent !important;
 
-  border: 1px solid rgba(255,255,255,.55) !important;
+  border: 0.5px solid rgba(8, 145, 178, 0.5) !important;
   border-radius: 8px !important; /* не пилюля */
 
   padding: 8px 14px !important;   /* рамка ближе к тексту */
@@ -1758,7 +1758,7 @@ html, body {
 .se1 .div-block-4 .link.button:hover,
 .se1 .div-block-4 .link.button._2:hover{
   background: rgba(255,255,255,.06) !important;
-  border-color: rgba(255,255,255,.9) !important;
+  border-color: rgba(8, 145, 178, 0.8) !important;
   box-shadow: 0 0 0 1px rgba(255,255,255,.15) !important;
   transform: translateY(-1px);
 }
