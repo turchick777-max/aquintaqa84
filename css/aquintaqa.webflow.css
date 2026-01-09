@@ -1911,6 +1911,6 @@ html, body {
 /* Ширина меню */
 .w-nav-menu,
 .nav-menu-2 {
-  width: 35vw !important;
-  min-width: 35vw !important;
+  width: 48vw !important;
+  min-width: 48vw !important;
 }
