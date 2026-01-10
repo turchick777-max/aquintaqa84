@@ -1940,7 +1940,7 @@ html, body {
 
   /* “дыхание” — медленно и не заметно */
   --breath-dur: 5.8s;
-  --breath-amp: 0.32;
+  --breath-amp: 0.40;
 
   /* редкая искра */
   --flare-dur: 13s;
