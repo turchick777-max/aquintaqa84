@@ -1927,10 +1927,11 @@ html, body {
   --marker-u: clamp(6px, 0.75vmin, 10px);
 
   /* размеры слоёв (в "физических" единицах) */
-  --marker-core: calc(var(--marker-u) * 0.9);
-  --marker-inner: calc(var(--marker-u) * 3.2);
-  --marker-outer: calc(var(--marker-u) * 7.8);
-  --marker-occl: calc(var(--marker-u) * 2.4);
+ --marker-core: calc(var(--marker-u) * 1.25);
+--marker-inner: calc(var(--marker-u) * 4.2);
+--marker-outer: calc(var(--marker-u) * 9.8);
+--marker-occl: calc(var(--marker-u) * 3.0);
+
 
   /* интенсивности */
   --core-a: 0.92;
