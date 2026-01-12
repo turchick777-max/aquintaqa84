@@ -1899,3 +1899,9 @@ html, body {
   width: 48vw !important;
   min-width: 48vw !important;
 }
+/* === HERO LEFT TEXT: -15% SCALE === */
+.se1 .content-img > .text-block,
+.se1 .content-img > .text-block._2 {
+  font-size: 0.94rem !important;   /* было ~1.11rem → стало ~ -15% */
+  line-height: 1.45 !important;
+}
