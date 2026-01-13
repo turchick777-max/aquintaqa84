@@ -1905,4 +1905,7 @@ html, body {
   font-size: 0.94rem !important;
   line-height: 1.45 !important;
 }
+.marker-occlusion {
+  display: none !important;
+}
 
