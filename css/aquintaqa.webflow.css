@@ -1207,7 +1207,7 @@ a:hover {
 .se1 .div-block-17 {
   position: absolute !important;
   top: 45px !important;
-  left: 200px !important;
+  left: 170px !important;
   right: auto !important;
   bottom: auto !important;
   transform: translateY(-50%) !important;
@@ -1809,8 +1809,8 @@ html, body {
 
 .sphere-marker {
   position: absolute;
-  top: 38%;
-  left: 17% !important;
+  top: 35%;
+  left: 14% !important;
   transform: translate(-50%, -50%);
   z-index: 100;
   pointer-events: none;
