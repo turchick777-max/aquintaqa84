@@ -1905,3 +1905,9 @@ html, body {
   font-size: 0.94rem !important;   /* было ~1.11rem → стало ~ -15% */
   line-height: 1.45 !important;
 }
+/* страховка именно для строки <1% */
+.se1 .content-img .text-block-2,
+.se1 .content-img .text-block-3 {
+  font-size: 0.94rem !important;
+}
+
