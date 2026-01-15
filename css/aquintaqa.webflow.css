@@ -192,12 +192,38 @@ a:hover {
   position: relative;
   overflow: hidden;
   background-color: #F4F7FA;
+  /* Только укрупнённая сетка (каждые 5 клеток) */
   background-image:
-    linear-gradient(rgba(15, 23, 42, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
     linear-gradient(rgba(15, 23, 42, 0.085) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 23, 42, 0.085) 1px, transparent 1px);
-  background-size: 32px 32px, 32px 32px, 160px 160px, 160px 160px;
+  background-size: 100px 100px;
+}
+
+/* Мелкая сетка - тонкие блеклые линии */
+.se2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(180, 190, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 190, 200, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.3px);
+}
+
+/* Точки в углах клеток */
+.se2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(140, 160, 180, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 10px 10px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.5px);
 }
 
 /* CAD Frame - внешняя рамка */
