@@ -216,7 +216,7 @@
       <div class="div2">
         <h2 class="h2">HOW IT WORKS</h2>
         <div class="content-how-it-works">
-          <!-- Footer Panel -->
+          <!-- Footer Panel - fixed at bottom -->
           <footer class="hiw-footer">
             <!-- Tabs row -->
             <div class="hiw-footer__tabs" id="hiwTabs">
@@ -224,25 +224,20 @@
               <button class="hiw-tab" data-idx="1">2. Gas-Sorbent Dosing</button>
               <button class="hiw-tab" data-idx="2">3. Sorption (Contactor)</button>
               <button class="hiw-tab" data-idx="3">4. Separation (Phase split)</button>
-              <button class="hiw-tab" data-idx="4">5. Mineralization & Polishing</button>
             </div>
 
-            <!-- Content row: Description + Legend -->
+            <!-- Content row: Steps list + Description -->
             <div class="hiw-footer__content">
+              <div class="hiw-footer__steps" id="hiwSteps">
+                <button class="hiw-step is-active" data-idx="0">1. Intake & Stabilization</button>
+                <button class="hiw-step" data-idx="1">2. Gas-Sorbent Dosing</button>
+                <button class="hiw-step" data-idx="2">3. Sorption (Contactor)</button>
+                <button class="hiw-step" data-idx="3">4. Separation (Phase split)</button>
+                <button class="hiw-step" data-idx="4">5. Mineralization & Polishing</button>
+              </div>
               <div class="hiw-footer__detail">
                 <h3 class="hiw-footer__title" id="hiwDetailTitle">1. INTAKE & STABILIZATION</h3>
                 <p class="hiw-footer__text" id="hiwDetailText">Intake of seawater or brackish water. Coarse protection against debris and flow stabilization. No heavy pre-treatment trains required.</p>
-              </div>
-              <div class="hiw-footer__legend">
-                <div class="hiw-legend__title">LEGEND</div>
-                <div class="hiw-legend__row">
-                  <span class="hiw-legend__swatch core"></span>
-                  <span class="hiw-legend__text">AQUINTAQA core module boundary <span class="muted">(инкапсулировано / защищено)</span></span>
-                </div>
-                <div class="hiw-legend__row">
-                  <span class="hiw-legend__swatch cots"></span>
-                  <span class="hiw-legend__text">COTS-based auxiliary systems <span class="muted">(интейк, утилиты, полировка, управлен.)</span></span>
-                </div>
               </div>
             </div>
           </footer>
@@ -345,6 +340,7 @@
     ];
 
     const tabs = document.querySelectorAll('.hiw-tab');
+    const steps = document.querySelectorAll('.hiw-step');
     const titleEl = document.getElementById('hiwDetailTitle');
     const textEl = document.getElementById('hiwDetailText');
 
@@ -353,9 +349,15 @@
 
     function setActive(idx) {
       active = idx;
+      // Update tabs (only 4 visible, so handle index mapping)
       tabs.forEach((tab, i) => {
         tab.classList.toggle('is-active', i === idx);
       });
+      // Update steps (all 5 visible)
+      steps.forEach((step, i) => {
+        step.classList.toggle('is-active', i === idx);
+      });
+      // Update detail text
       if (titleEl && textEl) {
         titleEl.textContent = stages[idx].title;
         textEl.textContent = stages[idx].text;
@@ -366,13 +368,26 @@
       setActive((active + 1) % stages.length);
     }
 
+    function resetTimer() {
+      if (AUTOPLAY && timer) {
+        clearInterval(timer);
+        timer = setInterval(next, AUTOPLAY_MS);
+      }
+    }
+
+    // Tab clicks
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => {
         setActive(i);
-        if (AUTOPLAY && timer) {
-          clearInterval(timer);
-          timer = setInterval(next, AUTOPLAY_MS);
-        }
+        resetTimer();
+      });
+    });
+
+    // Step clicks
+    steps.forEach((step, i) => {
+      step.addEventListener('click', () => {
+        setActive(i);
+        resetTimer();
       });
     });
 
