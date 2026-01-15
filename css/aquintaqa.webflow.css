@@ -199,6 +199,8 @@ a:hover {
     linear-gradient(rgba(15, 23, 42, 0.085) 1px, transparent 1px),
     linear-gradient(90deg, rgba(15, 23, 42, 0.085) 1px, transparent 1px);
   background-size: 100px 100px;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 /* Мелкая сетка - тонкие блеклые линии */
@@ -529,6 +531,9 @@ a:hover {
   display: flex;
   position: fixed;
   inset: 0% 0% auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .se1 {
@@ -536,6 +541,8 @@ a:hover {
   align-items: center;
   height: 100vh;
   display: flex;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .se5 {
@@ -1165,7 +1172,10 @@ a:hover {
   position: absolute;
   inset: 0%;
   will-change: transform;
-  contain: layout style;
+  contain: strict;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  isolation: isolate;
 }
 
 .spline-content {
