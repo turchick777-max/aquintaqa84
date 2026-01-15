@@ -113,6 +113,8 @@ a:hover {
   height: 950px;
   padding-top: 117px;
   padding-bottom: 53px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 950px;
 }
 
 .link {
@@ -210,7 +212,6 @@ a:hover {
   background-size: 20px 20px;
   pointer-events: none;
   z-index: 0;
-  filter: blur(0.3px);
 }
 
 /* Точки в углах клеток */
@@ -223,7 +224,6 @@ a:hover {
   background-position: 10px 10px;
   pointer-events: none;
   z-index: 0;
-  filter: blur(0.5px);
 }
 
 /* CAD Frame - внешняя рамка */
@@ -542,6 +542,8 @@ a:hover {
   height: 950px;
   padding-top: 117px;
   padding-bottom: 53px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 950px;
 }
 
 .div2 {
@@ -1988,7 +1990,7 @@ html, body {
   background: radial-gradient(circle, rgba(0,180,220,0.15) 0%, rgba(0,180,220,0.05) 40%, transparent 70%);
   opacity: 0.4;
   mix-blend-mode: screen;
-  animation: marker-breath 4s ease-in-out infinite;
+  animation: marker-breath 8s ease-in-out infinite;
   will-change: opacity;
 }
 
@@ -2004,10 +2006,10 @@ html, body {
   opacity: 0.95;
   mix-blend-mode: screen;
   box-shadow: 0 0 4px 1px rgba(0,212,255,0.8), 0 0 8px 2px rgba(0,180,220,0.4);
-  animation: marker-breath-core 4s ease-in-out infinite;
+  animation: marker-breath-core 8s ease-in-out infinite;
   margin-top: -1px;
   margin-left: 1px;
-  will-change: opacity, box-shadow;
+  will-change: opacity;
 }
 
 .marker-flare {
@@ -2031,8 +2033,8 @@ html, body {
 }
 
 @keyframes marker-breath-core {
-  0%, 100% { opacity: 0.8; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
-  50% { opacity: 0.95; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.95; }
 }
 
 @keyframes marker-flare-appear {
