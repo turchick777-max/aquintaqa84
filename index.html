@@ -305,6 +305,7 @@
   <!-- HIW Footer Interactivity -->
   <script>
   (function() {
+    'use strict';
     const AUTOPLAY = true;
     const AUTOPLAY_MS = 4000;
 
@@ -331,28 +332,35 @@
       }
     ];
 
+    // Cache DOM queries once
     const tabs = document.querySelectorAll('.hiw-tab');
     const titleEl = document.getElementById('hiwDetailTitle');
     const textEl = document.getElementById('hiwDetailText');
+    const stagesLen = stages.length;
 
     let active = 0;
     let timer = null;
+    let rafId = null;
 
     function setActive(idx) {
       active = idx;
-      // Update tabs
-      tabs.forEach((tab, i) => {
-        tab.classList.toggle('is-active', i === idx);
+      // Use requestAnimationFrame for smoother DOM updates
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(function() {
+        // Update tabs
+        for (let i = 0; i < tabs.length; i++) {
+          tabs[i].classList.toggle('is-active', i === idx);
+        }
+        // Update detail text
+        if (titleEl && textEl) {
+          titleEl.textContent = stages[idx].title;
+          textEl.textContent = stages[idx].text;
+        }
       });
-      // Update detail text
-      if (titleEl && textEl) {
-        titleEl.textContent = stages[idx].title;
-        textEl.textContent = stages[idx].text;
-      }
     }
 
     function next() {
-      setActive((active + 1) % stages.length);
+      setActive((active + 1) % stagesLen);
     }
 
     function resetTimer() {
@@ -362,13 +370,13 @@
       }
     }
 
-    // Tab clicks
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => {
+    // Tab clicks with passive hint where possible
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function() {
         setActive(i);
         resetTimer();
-      });
-    });
+      }, false);
+    }
 
     setActive(0);
 

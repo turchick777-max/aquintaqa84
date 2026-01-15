@@ -338,7 +338,8 @@ a:hover {
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  will-change: background, color;
 }
 
 .hiw-tab:hover {
@@ -689,9 +690,6 @@ a:hover {
 
 .text-block._2 {
   color: inherit;
-}
-
-
 }
 
 .div-block-4 {
@@ -1164,6 +1162,8 @@ a:hover {
   padding-top: 42px;
   position: absolute;
   inset: 0%;
+  will-change: transform;
+  contain: layout style;
 }
 
 .spline-content {
@@ -1192,64 +1192,6 @@ a:hover {
   .board-map {
     padding-bottom: 50%;
   }
-}
-
-
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-ExtraBold.woff') format('woff'), url('../fonts/Onest-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-Thin.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Onest';
-  src: url('../fonts/Onest-ExtraLight.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* ===================================
@@ -1557,7 +1499,6 @@ a:hover {
   opacity: 1 !important;
 }
 
-}
 /* ===== HERO SUBTITLE: make smaller ===== */
 
 .se1 .colum-r .text {
@@ -2040,7 +1981,7 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   width: var(--marker-outer-glow-size);
   height: var(--marker-outer-glow-size);
   border-radius: 50%;
@@ -2048,13 +1989,14 @@ html, body {
   opacity: 0.4;
   mix-blend-mode: screen;
   animation: marker-breath 4s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .marker-core {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   width: var(--marker-core-size);
   height: var(--marker-core-size);
   border-radius: 50%;
@@ -2065,13 +2007,14 @@ html, body {
   animation: marker-breath-core 4s ease-in-out infinite;
   margin-top: -1px;
   margin-left: 1px;
+  will-change: opacity, box-shadow;
 }
 
 .marker-flare {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   width: 2px;
   height: 20px;
   background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.6) 55%, transparent 100%);
@@ -2079,6 +2022,7 @@ html, body {
   mix-blend-mode: screen;
   animation: marker-flare-appear 8s ease-in-out infinite;
   animation-delay: 3s;
+  will-change: opacity, transform;
 }
 
 @keyframes marker-breath {
