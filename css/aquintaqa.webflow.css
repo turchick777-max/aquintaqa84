@@ -187,11 +187,53 @@ a:hover {
 }
 
 .se2 {
-  padding-top: 54px;
-  padding-bottom: 54px;
+  min-height: 100vh;
+  padding: 80px 50px;
+  position: relative;
+  overflow: hidden;
   background-color: #e8ecf0;
-  background-image: radial-gradient(circle, rgba(150, 170, 190, 0.4) 1px, transparent 1px);
+}
+
+/* Тонкие линии сетки */
+.se2::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(180, 190, 200, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(180, 190, 200, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.3px);
+}
+
+/* Точки в углах клеток */
+.se2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(140, 160, 180, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 10px 10px;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+
+.se2 .div2 {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.se2 .h2 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #3a4a5a;
+  margin-bottom: 80px;
 }
 
 .se2.no {
