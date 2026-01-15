@@ -216,7 +216,7 @@
       <div class="div2">
         <h2 class="h2">HOW IT WORKS</h2>
         <div class="content-how-it-works">
-          <!-- Footer Panel - fixed at bottom -->
+          <!-- Footer Panel - single wide panel -->
           <footer class="hiw-footer">
             <!-- Tabs row -->
             <div class="hiw-footer__tabs" id="hiwTabs">
@@ -224,21 +224,13 @@
               <button class="hiw-tab" data-idx="1">2. Gas-Sorbent Dosing</button>
               <button class="hiw-tab" data-idx="2">3. Sorption (Contactor)</button>
               <button class="hiw-tab" data-idx="3">4. Separation (Phase split)</button>
+              <button class="hiw-tab" data-idx="4">5. Mineralization & Polishing</button>
             </div>
 
-            <!-- Content row: Steps list + Description -->
-            <div class="hiw-footer__content">
-              <div class="hiw-footer__steps" id="hiwSteps">
-                <button class="hiw-step is-active" data-idx="0">1. Intake & Stabilization</button>
-                <button class="hiw-step" data-idx="1">2. Gas-Sorbent Dosing</button>
-                <button class="hiw-step" data-idx="2">3. Sorption (Contactor)</button>
-                <button class="hiw-step" data-idx="3">4. Separation (Phase split)</button>
-                <button class="hiw-step" data-idx="4">5. Mineralization & Polishing</button>
-              </div>
-              <div class="hiw-footer__detail">
-                <h3 class="hiw-footer__title" id="hiwDetailTitle">1. INTAKE & STABILIZATION</h3>
-                <p class="hiw-footer__text" id="hiwDetailText">Intake of seawater or brackish water. Coarse protection against debris and flow stabilization. No heavy pre-treatment trains required.</p>
-              </div>
+            <!-- Description -->
+            <div class="hiw-footer__detail">
+              <h3 class="hiw-footer__title" id="hiwDetailTitle">1. INTAKE & STABILIZATION</h3>
+              <p class="hiw-footer__text" id="hiwDetailText">Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required.</p>
             </div>
           </footer>
         </div>
@@ -319,15 +311,15 @@
     const stages = [
       {
         title: "1. INTAKE & STABILIZATION",
-        text: "Intake of seawater or brackish water. Coarse protection against debris and flow stabilization. No heavy pre-treatment trains required."
+        text: "Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required."
       },
       {
         title: "2. GAS-SORBENT DOSING",
-        text: "Inert gas is combined with our gas-sorbent formulation and precisely dosed into the intake flow. This step stabilizes water chemistry and prepares the feed for sorption."
+        text: "Inert gas is combined with our gas-sorbent formulation and precisely dosed into the intake flow. Prepares feed for selective capture."
       },
       {
         title: "3. SORPTION (CONTACTOR)",
-        text: "Target ions, hardness and dissolved organics are captured on the sorbent surface under mild conditions — no membranes, no high pressures, no boiling."
+        text: "Salt ions, hardness and dissolved organics are bound to the sorbent surface. The process runs under mild conditions — no membranes, no high pressures, no boiling."
       },
       {
         title: "4. SEPARATION (PHASE SPLIT)",
@@ -335,12 +327,11 @@
       },
       {
         title: "5. MINERALIZATION & POLISHING",
-        text: "Final conditioning and polishing to deliver consistent drinking water quality (taste/mineral balance) per target specification."
+        text: "Final conditioning and polishing to deliver consistent drinking water quality with appropriate mineral balance per target specification."
       }
     ];
 
     const tabs = document.querySelectorAll('.hiw-tab');
-    const steps = document.querySelectorAll('.hiw-step');
     const titleEl = document.getElementById('hiwDetailTitle');
     const textEl = document.getElementById('hiwDetailText');
 
@@ -349,13 +340,9 @@
 
     function setActive(idx) {
       active = idx;
-      // Update tabs (only 4 visible, so handle index mapping)
+      // Update tabs
       tabs.forEach((tab, i) => {
         tab.classList.toggle('is-active', i === idx);
-      });
-      // Update steps (all 5 visible)
-      steps.forEach((step, i) => {
-        step.classList.toggle('is-active', i === idx);
       });
       // Update detail text
       if (titleEl && textEl) {
@@ -378,14 +365,6 @@
     // Tab clicks
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => {
-        setActive(i);
-        resetTimer();
-      });
-    });
-
-    // Step clicks
-    steps.forEach((step, i) => {
-      step.addEventListener('click', () => {
         setActive(i);
         resetTimer();
       });
