@@ -302,39 +302,39 @@ a:hover {
 
 /* ===== HIW Footer Panel ===== */
 .content-how-it-works {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 200px);
-  justify-content: flex-end;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 1280px;
 }
 
 .hiw-footer {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 0;
-  box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
+  background: #fff;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 -2px 12px rgba(15, 23, 42, 0.04);
 }
 
 /* Tabs row */
 .hiw-footer__tabs {
   display: flex;
-  gap: 0;
-  padding: 0;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
-  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 .hiw-tab {
-  padding: 14px 24px;
+  flex: 1;
+  padding: 12px 20px;
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  color: rgba(15, 23, 42, 0.70);
-  background: transparent;
+  font-weight: 400;
+  color: rgba(15, 23, 42, 0.75);
+  background: #fff;
   border: none;
-  border-right: 1px solid rgba(15, 23, 42, 0.10);
+  border-right: 1px solid rgba(15, 23, 42, 0.12);
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: all 150ms ease;
+  text-align: center;
 }
 
 .hiw-tab:last-child {
@@ -342,83 +342,90 @@ a:hover {
 }
 
 .hiw-tab:hover {
-  background: rgba(0, 158, 186, 0.05);
-  color: rgba(15, 23, 42, 0.90);
+  background: rgba(0, 158, 186, 0.04);
 }
 
 .hiw-tab.is-active {
-  background: rgba(0, 158, 186, 0.12);
-  color: #009EBA;
-  font-weight: 600;
+  background: rgba(0, 158, 186, 0.08);
+  color: #0891b2;
+  font-weight: 500;
+  border-bottom: 2px solid #0891b2;
+  margin-bottom: -1px;
 }
 
 /* Content row */
 .hiw-footer__content {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 0;
+  grid-template-columns: 260px 1fr;
+  background: #fff;
 }
 
 /* Steps list (left column) */
 .hiw-footer__steps {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid rgba(15, 23, 42, 0.10);
-  padding: 12px 0;
+  border-right: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 8px 0;
+  background: #fafbfc;
 }
 
 .hiw-step {
-  padding: 12px 20px;
+  padding: 10px 18px;
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 14px;
-  font-weight: 500;
-  color: rgba(15, 23, 42, 0.65);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(15, 23, 42, 0.70);
   background: transparent;
   border: none;
   text-align: left;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: all 150ms ease;
 }
 
 .hiw-step:hover {
-  background: rgba(0, 158, 186, 0.05);
-  color: rgba(15, 23, 42, 0.85);
+  background: rgba(0, 158, 186, 0.06);
 }
 
 .hiw-step.is-active {
-  background: #009EBA;
+  background: #0891b2;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* Detail section (right column) */
 .hiw-footer__detail {
-  padding: 20px 28px;
+  padding: 16px 24px;
 }
 
 .hiw-footer__title {
-  margin: 0 0 14px 0;
+  margin: 0 0 12px 0;
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: rgba(15, 23, 42, 0.85);
   text-transform: uppercase;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
 }
 
 .hiw-footer__text {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.65;
-  color: rgba(71, 85, 105, 0.92);
+  line-height: 1.6;
+  color: rgba(71, 85, 105, 0.90);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
+  .content-how-it-works {
+    width: calc(100% - 40px);
+    bottom: 20px;
+  }
   .hiw-footer__content {
     grid-template-columns: 1fr;
   }
@@ -426,7 +433,11 @@ a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     border-right: none;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  }
+  .hiw-tab {
+    padding: 10px 12px;
+    font-size: 12px;
   }
 }
 
