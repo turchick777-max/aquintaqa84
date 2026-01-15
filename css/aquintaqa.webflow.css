@@ -285,7 +285,7 @@ a:hover {
 }
 
 .se2 .div2 {
-  position: relative;
+  position: static;
   z-index: 2;
   max-width: 1320px;
   margin: 0 auto;
