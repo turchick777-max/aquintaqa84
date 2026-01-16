@@ -1160,9 +1160,9 @@ a:hover {
   position: relative !important;
   top: -6.5px !important;
 }
-/* Глобус левее от бургера */
+/* Глобус ближе к бургеру (премиальный spacing) */
 .navbar .w-dropdown {
-  margin-right: 40px !important;
+  margin-right: 6px !important;
 }
 /* ===== FIX: стрелка справа от глобуса ===== */
 
@@ -1245,9 +1245,9 @@ a:hover {
   gap: 3px !important;
 }
 
-/* Меньше расстояние между глобусом и бургером */
+/* Аккуратный spacing между глобусом и бургером */
 .navbar .w-dropdown {
-  margin-right: 10px !important;
+  margin-right: 6px !important;
 }
 /* Navbar на всю ширину, элементы в углы */
 .navbar {
