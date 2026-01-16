@@ -1766,6 +1766,7 @@ html, body {
   opacity: 0.4;
   mix-blend-mode: screen;
   animation: marker-breath 4s ease-in-out infinite;
+  will-change: opacity; /* PERF: GPU layer for animation */
 }
 
 .marker-core {
@@ -1783,6 +1784,7 @@ html, body {
   animation: marker-breath-core 4s ease-in-out infinite;
   margin-top: -1px;
   margin-left: 1px;
+  will-change: opacity, box-shadow; /* PERF: GPU layer for animation */
 }
 
 .marker-flare {
@@ -1797,6 +1799,7 @@ html, body {
   mix-blend-mode: screen;
   animation: marker-flare-appear 8s ease-in-out infinite;
   animation-delay: 3s;
+  will-change: opacity, transform; /* PERF: GPU layer for animation */
 }
 
 @keyframes marker-breath {
