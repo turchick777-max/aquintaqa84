@@ -1,107 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Dec 29 2025 13:07:47 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="69396815efaae5adc8efcc82" data-wf-site="69396814efaae5adc8efcc0f" lang="en">
-  <style>
- /* =========================
-   HEADER ICON REFINEMENT
-   ========================= */
-
-/* УБРАТЬ РАМКУ / ПЛАШКУ ВОКРУГ ГЛОБУСА */
-.w-dropdown-toggle {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-/* УБРАТЬ ОБВОДКУ ПРИ ФОКУСЕ */
-.w-dropdown-toggle:focus,
-.menu-button:focus {
-  outline: none !important;
-}
-
-/* УБРАТЬ ЛЮБОЙ ФОН У БУРГЕРА */
-.menu-button {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* =========================
-   HEADER LAYOUT & ALIGNMENT
-   ========================= */
-
-/* делаем внутренний контейнер шапки flex */
-.w-nav .w-container,
-.w-nav .container,
-.navbar .w-container,
-.navbar .container {
-  display: flex !important;
-  align-items: center !important;
-}
-
-/* логотип всегда прижат влево */
-.w-nav .w-nav-brand {
-  margin-right: auto !important;
-}
-
-/* глобус прижать вправо, и поставить перед бургером */
-.w-nav .w-dropdown {
-  margin-left: auto !important;
-  margin-right: 16px !important;
-}
-
-/* бургер крайний справа */
-.w-nav .w-nav-button {
-  margin-left: 0 !important;
-}
-
-/* ОДИНАКОВЫЕ ОТСТУПЫ: слева от логотипа = справа от бургера */
-.w-nav .w-container,
-.navbar .w-container {
-  padding-left: 32px !important;
-  padding-right: 32px !important;
-}
-
-/* СТРЕЛОЧКА СПРАВА ОТ ГЛОБУСА: ЯВНО вправо с отступом */
-.navbar .w-dropdown .w-dropdown-toggle {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 20px !important;
-}
-
-.navbar .w-dropdown .icon-lang {
-  order: 1 !important;
-  margin: 0 !important;
-}
-
-.navbar .w-dropdown .icon.w-icon-dropdown-toggle {
-  order: 2 !important;
-  margin: 0 !important;
-  font-size: 10px !important;
-}
-
-/* БУРГЕР И ГЛОБУС: ОДИНАКОВАЯ ВЫСОТА */
-.navbar .w-dropdown,
-.navbar .div-block-11,
-.navbar .menu-button {
-  height: 24px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* БУРГЕР: поднять на уровень глобуса */
-.navbar .menu-button {
-  padding: 0 !important;
-  margin: 0 !important;
-  transform: translateY(-6px) !important;
-}
-
-.navbar .w-dropdown {
-  transform: translateY(-6px) !important;
-}
-</style>
 <head>
   <meta charset="utf-8">
   <title>AQUINTAQA — Freshwater from seawater. A new desalination technology — no membranes, no high-salinity brine.</title>
@@ -127,6 +25,23 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
   <meta name="robots" content="noindex, nofollow">
   <meta name="author" content="wtw"><!--  HEAD CODE  -->
+  <!-- Header icon overrides (moved from invalid location before <head>) -->
+  <style>
+    .w-dropdown-toggle { background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+    .w-dropdown-toggle:focus, .menu-button:focus { outline: none !important; }
+    .menu-button { background: transparent !important; box-shadow: none !important; border: none !important; }
+    .w-nav .w-container, .w-nav .container, .navbar .w-container, .navbar .container { display: flex !important; align-items: center !important; }
+    .w-nav .w-nav-brand { margin-right: auto !important; }
+    .w-nav .w-dropdown { margin-left: auto !important; margin-right: 16px !important; }
+    .w-nav .w-nav-button { margin-left: 0 !important; }
+    .w-nav .w-container, .navbar .w-container { padding-left: 32px !important; padding-right: 32px !important; }
+    .navbar .w-dropdown .w-dropdown-toggle { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 20px !important; }
+    .navbar .w-dropdown .icon-lang { order: 1 !important; margin: 0 !important; }
+    .navbar .w-dropdown .icon.w-icon-dropdown-toggle { order: 2 !important; margin: 0 !important; font-size: 10px !important; }
+    .navbar .w-dropdown, .navbar .div-block-11, .navbar .menu-button { height: 24px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .navbar .menu-button { padding: 0 !important; margin: 0 !important; transform: translateY(-6px) !important; }
+    .navbar .w-dropdown { transform: translateY(-6px) !important; }
+  </style>
 </head>
 <body class="body">
   <div class="spline-content">
