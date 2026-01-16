@@ -457,7 +457,9 @@ a:hover {
   width: 95%;
   position: relative;
   transform: rotate(0);
-  box-shadow: 0 0 26px -3px #ffffff5e, inset 0 2px 5px 5px #ffffff08, 0 0 800px 20px #42cff2a1;
+  /* PERF: заменили box-shadow 800px на filter для GPU-ускорения */
+  box-shadow: 0 0 26px -3px #ffffff5e, inset 0 2px 5px 5px #ffffff08;
+  filter: drop-shadow(0 0 80px #42cff2a1);
 }
 
 .sfera.no {
