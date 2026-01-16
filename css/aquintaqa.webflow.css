@@ -942,12 +942,7 @@ a:hover {
   inset: 0%;
   /* PERF: GPU layer for Spline canvas */
   will-change: transform;
-  contain: strict;
-}
-
-/* PERF: Lazy state - hide until loaded */
-.spline-scene.spline-lazy {
-  opacity: 0;
+  contain: layout style;
 }
 
 .spline-scene canvas {
