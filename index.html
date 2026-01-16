@@ -216,23 +216,56 @@
       <div class="div2">
         <h2 class="h2">HOW IT WORKS</h2>
         <div class="content-how-it-works">
-          <!-- Footer Panel - single wide panel -->
-          <footer class="hiw-footer">
-            <!-- Tabs row -->
-            <div class="hiw-footer__tabs" id="hiwTabs">
-              <button class="hiw-tab is-active" data-idx="0">1. Intake & Stabilization</button>
-              <button class="hiw-tab" data-idx="1">2. Gas-Sorbent Dosing</button>
-              <button class="hiw-tab" data-idx="2">3. Sorption (Contactor)</button>
-              <button class="hiw-tab" data-idx="3">4. Separation (Phase split)</button>
-              <button class="hiw-tab" data-idx="4">5. Mineralization & Polishing</button>
+          <!-- Interactive Panel -->
+          <div class="hiw__interactive-panel">
+            <!-- Top tabs -->
+            <div class="hiw__tabs" role="tablist">
+              <button class="hiw__tab is-active" role="tab" data-stage="0">1. Intake & Stabilization</button>
+              <button class="hiw__tab" role="tab" data-stage="1">2. Gas-Sorbent Dosing</button>
+              <button class="hiw__tab" role="tab" data-stage="2">3. Sorption (Contactor)</button>
+              <button class="hiw__tab" role="tab" data-stage="3">4. Separation (Phase split)</button>
+              <button class="hiw__tab" role="tab" data-stage="4">5. Mineralization & Polishing</button>
             </div>
 
-            <!-- Description -->
-            <div class="hiw-footer__detail">
-              <h3 class="hiw-footer__title" id="hiwDetailTitle">1. INTAKE & STABILIZATION</h3>
-              <p class="hiw-footer__text" id="hiwDetailText">Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required.</p>
+            <!-- Content area -->
+            <div class="hiw__panel-content">
+              <!-- Left sidebar -->
+              <aside class="hiw__sidebar">
+                <div class="hiw__sidebar-title">Stages</div>
+                <div class="hiw__stage-list">
+                  <div class="hiw__stage-item is-active" data-stage="0">
+                    <div class="hiw__stage-number">1</div>
+                    <div class="hiw__stage-label">Intake &<br>Stabilization</div>
+                  </div>
+                  <div class="hiw__stage-item" data-stage="1">
+                    <div class="hiw__stage-number">2</div>
+                    <div class="hiw__stage-label">Gas-Sorbent<br>Dosing</div>
+                  </div>
+                  <div class="hiw__stage-item" data-stage="2">
+                    <div class="hiw__stage-number">3</div>
+                    <div class="hiw__stage-label">Sorption<br>(Contactor)</div>
+                  </div>
+                  <div class="hiw__stage-item" data-stage="3">
+                    <div class="hiw__stage-number">4</div>
+                    <div class="hiw__stage-label">Separation<br>(Phase split)</div>
+                  </div>
+                  <div class="hiw__stage-item" data-stage="4">
+                    <div class="hiw__stage-number">5</div>
+                    <div class="hiw__stage-label">Mineralization<br>& Polishing</div>
+                  </div>
+                </div>
+              </aside>
+
+              <!-- Center detail -->
+              <div class="hiw__detail">
+                <div class="hiw__detail-header">
+                  <span class="hiw__detail-kicker" id="detailKicker">STAGE 1</span>
+                  <h3 class="hiw__detail-title" id="detailTitle">INTAKE & STABILIZATION</h3>
+                </div>
+                <p class="hiw__detail-text" id="detailText">Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required.</p>
+              </div>
             </div>
-          </footer>
+          </div>
         </div>
       </div>
     </div>
@@ -302,47 +335,55 @@
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69396814efaae5adc8efcc0f" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
 
-  <!-- HIW Footer Interactivity -->
+  <!-- HIW Panel Interactivity -->
   <script>
   (function() {
     'use strict';
     const AUTOPLAY = true;
-    const AUTOPLAY_MS = 4000;
+    const AUTOPLAY_MS = 5000;
 
     const stages = [
       {
-        title: "1. INTAKE & STABILIZATION",
-        text: "Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required."
+        kicker: 'STAGE 1',
+        title: 'INTAKE & STABILIZATION',
+        text: 'Seawater or brackish water intake with coarse debris protection and flow stabilization. No heavy pre-treatment required.'
       },
       {
-        title: "2. GAS-SORBENT DOSING",
-        text: "Inert gas is combined with our gas-sorbent formulation and precisely dosed into the intake flow. Prepares feed for selective capture."
+        kicker: 'STAGE 2',
+        title: 'GAS-SORBENT DOSING',
+        text: 'Inert gas is combined with our gas-sorbent formulation and precisely dosed into the intake flow. This step stabilizes water chemistry and prepares the feed for sorption.'
       },
       {
-        title: "3. SORPTION (CONTACTOR)",
-        text: "Salt ions, hardness and dissolved organics are bound to the sorbent surface. The process runs under mild conditions — no membranes, no high pressures, no boiling."
+        kicker: 'STAGE 3',
+        title: 'SORPTION (CONTACTOR)',
+        text: 'Salt ions, hardness and dissolved organics are bound to the sorbent surface. The process runs under mild conditions — no membranes, no high pressures, no boiling.'
       },
       {
-        title: "4. SEPARATION (PHASE SPLIT)",
-        text: "Purified water is separated from the loaded sorbent by mechanical/physical means. No reverse osmosis or thermal distillation required. Residual stream is <5% of input flow."
+        kicker: 'STAGE 4',
+        title: 'SEPARATION (PHASE SPLIT)',
+        text: 'Purified water is separated from the loaded sorbent by mechanical/physical means. No reverse osmosis or thermal distillation required. Residual stream is <5% of input flow.'
       },
       {
-        title: "5. MINERALIZATION & POLISHING",
-        text: "Final conditioning and polishing to deliver consistent drinking water quality with appropriate mineral balance per target specification."
+        kicker: 'STAGE 5',
+        title: 'MINERALIZATION & POLISHING',
+        text: 'Final conditioning and polishing to deliver consistent drinking water quality (taste/mineral balance) per target specification.'
       }
     ];
 
     // Cache DOM queries once
-    const tabs = document.querySelectorAll('.hiw-tab');
-    const titleEl = document.getElementById('hiwDetailTitle');
-    const textEl = document.getElementById('hiwDetailText');
+    const tabs = document.querySelectorAll('.hiw__tab');
+    const sidebarItems = document.querySelectorAll('.hiw__stage-item');
+    const kickerEl = document.getElementById('detailKicker');
+    const titleEl = document.getElementById('detailTitle');
+    const textEl = document.getElementById('detailText');
+    const panel = document.querySelector('.hiw__interactive-panel');
     const stagesLen = stages.length;
 
     let active = 0;
     let timer = null;
     let rafId = null;
 
-    function setActive(idx) {
+    function setActive(idx, pauseAutoplay) {
       active = idx;
       // Use requestAnimationFrame for smoother DOM updates
       if (rafId) cancelAnimationFrame(rafId);
@@ -351,37 +392,61 @@
         for (let i = 0; i < tabs.length; i++) {
           tabs[i].classList.toggle('is-active', i === idx);
         }
-        // Update detail text
-        if (titleEl && textEl) {
-          titleEl.textContent = stages[idx].title;
-          textEl.textContent = stages[idx].text;
+        // Update sidebar items
+        for (let i = 0; i < sidebarItems.length; i++) {
+          sidebarItems[i].classList.toggle('is-active', i === idx);
         }
+        // Update detail text
+        if (kickerEl) kickerEl.textContent = stages[idx].kicker;
+        if (titleEl) titleEl.textContent = stages[idx].title;
+        if (textEl) textEl.textContent = stages[idx].text;
       });
-    }
 
-    function next() {
-      setActive((active + 1) % stagesLen);
-    }
-
-    function resetTimer() {
-      if (AUTOPLAY && timer) {
+      // Reset autoplay if user clicked
+      if (pauseAutoplay && AUTOPLAY && timer) {
         clearInterval(timer);
         timer = setInterval(next, AUTOPLAY_MS);
       }
     }
 
-    // Tab clicks with passive hint where possible
+    function next() {
+      setActive((active + 1) % stagesLen, false);
+    }
+
+    // Tab clicks
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].addEventListener('click', function() {
-        setActive(i);
-        resetTimer();
+        setActive(i, true);
       }, false);
     }
 
-    setActive(0);
+    // Sidebar item clicks
+    for (let i = 0; i < sidebarItems.length; i++) {
+      sidebarItems[i].addEventListener('click', function() {
+        setActive(i, true);
+      }, false);
+    }
 
+    // Initialize
+    setActive(0, false);
+
+    // Start autoplay
     if (AUTOPLAY) {
       timer = setInterval(next, AUTOPLAY_MS);
+    }
+
+    // Pause autoplay on hover
+    if (panel && AUTOPLAY) {
+      panel.addEventListener('mouseenter', function() {
+        clearInterval(timer);
+        timer = null;
+      }, false);
+
+      panel.addEventListener('mouseleave', function() {
+        if (!timer) {
+          timer = setInterval(next, AUTOPLAY_MS);
+        }
+      }, false);
     }
   })();
   </script>
