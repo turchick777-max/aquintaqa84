@@ -44,9 +44,36 @@
   </style>
 </head>
 <body class="body">
-  <div class="spline-content">
-    <div class="spline-scene" data-w-id="9399c96b-cd7d-4fef-4d18-4d2d086db8ae" data-animation-type="spline" data-spline-url="https://prod.spline.design/8z6pBDvGF-zx6ta3/scene.splinecode?v=2"><canvas></canvas></div>
+  <!-- PERF: Spline lazy-load wrapper - scene loads only when visible -->
+  <div class="spline-content" id="spline-wrapper">
+    <div class="spline-scene spline-lazy" 
+         data-w-id="9399c96b-cd7d-4fef-4d18-4d2d086db8ae" 
+         data-spline-url-lazy="https://prod.spline.design/8z6pBDvGF-zx6ta3/scene.splinecode?v=2">
+      <canvas></canvas>
+    </div>
   </div>
+  <script>
+    // PERF: Lazy-load Spline scene after page is interactive
+    (function() {
+      var loaded = false;
+      function loadSpline() {
+        if (loaded) return;
+        loaded = true;
+        var el = document.querySelector('.spline-lazy');
+        if (el) {
+          var url = el.getAttribute('data-spline-url-lazy');
+          if (url) {
+            el.setAttribute('data-animation-type', 'spline');
+            el.setAttribute('data-spline-url', url);
+            el.classList.remove('spline-lazy');
+          }
+        }
+      }
+      // Load after 2s or on scroll, whichever comes first
+      setTimeout(loadSpline, 2000);
+      window.addEventListener('scroll', loadSpline, { once: true, passive: true });
+    })();
+  </script>
   <!-- Embedded Marker - точка на сфере -->
 <div class="sphere-marker">
   <div class="marker-occlusion"></div>

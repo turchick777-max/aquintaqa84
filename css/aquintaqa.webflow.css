@@ -940,6 +940,18 @@ a:hover {
   padding-top: 42px;
   position: absolute;
   inset: 0%;
+  /* PERF: GPU layer for Spline canvas */
+  will-change: transform;
+  contain: strict;
+}
+
+/* PERF: Lazy state - hide until loaded */
+.spline-scene.spline-lazy {
+  opacity: 0;
+}
+
+.spline-scene canvas {
+  will-change: transform;
 }
 
 .spline-content {
