@@ -1242,7 +1242,17 @@ a:hover {
 
 /* Стрелка ближе к глобусу */
 .navbar .w-dropdown .w-dropdown-toggle {
-  gap: 3px !important;
+  gap: 4px !important;
+  padding-right: 0 !important;
+}
+
+/* Стрелка dropdown видимая */
+.navbar .w-dropdown .w-icon-dropdown-toggle {
+  position: static !important;
+  display: inline-block !important;
+  opacity: 0.7 !important;
+  font-size: 8px !important;
+  margin-left: 2px !important;
 }
 
 /* Аккуратный spacing между глобусом и бургером */
