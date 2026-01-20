@@ -2073,12 +2073,13 @@ html, body {
     object-fit: contain !important;
   }
   
-  /* === MARKER: centered on sphere === */
+  /* === MARKER: positioned on sphere surface === */
   .sphere-marker {
     position: absolute !important;
-    top: 36% !important;
-    left: 42% !important;
-    transform: translate(-50%, -50%) scale(0.8) !important;
+    /* Relative to sphere center (top:38%, left:50%) minus offset for "surface" position */
+    top: 35% !important;
+    left: 44% !important;
+    transform: translate(-50%, -50%) scale(0.75) !important;
     z-index: 15 !important;
   }
   
@@ -2163,8 +2164,8 @@ html, body {
   }
   
   .sphere-marker {
-    top: 34% !important;
-    left: 40% !important;
+    top: 33% !important;
+    left: 43% !important;
     transform: translate(-50%, -50%) scale(0.7) !important;
   }
   
@@ -2237,9 +2238,9 @@ html, body {
   }
   
   .sphere-marker {
-    top: 34% !important;
-    left: 40% !important;
-    transform: translate(-50%, -50%) scale(0.65) !important;
+    top: 32% !important;
+    left: 43% !important;
+    transform: translate(-50%, -50%) scale(0.6) !important;
   }
   
   /* Bottom copy: tighter */
