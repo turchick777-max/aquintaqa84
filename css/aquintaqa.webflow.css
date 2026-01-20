@@ -1924,37 +1924,41 @@ html, body {
     font-size: clamp(0.7rem, 2.5vw, 0.85rem) !important;
   }
   
-  /* === SPLINE SPHERE: fit in viewport === */
+  /* === SPLINE SPHERE: fully visible in viewport === */
   .spline-content {
-    position: relative !important;
-    height: auto !important;
-    order: 2 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
     width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 20px 0 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
   }
   
   .spline-scene {
-    position: relative !important;
-    inset: auto !important;
-    width: 100% !important;
-    height: clamp(280px, 60vw, 400px) !important;
-    transform: none !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vw !important;
+    height: 100vw !important; /* Square aspect for sphere */
+    max-width: 400px !important;
+    max-height: 400px !important;
+    transform: translate(-50%, -40%) scale(0.9) !important;
     padding-top: 0 !important;
   }
   
   .spline-scene canvas {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
   }
   
-  /* === MARKER: position relative to sphere container === */
+  /* === MARKER: follows sphere center === */
   .sphere-marker {
-    top: 35% !important;
-    left: 25% !important;
+    top: calc(50% - 5%) !important;
+    left: calc(50% - 15%) !important;
+    transform: translate(-50%, -50%) scale(0.85) !important;
   }
   
   /* === BOTTOM COPY: title, subtitle, button === */
@@ -1993,13 +1997,15 @@ html, body {
   }
   
   .spline-scene {
-    height: clamp(240px, 55vw, 320px) !important;
+    max-width: 320px !important;
+    max-height: 320px !important;
+    transform: translate(-50%, -35%) scale(0.85) !important;
   }
   
   .sphere-marker {
-    top: 32% !important;
-    left: 22% !important;
-    transform: translate(-50%, -50%) scale(0.8) !important;
+    top: calc(50% - 8%) !important;
+    left: calc(50% - 12%) !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
   }
   
   .se1 .h1,
