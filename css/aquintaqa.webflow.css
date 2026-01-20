@@ -2052,8 +2052,8 @@ html, body {
     content: '';
     display: block;
     width: 100%;
-    height: 52vw; /* Space for sphere */
-    max-height: 320px;
+    height: 45vw; /* Space for sphere */
+    max-height: 260px;
   }
   
   /* === SPLINE SPHERE: centered, fully visible === */
@@ -2072,14 +2072,14 @@ html, body {
   
   .spline-scene {
     position: absolute !important;
-    /* Position sphere in middle of screen, below stats text */
-    top: 38% !important;
+    /* Position sphere below stats text, centered */
+    top: 46% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 75vw !important;
-    height: 75vw !important;
-    max-width: 320px !important;
-    max-height: 320px !important;
+    width: 65vw !important;
+    height: 65vw !important;
+    max-width: 280px !important;
+    max-height: 280px !important;
     padding-top: 0 !important;
     z-index: 1 !important;
   }
@@ -2093,10 +2093,10 @@ html, body {
   /* === MARKER: positioned on sphere surface === */
   .sphere-marker {
     position: absolute !important;
-    /* Relative to sphere center (top:38%, left:50%) minus offset for "surface" position */
-    top: 35% !important;
+    /* Relative to sphere center (top:46%, left:50%) minus offset for "surface" position */
+    top: 43% !important;
     left: 44% !important;
-    transform: translate(-50%, -50%) scale(0.75) !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
     z-index: 15 !important;
   }
   
@@ -2107,7 +2107,7 @@ html, body {
     position: relative !important;
     z-index: 20 !important;
     padding: 0 24px 40px 24px !important;
-    margin-top: auto !important; /* Push to bottom */
+    margin-top: 20px !important; /* Small gap after sphere space */
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -2170,20 +2170,22 @@ html, body {
 @media screen and (max-width: 560px) {
   /* Sphere: adjust position for smaller screens */
   .spline-scene {
-    top: 36% !important;
-    max-width: 280px !important;
-    max-height: 280px !important;
+    top: 44% !important;
+    width: 60vw !important;
+    height: 60vw !important;
+    max-width: 250px !important;
+    max-height: 250px !important;
   }
   
   .se1 .colum-l::after {
-    height: 55vw;
-    max-height: 280px;
+    height: 42vw;
+    max-height: 230px;
   }
   
   .sphere-marker {
-    top: 33% !important;
-    left: 43% !important;
-    transform: translate(-50%, -50%) scale(0.7) !important;
+    top: 41% !important;
+    left: 44% !important;
+    transform: translate(-50%, -50%) scale(0.65) !important;
   }
   
   /* Typography: slightly smaller */
@@ -2246,24 +2248,24 @@ html, body {
     max-width: 220px !important;
   }
   
-  /* Sphere: smaller */
+  /* Sphere: smaller for tiny screens */
   .se1 .colum-l::after {
-    height: 58vw;
-    max-height: 260px;
+    height: 40vw;
+    max-height: 200px;
   }
   
   .spline-scene {
-    top: 36% !important;
-    width: 70vw !important;
-    height: 70vw !important;
-    max-width: 260px !important;
-    max-height: 260px !important;
+    top: 42% !important;
+    width: 55vw !important;
+    height: 55vw !important;
+    max-width: 220px !important;
+    max-height: 220px !important;
   }
   
   .sphere-marker {
-    top: 32% !important;
-    left: 43% !important;
-    transform: translate(-50%, -50%) scale(0.6) !important;
+    top: 39% !important;
+    left: 44% !important;
+    transform: translate(-50%, -50%) scale(0.55) !important;
   }
   
   /* Bottom copy: tighter */
