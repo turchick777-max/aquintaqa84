@@ -1850,3 +1850,160 @@ html, body {
 .marker-occlusion {
   display: none !important;
 }
+
+/* ==============================================
+   MOBILE HERO - SpaceX-like layout
+   ============================================== */
+
+@media screen and (max-width: 768px) {
+  /* === HERO CONTAINER: column layout === */
+  .se1 {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh; /* iOS dynamic viewport */
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .se1 .noize {
+    padding-top: 80px !important; /* space for header */
+    padding-bottom: 40px !important;
+    height: auto !important;
+  }
+  
+  .se1 .div1 {
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 20px !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* === COLUMNS: stack vertically === */
+  .se1 .colum-l {
+    width: 100% !important;
+    order: 1 !important;
+  }
+  
+  .se1 .colum-r {
+    width: 100% !important;
+    order: 3 !important;
+    padding-left: 0 !important;
+    padding-top: 24px !important;
+  }
+  
+  /* === TOP COPY: reset absolute positioning === */
+  .se1 .content-img {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  
+  .se1 .content-img > .text-block,
+  .se1 .content-img > .text-block._2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+  }
+  
+  .se1 .div-block-17 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .se1 .div-block-17 .text-block-2 {
+    white-space: normal !important;
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem) !important;
+  }
+  
+  /* === SPLINE SPHERE: fit in viewport === */
+  .spline-content {
+    position: relative !important;
+    height: auto !important;
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 20px 0 !important;
+  }
+  
+  .spline-scene {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: clamp(280px, 60vw, 400px) !important;
+    transform: none !important;
+    padding-top: 0 !important;
+  }
+  
+  .spline-scene canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  /* === MARKER: position relative to sphere container === */
+  .sphere-marker {
+    top: 35% !important;
+    left: 25% !important;
+  }
+  
+  /* === BOTTOM COPY: title, subtitle, button === */
+  .se1 .h1,
+  .se1 h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .se1 .colum-r .text {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem) !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .se1 .div-block-4 {
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+  }
+  
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: clamp(0.85rem, 3vw, 0.95rem) !important;
+    padding: 12px 20px !important;
+  }
+}
+
+/* === EXTRA SMALL MOBILE (≤480px) === */
+@media screen and (max-width: 480px) {
+  .se1 .noize {
+    padding-top: 70px !important;
+  }
+  
+  .se1 .div1 {
+    padding: 0 16px !important;
+  }
+  
+  .spline-scene {
+    height: clamp(240px, 55vw, 320px) !important;
+  }
+  
+  .sphere-marker {
+    top: 32% !important;
+    left: 22% !important;
+    transform: translate(-50%, -50%) scale(0.8) !important;
+  }
+  
+  .se1 .h1,
+  .se1 h1 {
+    font-size: clamp(1.5rem, 8vw, 2rem) !important;
+  }
+}
