@@ -2148,6 +2148,41 @@ html, body {
   }
 }
 
+/* === MEDIUM MOBILE (≤560px) === */
+@media screen and (max-width: 560px) {
+  /* Sphere: adjust position for smaller screens */
+  .spline-scene {
+    top: 36% !important;
+    max-width: 280px !important;
+    max-height: 280px !important;
+  }
+  
+  .se1 .colum-l::after {
+    height: 55vw;
+    max-height: 280px;
+  }
+  
+  .sphere-marker {
+    top: 34% !important;
+    left: 40% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+  
+  /* Typography: slightly smaller */
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.55rem !important;
+  }
+  
+  .se1 .content-img > .text-block {
+    font-size: 0.9rem !important;
+  }
+  
+  .se1 .content-img > .text-block._2 {
+    font-size: 0.82rem !important;
+  }
+}
+
 /* === EXTRA SMALL MOBILE (≤420px) === */
 @media screen and (max-width: 420px) {
   /* Header: smaller but still readable */
