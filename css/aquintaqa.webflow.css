@@ -1061,8 +1061,11 @@ a:hover {
   order: 2 !important;
   font-size: 10px !important;
 }
-.spline-scene {
-  transform: translateX(-20%) !important;
+/* Desktop only - sphere position */
+@media screen and (min-width: 769px) {
+  .spline-scene {
+    transform: translateX(-20%) !important;
+  }
 }
 /* =============================================
    HERO TEXT REPOSITIONING - PRODUCTION FIX
@@ -1224,9 +1227,11 @@ a:hover {
 .navbar .w-dropdown-toggle .icon-lang { order: 1 !important; }
 .navbar .w-dropdown-toggle .w-icon-dropdown-toggle { order: 2 !important; }
 
-/* Сфера: больше и правее */
-.spline-scene {
-  transform: scale(1.16) translateX(-6%) translateY(4%) !important;
+/* Сфера: больше и правее (desktop only) */
+@media screen and (min-width: 769px) {
+  .spline-scene {
+    transform: scale(1.16) translateX(-6%) translateY(4%) !important;
+  }
 }
 /* Уменьшить заголовок */
 .se1 .h1,
@@ -1944,23 +1949,22 @@ html, body {
     top: 0 !important;
   }
   
-  /* === HERO SECTION: Flex column layout === */
+  /* === HERO SECTION: Full viewport with flex === */
   .se1 {
-    height: auto !important;
+    height: 100vh !important;
+    height: 100dvh !important;
     min-height: 100vh !important;
     min-height: 100dvh !important;
     display: flex !important;
     flex-direction: column !important;
     position: relative !important;
     overflow: visible !important;
-    padding-bottom: 40px !important;
+    padding: 0 !important;
   }
   
   .se1 .noize {
     width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: 100% !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -1969,10 +1973,9 @@ html, body {
   
   .se1 .div1 {
     flex-direction: column !important;
+    justify-content: space-between !important;
     width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
     position: relative !important;
@@ -2062,50 +2065,56 @@ html, body {
     max-width: 260px !important;
   }
   
-  /* === SPHERE CONTAINER: Normal flow, no cropping === */
+  /* === SPHERE CONTAINER: Absolute positioned in center === */
   .spline-content {
-    position: relative !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     width: 100% !important;
-    height: auto !important;
-    order: 2 !important;
+    height: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    flex: 1 1 auto !important;
-    min-height: 45svh !important;
     overflow: visible !important;
-    z-index: 5 !important;
+    z-index: 1 !important;
     pointer-events: none !important;
   }
   
-  /* Sphere scene: centered, aspect-ratio preserved */
+  /* Sphere scene: centered, full visible */
   .spline-scene {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
+    inset: auto !important;
     transform: none !important;
-    width: 88vw !important;
-    height: 88vw !important;
-    max-width: 380px !important;
-    max-height: 380px !important;
+    width: 75vw !important;
+    height: 75vw !important;
+    max-width: 320px !important;
+    max-height: 320px !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
     padding-top: 0 !important;
-    z-index: 5 !important;
+    z-index: 1 !important;
     margin: 0 auto !important;
+    overflow: visible !important;
   }
   
   .spline-scene canvas {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
+    overflow: visible !important;
   }
   
-  /* === MARKER: positioned relative to sphere center === */
+  /* === MARKER: positioned relative to viewport center === */
   .sphere-marker {
     position: fixed !important;
     top: 50% !important;
-    left: 42% !important;
+    left: 45% !important;
     transform: translate(-50%, -50%) scale(0.8) !important;
     z-index: 10 !important;
     pointer-events: none !important;
@@ -2119,12 +2128,12 @@ html, body {
     right: auto !important;
     width: 100% !important;
     z-index: 20 !important;
-    padding: 20px 24px 40px 24px !important;
+    padding: 20px 24px 50px 24px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    background: transparent !important;
-    order: 3 !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, transparent 100%) !important;
+    margin-top: auto !important;
     flex-shrink: 0 !important;
   }
   
@@ -2180,19 +2189,17 @@ html, body {
 /* === TABLET / LARGE MOBILE (430-768px) === */
 @media screen and (min-width: 430px) and (max-width: 768px) {
   .spline-scene {
-    width: 75vw !important;
-    height: 75vw !important;
-    max-width: 400px !important;
-    max-height: 400px !important;
-  }
-  
-  .spline-content {
-    min-height: 50svh !important;
+    width: 70vw !important;
+    height: 70vw !important;
+    max-width: 380px !important;
+    max-height: 380px !important;
+    min-width: 300px !important;
+    min-height: 300px !important;
   }
   
   .sphere-marker {
-    top: 48% !important;
-    left: 43% !important;
+    top: 50% !important;
+    left: 46% !important;
     transform: translate(-50%, -50%) scale(0.85) !important;
   }
   
@@ -2204,20 +2211,18 @@ html, body {
 
 /* === MEDIUM MOBILE (≤430px) - iPhone 14 Pro Max === */
 @media screen and (max-width: 430px) {
-  .spline-content {
-    min-height: 42svh !important;
-  }
-  
   .spline-scene {
-    width: 85vw !important;
-    height: 85vw !important;
-    max-width: 360px !important;
-    max-height: 360px !important;
+    width: 75vw !important;
+    height: 75vw !important;
+    max-width: 320px !important;
+    max-height: 320px !important;
+    min-width: 280px !important;
+    min-height: 280px !important;
   }
   
   .sphere-marker {
-    top: 48% !important;
-    left: 42% !important;
+    top: 50% !important;
+    left: 45% !important;
     transform: translate(-50%, -50%) scale(0.75) !important;
   }
   
@@ -2246,20 +2251,18 @@ html, body {
     padding: 75px 20px 12px 20px !important;
   }
   
-  .spline-content {
-    min-height: 40svh !important;
-  }
-  
   .spline-scene {
-    width: 82vw !important;
-    height: 82vw !important;
-    max-width: 320px !important;
-    max-height: 320px !important;
+    width: 72vw !important;
+    height: 72vw !important;
+    max-width: 280px !important;
+    max-height: 280px !important;
+    min-width: 250px !important;
+    min-height: 250px !important;
   }
   
   .sphere-marker {
-    top: 46% !important;
-    left: 42% !important;
+    top: 50% !important;
+    left: 45% !important;
     transform: translate(-50%, -50%) scale(0.7) !important;
   }
   
@@ -2320,20 +2323,18 @@ html, body {
     padding: 70px 16px 10px 16px !important;
   }
   
-  .spline-content {
-    min-height: 38svh !important;
-  }
-  
   .spline-scene {
-    width: 78vw !important;
-    height: 78vw !important;
-    max-width: 280px !important;
-    max-height: 280px !important;
+    width: 68vw !important;
+    height: 68vw !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+    min-width: 220px !important;
+    min-height: 220px !important;
   }
   
   .sphere-marker {
-    top: 44% !important;
-    left: 42% !important;
+    top: 50% !important;
+    left: 45% !important;
     transform: translate(-50%, -50%) scale(0.6) !important;
   }
   
