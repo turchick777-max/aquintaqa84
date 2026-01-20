@@ -1861,6 +1861,11 @@ html, body {
   html, body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    width: 100% !important;
+  }
+  
+  * {
+    box-sizing: border-box !important;
   }
   
   /* === HEADER: larger logo, aligned icons === */
