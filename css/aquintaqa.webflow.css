@@ -1852,8 +1852,8 @@ html, body {
 }
 
 /* ==============================================
-   MOBILE HERO - SpaceX-like layout
-   Composition: Header → Stats text → SPHERE (full) → Title → Subtitle → Button
+   MOBILE HERO - SpaceX-style layout
+   Reference: spacex.com mobile - planet centered, text below
    ============================================== */
 
 @media screen and (max-width: 768px) {
@@ -1868,13 +1868,13 @@ html, body {
     box-sizing: border-box !important;
   }
   
-  /* === HEADER: larger logo, aligned icons === */
+  /* === HEADER === */
   .navbar {
-    padding: 14px 20px !important;
+    padding: 16px 24px !important;
     border-radius: 0 !important;
-    background: rgba(0, 0, 0, 0.9) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     margin-top: 0 !important;
     position: fixed !important;
     top: 0 !important;
@@ -1883,14 +1883,12 @@ html, body {
     z-index: 1000 !important;
   }
   
-  /* Logo: larger for mobile readability */
   .logo {
-    width: 135px !important;
-    padding-bottom: 44px !important; /* Maintain aspect ratio ~32.5% */
+    width: 140px !important;
+    padding-bottom: 46px !important;
     min-width: 120px !important;
   }
   
-  /* Icons alignment: reset transforms, align vertically */
   .navbar .div-block-11,
   .navbar .w-dropdown {
     transform: none !important;
@@ -1899,7 +1897,7 @@ html, body {
   }
   
   .navbar .w-dropdown {
-    margin-right: 14px !important;
+    margin-right: 16px !important;
   }
   
   .navbar .icon-lang {
@@ -1909,7 +1907,7 @@ html, body {
   
   .navbar .w-icon-dropdown-toggle {
     font-size: 9px !important;
-    opacity: 0.75 !important;
+    opacity: 0.7 !important;
   }
   
   .navbar .menu-button {
@@ -1923,140 +1921,40 @@ html, body {
     color: #fff !important;
   }
   
-  /* === HERO SECTION: SpaceX vertical flow === */
+  /* === HERO SECTION === */
   .se1 {
-    height: auto !important;
-    min-height: 100vh;
-    min-height: 100dvh; /* iOS safe area */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    padding-top: env(safe-area-inset-top);
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    display: block !important;
     position: relative !important;
     overflow: hidden !important;
   }
   
   .se1 .noize {
     width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: 100% !important;
     padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
   }
   
   .se1 .div1 {
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
     width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
+    height: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
     position: relative !important;
-  }
-  
-  /* === TOP SECTION: Stats text (above sphere) === */
-  .se1 .colum-l {
-    width: 100% !important;
-    order: 1 !important;
-    position: relative !important;
-    z-index: 20 !important;
-    padding: 80px 24px 0 24px !important; /* header space + sides */
-    margin-bottom: 0 !important;
-  }
-  
-  .se1 .content-img {
-    position: relative !important;
     display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 6px !important;
-    margin-top: 0 !important;
-    z-index: 20 !important;
   }
   
-  /* Line 1: "Planet of 8+ billion people." */
-  .se1 .content-img > .text-block {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-    width: auto !important;
-    text-align: left !important;
-    font-size: 0.95rem !important;
-    font-weight: 300 !important;
-    line-height: 1.5 !important;
-    letter-spacing: 0.04em !important;
-    color: rgba(255, 255, 255, 0.85) !important;
+  /* === HIDE STATS TEXT ON MOBILE (clean like SpaceX) === */
+  .se1 .colum-l {
+    display: none !important;
   }
   
-  /* Line 2: "~97.5% of water..." */
-  .se1 .content-img > .text-block._2 {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    margin: 0 !important;
-    max-width: 100% !important;
-    width: auto !important;
-    text-align: left !important;
-    font-size: 0.85rem !important;
-    font-weight: 300 !important;
-    line-height: 1.5 !important;
-    letter-spacing: 0.03em !important;
-    color: rgba(255, 255, 255, 0.7) !important;
-  }
-  
-  /* Line 3: "<1% share..." container */
-  .se1 .div-block-17 {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    width: auto !important;
-    height: auto !important;
-    display: block !important;
-    margin-top: 4px !important;
-  }
-  
-  /* Line 3 text */
-  .se1 .div-block-17 .text-block-2 {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    white-space: normal !important;
-    text-align: left !important;
-    font-size: 0.7rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.1em !important;
-    line-height: 1.4 !important;
-    text-transform: uppercase !important;
-    color: rgba(255, 255, 255, 0.6) !important;
-    width: auto !important;
-    max-width: 260px !important;
-  }
-  
-  /* === MIDDLE SECTION: Sphere placeholder space === */
-  /* The sphere is absolutely positioned, this creates visual space */
-  .se1 .colum-l::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 45vw; /* Space for sphere */
-    max-height: 260px;
-  }
-  
-  /* === SPLINE SPHERE: centered, fully visible === */
+  /* === SPHERE: centered, large, like SpaceX Mars === */
   .spline-content {
     position: absolute !important;
     top: 0 !important;
@@ -2066,20 +1964,18 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     pointer-events: none !important;
-    overflow: visible !important;
     z-index: 1 !important;
   }
   
   .spline-scene {
     position: absolute !important;
-    /* Position sphere below stats text, centered */
-    top: 46% !important;
+    top: 35% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 65vw !important;
-    height: 65vw !important;
-    max-width: 280px !important;
-    max-height: 280px !important;
+    width: 85vw !important;
+    height: 85vw !important;
+    max-width: 380px !important;
+    max-height: 380px !important;
     padding-top: 0 !important;
     z-index: 1 !important;
   }
@@ -2087,46 +1983,47 @@ html, body {
   .spline-scene canvas {
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain !important;
   }
   
-  /* === MARKER: positioned on sphere surface === */
+  /* === MARKER on sphere === */
   .sphere-marker {
     position: absolute !important;
-    /* Relative to sphere center (top:46%, left:50%) minus offset for "surface" position */
-    top: 43% !important;
-    left: 44% !important;
-    transform: translate(-50%, -50%) scale(0.7) !important;
-    z-index: 15 !important;
+    top: 32% !important;
+    left: 42% !important;
+    transform: translate(-50%, -50%) scale(0.8) !important;
+    z-index: 10 !important;
   }
   
   /* === BOTTOM SECTION: Title + Subtitle + Button === */
   .se1 .colum-r {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
     width: 100% !important;
-    order: 2 !important;
-    position: relative !important;
     z-index: 20 !important;
-    padding: 0 24px 40px 24px !important;
-    margin-top: 20px !important; /* Small gap after sphere space */
+    padding: 0 24px 50px 24px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%) !important;
+    padding-top: 60px !important;
   }
   
-  /* Title: "NEXT-GENERATION DESALINATION." */
+  /* Title */
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.65rem !important;
+    font-size: 1.75rem !important;
     font-weight: 600 !important;
-    line-height: 1.2 !important;
+    line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
     text-align: left !important;
   }
   
-  /* Subtitle: "No RO. No thermal desalination." */
+  /* Subtitle */
   .se1 .colum-r .text {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
     margin-bottom: 0 !important;
@@ -2135,32 +2032,23 @@ html, body {
     transform: none !important;
   }
   
-  /* Button container */
+  /* Button */
   .se1 .div-block-4 {
     margin-top: 1.5rem !important;
     width: auto !important;
-    flex-wrap: wrap !important;
-    gap: 12px !important;
   }
   
-  /* Button: "Executive Summary (PDF)" */
   .se1 .div-block-4 .link.button,
   .se1 .div-block-4 .link.button._2 {
-    font-size: 0.85rem !important;
-    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
+    padding: 14px 24px !important;
     border-width: 1px !important;
-    border-radius: 6px !important;
+    border-radius: 4px !important;
   }
   
-  /* === HIDE DESKTOP-ONLY ELEMENTS === */
-  .se1 .podpis {
-    display: none !important;
-  }
-  
-  .se1 .sfera {
-    display: none !important;
-  }
-  
+  /* Hide desktop elements */
+  .se1 .podpis,
+  .se1 .sfera,
   .se1 .div-block-5 {
     display: none !important;
   }
@@ -2168,128 +2056,77 @@ html, body {
 
 /* === MEDIUM MOBILE (≤560px) === */
 @media screen and (max-width: 560px) {
-  /* Sphere: adjust position for smaller screens */
   .spline-scene {
-    top: 44% !important;
-    width: 60vw !important;
-    height: 60vw !important;
-    max-width: 250px !important;
-    max-height: 250px !important;
-  }
-  
-  .se1 .colum-l::after {
-    height: 42vw;
-    max-height: 230px;
+    top: 33% !important;
+    width: 75vw !important;
+    height: 75vw !important;
+    max-width: 320px !important;
+    max-height: 320px !important;
   }
   
   .sphere-marker {
-    top: 41% !important;
-    left: 44% !important;
-    transform: translate(-50%, -50%) scale(0.65) !important;
+    top: 30% !important;
+    left: 42% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
   }
   
-  /* Typography: slightly smaller */
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.55rem !important;
+    font-size: 1.6rem !important;
   }
   
-  .se1 .content-img > .text-block {
-    font-size: 0.9rem !important;
-  }
-  
-  .se1 .content-img > .text-block._2 {
-    font-size: 0.82rem !important;
+  .se1 .colum-r .text {
+    font-size: 0.95rem !important;
   }
 }
 
 /* === EXTRA SMALL MOBILE (≤420px) === */
 @media screen and (max-width: 420px) {
-  /* Header: compact but readable */
   .navbar {
-    padding: 12px 14px !important;
+    padding: 14px 18px !important;
   }
   
-  /* Logo: still readable on small screens */
   .logo {
-    width: 115px !important;
-    padding-bottom: 38px !important;
-    min-width: 100px !important;
+    width: 120px !important;
+    padding-bottom: 40px !important;
   }
   
   .navbar .w-dropdown {
-    margin-right: 10px !important;
-  }
-  
-  .navbar .icon-lang {
-    width: 22px !important;
-    height: 22px !important;
-  }
-  
-  .w-icon-nav-menu {
-    width: 22px !important;
-  }
-  
-  /* Top stats: tighter padding */
-  .se1 .colum-l {
-    padding: 70px 18px 0 18px !important;
-  }
-  
-  .se1 .content-img > .text-block {
-    font-size: 0.85rem !important;
-  }
-  
-  .se1 .content-img > .text-block._2 {
-    font-size: 0.78rem !important;
-  }
-  
-  .se1 .div-block-17 .text-block-2 {
-    font-size: 0.65rem !important;
-    max-width: 220px !important;
-  }
-  
-  /* Sphere: smaller for tiny screens */
-  .se1 .colum-l::after {
-    height: 40vw;
-    max-height: 200px;
+    margin-right: 12px !important;
   }
   
   .spline-scene {
-    top: 42% !important;
-    width: 55vw !important;
-    height: 55vw !important;
-    max-width: 220px !important;
-    max-height: 220px !important;
+    top: 32% !important;
+    width: 70vw !important;
+    height: 70vw !important;
+    max-width: 280px !important;
+    max-height: 280px !important;
   }
   
   .sphere-marker {
-    top: 39% !important;
-    left: 44% !important;
-    transform: translate(-50%, -50%) scale(0.55) !important;
+    top: 29% !important;
+    left: 42% !important;
+    transform: translate(-50%, -50%) scale(0.6) !important;
   }
   
-  /* Bottom copy: tighter */
   .se1 .colum-r {
-    padding: 0 18px 32px 18px !important;
+    padding: 0 20px 40px 20px !important;
+    padding-top: 50px !important;
   }
   
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.45rem !important;
-    margin-bottom: 8px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
   }
   
   .se1 .colum-r .text {
-    font-size: 0.88rem !important;
-  }
-  
-  .se1 .div-block-4 {
-    margin-top: 1.25rem !important;
+    font-size: 0.9rem !important;
   }
   
   .se1 .div-block-4 .link.button,
   .se1 .div-block-4 .link.button._2 {
-    font-size: 0.8rem !important;
-    padding: 11px 16px !important;
+    font-size: 0.85rem !important;
+    padding: 12px 20px !important;
   }
 }
