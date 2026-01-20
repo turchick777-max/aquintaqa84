@@ -1853,7 +1853,6 @@ html, body {
 
 /* ==============================================
    MOBILE HERO - SpaceX-style layout
-   Reference: spacex.com mobile - planet centered, text below
    ============================================== */
 
 @media screen and (max-width: 768px) {
@@ -1868,9 +1867,9 @@ html, body {
     box-sizing: border-box !important;
   }
   
-  /* === HEADER === */
+  /* === HEADER: icons aligned === */
   .navbar {
-    padding: 16px 24px !important;
+    padding: 14px 20px !important;
     border-radius: 0 !important;
     background: rgba(0, 0, 0, 0.95) !important;
     backdrop-filter: blur(10px) !important;
@@ -1881,6 +1880,9 @@ html, body {
     left: 0 !important;
     right: 0 !important;
     z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
   
   .logo {
@@ -1889,36 +1891,55 @@ html, body {
     min-width: 120px !important;
   }
   
-  .navbar .div-block-11,
-  .navbar .w-dropdown {
-    transform: none !important;
+  /* Icons container: align globe and burger on same line */
+  .navbar .div-block-11 {
     display: flex !important;
     align-items: center !important;
+    height: 24px !important;
+    transform: none !important;
   }
   
   .navbar .w-dropdown {
+    display: flex !important;
+    align-items: center !important;
+    height: 24px !important;
     margin-right: 16px !important;
+    transform: none !important;
+  }
+  
+  .navbar .w-dropdown-toggle {
+    display: flex !important;
+    align-items: center !important;
+    height: 24px !important;
+    padding: 0 !important;
   }
   
   .navbar .icon-lang {
-    width: 24px !important;
-    height: 24px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
   
   .navbar .w-icon-dropdown-toggle {
-    font-size: 9px !important;
+    font-size: 8px !important;
     opacity: 0.7 !important;
+    margin-left: 4px !important;
   }
   
   .navbar .menu-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important;
+    width: 24px !important;
+    padding: 0 !important;
     top: 0 !important;
     transform: none !important;
-    padding: 4px !important;
   }
   
   .w-icon-nav-menu {
-    width: 24px !important;
+    width: 22px !important;
     color: #fff !important;
+    top: 0 !important;
   }
   
   /* === HERO SECTION === */
@@ -1926,7 +1947,8 @@ html, body {
     height: 100vh !important;
     height: 100dvh !important;
     min-height: 100vh !important;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
     position: relative !important;
     overflow: hidden !important;
   }
@@ -1949,12 +1971,88 @@ html, body {
     display: flex !important;
   }
   
-  /* === HIDE STATS TEXT ON MOBILE (clean like SpaceX) === */
+  /* === TOP: Stats text (3 lines) === */
   .se1 .colum-l {
-    display: none !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 20 !important;
+    padding: 75px 20px 0 20px !important;
+    order: 1 !important;
   }
   
-  /* === SPHERE: centered, large, like SpaceX Mars === */
+  .se1 .content-img {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Line 1: "Planet of 8+ billion people." */
+  .se1 .content-img > .text-block {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: auto !important;
+    text-align: left !important;
+    font-size: 0.9rem !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  
+  /* Line 2: "~97.5% of water..." */
+  .se1 .content-img > .text-block._2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: auto !important;
+    text-align: left !important;
+    font-size: 0.8rem !important;
+    font-weight: 300 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  /* Line 3 container */
+  .se1 .div-block-17 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    margin-top: 4px !important;
+  }
+  
+  /* Line 3: "<1% share..." */
+  .se1 .div-block-17 .text-block-2 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    white-space: normal !important;
+    text-align: left !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.3 !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    width: auto !important;
+    max-width: 220px !important;
+  }
+  
+  /* === SPHERE: centered === */
   .spline-content {
     position: absolute !important;
     top: 0 !important;
@@ -1969,13 +2067,13 @@ html, body {
   
   .spline-scene {
     position: absolute !important;
-    top: 35% !important;
+    top: 42% !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 85vw !important;
-    height: 85vw !important;
-    max-width: 380px !important;
-    max-height: 380px !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    width: 80vw !important;
+    height: 80vw !important;
+    max-width: 340px !important;
+    max-height: 340px !important;
     padding-top: 0 !important;
     z-index: 1 !important;
   }
@@ -1985,16 +2083,16 @@ html, body {
     height: 100% !important;
   }
   
-  /* === MARKER on sphere === */
+  /* === MARKER === */
   .sphere-marker {
     position: absolute !important;
-    top: 32% !important;
-    left: 42% !important;
-    transform: translate(-50%, -50%) scale(0.8) !important;
+    top: 39% !important;
+    left: 44% !important;
+    transform: translate(-50%, -50%) scale(0.75) !important;
     z-index: 10 !important;
   }
   
-  /* === BOTTOM SECTION: Title + Subtitle + Button === */
+  /* === BOTTOM: Title + Subtitle + Button === */
   .se1 .colum-r {
     position: absolute !important;
     bottom: 0 !important;
@@ -2002,28 +2100,25 @@ html, body {
     right: 0 !important;
     width: 100% !important;
     z-index: 20 !important;
-    padding: 0 24px 50px 24px !important;
+    padding: 50px 20px 45px 20px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%) !important;
-    padding-top: 60px !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, transparent 100%) !important;
   }
   
-  /* Title */
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.75rem !important;
+    font-size: 1.6rem !important;
     font-weight: 600 !important;
     line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 10px !important;
     text-align: left !important;
   }
   
-  /* Subtitle */
   .se1 .colum-r .text {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
     margin-bottom: 0 !important;
@@ -2032,16 +2127,15 @@ html, body {
     transform: none !important;
   }
   
-  /* Button */
   .se1 .div-block-4 {
-    margin-top: 1.5rem !important;
+    margin-top: 1.25rem !important;
     width: auto !important;
   }
   
   .se1 .div-block-4 .link.button,
   .se1 .div-block-4 .link.button._2 {
-    font-size: 0.9rem !important;
-    padding: 14px 24px !important;
+    font-size: 0.85rem !important;
+    padding: 12px 20px !important;
     border-width: 1px !important;
     border-radius: 4px !important;
   }
@@ -2057,76 +2151,100 @@ html, body {
 /* === MEDIUM MOBILE (≤560px) === */
 @media screen and (max-width: 560px) {
   .spline-scene {
-    top: 33% !important;
-    width: 75vw !important;
-    height: 75vw !important;
-    max-width: 320px !important;
-    max-height: 320px !important;
+    top: 40% !important;
+    width: 72vw !important;
+    height: 72vw !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
   }
   
   .sphere-marker {
-    top: 30% !important;
-    left: 42% !important;
+    top: 37% !important;
+    left: 44% !important;
     transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+  
+  .se1 .content-img > .text-block {
+    font-size: 0.85rem !important;
+  }
+  
+  .se1 .content-img > .text-block._2 {
+    font-size: 0.75rem !important;
   }
   
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.6rem !important;
-  }
-  
-  .se1 .colum-r .text {
-    font-size: 0.95rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
 /* === EXTRA SMALL MOBILE (≤420px) === */
 @media screen and (max-width: 420px) {
   .navbar {
-    padding: 14px 18px !important;
+    padding: 12px 16px !important;
   }
   
   .logo {
-    width: 120px !important;
-    padding-bottom: 40px !important;
+    width: 115px !important;
+    padding-bottom: 38px !important;
   }
   
   .navbar .w-dropdown {
     margin-right: 12px !important;
   }
   
+  .se1 .colum-l {
+    padding: 68px 16px 0 16px !important;
+  }
+  
+  .se1 .content-img > .text-block {
+    font-size: 0.8rem !important;
+  }
+  
+  .se1 .content-img > .text-block._2 {
+    font-size: 0.72rem !important;
+  }
+  
+  .se1 .div-block-17 .text-block-2 {
+    font-size: 0.6rem !important;
+    max-width: 200px !important;
+  }
+  
   .spline-scene {
-    top: 32% !important;
-    width: 70vw !important;
-    height: 70vw !important;
-    max-width: 280px !important;
-    max-height: 280px !important;
+    top: 38% !important;
+    width: 68vw !important;
+    height: 68vw !important;
+    max-width: 260px !important;
+    max-height: 260px !important;
   }
   
   .sphere-marker {
-    top: 29% !important;
-    left: 42% !important;
+    top: 35% !important;
+    left: 44% !important;
     transform: translate(-50%, -50%) scale(0.6) !important;
   }
   
   .se1 .colum-r {
-    padding: 0 20px 40px 20px !important;
-    padding-top: 50px !important;
+    padding: 45px 16px 35px 16px !important;
   }
   
   .se1 .h1,
   .se1 h1 {
-    font-size: 1.5rem !important;
-    margin-bottom: 10px !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 8px !important;
   }
   
   .se1 .colum-r .text {
-    font-size: 0.9rem !important;
+    font-size: 0.88rem !important;
+  }
+  
+  .se1 .div-block-4 {
+    margin-top: 1rem !important;
   }
   
   .se1 .div-block-4 .link.button,
   .se1 .div-block-4 .link.button._2 {
-    font-size: 0.85rem !important;
-    padding: 12px 20px !important;
+    font-size: 0.8rem !important;
+    padding: 10px 16px !important;
   }
 }
