@@ -1476,8 +1476,11 @@ a:hover {
   order: 2 !important;
   font-size: 10px !important;
 }
-.spline-scene {
-  transform: translateX(-20%) !important;
+/* Desktop only - sphere position */
+@media screen and (min-width: 769px) {
+  .spline-scene {
+    transform: translateX(-20%) !important;
+  }
 }
 /* =============================================
    HERO TEXT REPOSITIONING - PRODUCTION FIX
@@ -1641,9 +1644,11 @@ a:hover {
 .navbar .w-dropdown-toggle .icon-lang { order: 1 !important; }
 .navbar .w-dropdown-toggle .w-icon-dropdown-toggle { order: 2 !important; }
 
-/* Сфера: больше и правее */
-.spline-scene {
-  transform: scale(1.16) translateX(-6%) translateY(4%) !important;
+/* Сфера: больше и правее (desktop only) */
+@media screen and (min-width: 769px) {
+  .spline-scene {
+    transform: scale(1.16) translateX(-6%) translateY(4%) !important;
+  }
 }
 /* Уменьшить заголовок */
 .se1 .h1,
@@ -2259,4 +2264,404 @@ html, body {
   font-size: 0.94rem !important;
   line-height: 1.45 !important;
 }
-/* PERF: marker-occlusion hidden in its main rule (line ~2172) */
+
+/* ==============================================
+   MOBILE HERO - SpaceX-style layout
+   Full sphere visible, no cropping
+   ============================================== */
+
+@media screen and (max-width: 768px) {
+  /* === PREVENT HORIZONTAL SCROLL === */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* === HEADER: icons aligned, larger logo === */
+  .navbar {
+    padding: 14px 20px !important;
+    border-radius: 0 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    margin-top: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Larger logo on mobile */
+  .logo {
+    width: 160px !important;
+    padding-bottom: 52px !important;
+    min-width: 140px !important;
+  }
+
+  /* Icons container: align globe and burger on same line */
+  .navbar .div-block-11 {
+    display: flex !important;
+    align-items: center !important;
+    height: 24px !important;
+    transform: none !important;
+  }
+
+  .navbar .w-dropdown {
+    display: flex !important;
+    align-items: center !important;
+    height: 24px !important;
+    margin-right: 16px !important;
+    transform: none !important;
+  }
+
+  .navbar .w-dropdown-toggle {
+    display: flex !important;
+    align-items: center !important;
+    height: 24px !important;
+    padding: 0 !important;
+  }
+
+  .navbar .icon-lang {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .navbar .w-icon-dropdown-toggle {
+    font-size: 8px !important;
+    opacity: 0.7 !important;
+    margin-left: 4px !important;
+  }
+
+  .navbar .menu-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important;
+    width: 24px !important;
+    padding: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+  }
+
+  .w-icon-nav-menu {
+    width: 22px !important;
+    color: #fff !important;
+    top: 0 !important;
+  }
+
+  /* === HERO SECTION: Full viewport with flex === */
+  .se1 {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .se1 .noize {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+
+  .se1 .div1 {
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    display: flex !important;
+    overflow: visible !important;
+  }
+
+  /* === HIDE STATS TEXT ON MOBILE (SpaceX style) === */
+  .se1 .colum-l {
+    display: none !important;
+  }
+
+  .se1 .content-img,
+  .se1 .content-img > .text-block,
+  .se1 .content-img > .text-block._2,
+  .se1 .div-block-17,
+  .se1 .div-block-17 .text-block-2 {
+    display: none !important;
+  }
+
+  /* === SPHERE CONTAINER: Full screen, no clipping === */
+  .spline-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  /* Sphere scene: wider than viewport to show full sphere */
+  .spline-scene {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-35%, -50%) !important;
+    width: 140vw !important;
+    height: 140vw !important;
+    max-width: 600px !important;
+    max-height: 600px !important;
+    padding-top: 0 !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+    inset: auto !important;
+  }
+
+  .spline-scene canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* === MARKER: positioned at sphere center === */
+  .sphere-marker {
+    position: fixed !important;
+    top: 42% !important;
+    left: 52% !important;
+    transform: translate(-50%, -50%) scale(0.8) !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+  }
+
+  /* === BOTTOM: Title + Subtitle + Button (SpaceX style) === */
+  .se1 .colum-r {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 20 !important;
+    padding: 30px 24px 50px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.4) 70%, transparent 100%) !important;
+  }
+
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.85rem !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 16px !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+  }
+
+  .se1 .colum-r .text {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 0 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-align: left !important;
+    transform: none !important;
+    max-width: 90% !important;
+  }
+
+  .se1 .div-block-4 {
+    margin-top: 1.75rem !important;
+    width: auto !important;
+  }
+
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: 0.9rem !important;
+    padding: 14px 28px !important;
+    border-width: 1px !important;
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 400 !important;
+  }
+
+  /* Hide desktop elements */
+  .se1 .podpis,
+  .se1 .sfera,
+  .se1 .div-block-5 {
+    display: none !important;
+  }
+
+  /* Menu mobile: full-screen overlay */
+  .nav-menu-2 {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
+/* === TABLET / LARGE MOBILE (430-768px) === */
+@media screen and (min-width: 430px) and (max-width: 768px) {
+  .spline-scene {
+    transform: translate(-38%, -50%) !important;
+    width: 130vw !important;
+    height: 130vw !important;
+    max-width: 550px !important;
+    max-height: 550px !important;
+  }
+
+  .sphere-marker {
+    top: 45% !important;
+    left: 55% !important;
+    transform: translate(-50%, -50%) scale(0.85) !important;
+  }
+
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* === MEDIUM MOBILE (≤430px) - iPhone 14 Pro Max === */
+@media screen and (max-width: 430px) {
+  .spline-scene {
+    transform: translate(-35%, -50%) !important;
+    width: 140vw !important;
+    height: 140vw !important;
+    max-width: 580px !important;
+    max-height: 580px !important;
+  }
+
+  .sphere-marker {
+    top: 42% !important;
+    left: 55% !important;
+    transform: translate(-50%, -50%) scale(0.75) !important;
+  }
+
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.65rem !important;
+  }
+}
+
+/* === SMALL MOBILE (≤390px) === */
+@media screen and (max-width: 390px) {
+  .logo {
+    width: 145px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .spline-scene {
+    transform: translate(-35%, -50%) !important;
+    width: 135vw !important;
+    height: 135vw !important;
+    max-width: 520px !important;
+    max-height: 520px !important;
+  }
+
+  .sphere-marker {
+    top: 42% !important;
+    left: 54% !important;
+    transform: translate(-50%, -50%) scale(0.7) !important;
+  }
+
+  .se1 .colum-r {
+    padding: 25px 20px 40px 20px !important;
+  }
+
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .se1 .colum-r .text {
+    font-size: 0.92rem !important;
+  }
+
+  .se1 .div-block-4 {
+    margin-top: 1.2rem !important;
+  }
+
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: 0.85rem !important;
+    padding: 12px 20px !important;
+  }
+}
+
+/* === EXTRA SMALL MOBILE (≤350px) === */
+@media screen and (max-width: 350px) {
+  .navbar {
+    padding: 12px 16px !important;
+  }
+
+  .logo {
+    width: 130px !important;
+    padding-bottom: 42px !important;
+  }
+
+  .navbar .w-dropdown {
+    margin-right: 12px !important;
+  }
+
+  .spline-scene {
+    transform: translate(-35%, -50%) !important;
+    width: 130vw !important;
+    height: 130vw !important;
+    max-width: 450px !important;
+    max-height: 450px !important;
+  }
+
+  .sphere-marker {
+    top: 42% !important;
+    left: 54% !important;
+    transform: translate(-50%, -50%) scale(0.6) !important;
+  }
+
+  .se1 .colum-r {
+    padding: 20px 16px 35px 16px !important;
+  }
+
+  .se1 .h1,
+  .se1 h1 {
+    font-size: 1.35rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .se1 .colum-r .text {
+    font-size: 0.85rem !important;
+  }
+
+  .se1 .div-block-4 {
+    margin-top: 1rem !important;
+  }
+
+  .se1 .div-block-4 .link.button,
+  .se1 .div-block-4 .link.button._2 {
+    font-size: 0.8rem !important;
+    padding: 10px 16px !important;
+  }
+}
