@@ -91,6 +91,9 @@ a:hover {
   height: 950px;
   padding-top: 117px;
   padding-bottom: 53px;
+  /* PERF: content-visibility defers rendering until section enters viewport */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 950px;
 }
 
 .link {
@@ -1491,6 +1494,8 @@ a:hover {
 /* ---- HERO SECTION CONTAINER ---- */
 .se1 {
   position: relative !important;
+  /* PERF: CSS containment - layout operations inside don't affect rest of page */
+  contain: layout style;
 }
 
 .se1 .noize {
@@ -2170,17 +2175,8 @@ html, body {
 }
 
 .marker-occlusion {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: var(--marker-occlusion-size);
-  height: var(--marker-occlusion-size);
-  border-radius: 50%;
-  background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.25) 60%, transparent 100%);
-  opacity: 0.3;
-  mix-blend-mode: multiply;
-  filter: blur(2px);
+  /* PERF: Element hidden via display:none at end of file, styles kept minimal */
+  display: none;
 }
 
 .marker-outer-glow {
@@ -2209,11 +2205,13 @@ html, body {
   background: radial-gradient(circle, #b8e4f0 0%, rgba(0,200,240,0.9) 50%, rgba(0,180,220,0.5) 100%);
   opacity: 0.95;
   mix-blend-mode: screen;
+  /* PERF: Static box-shadow instead of animated (saves ~60fps paint calls) */
   box-shadow: 0 0 4px 1px rgba(0,212,255,0.8), 0 0 8px 2px rgba(0,180,220,0.4);
+  /* PERF: Animation now uses only opacity + scale (GPU composited, no paint) */
   animation: marker-breath-core 4s ease-in-out infinite;
   margin-top: -1px;
   margin-left: 1px;
-  will-change: opacity, box-shadow; /* PERF: GPU layer for animation */
+  will-change: opacity, transform;
 }
 
 .marker-flare {
@@ -2236,9 +2234,11 @@ html, body {
   50% { opacity: 0.5; }
 }
 
+/* PERF: Removed box-shadow animation - it triggers paint on every frame!
+   Now using only opacity + scale which are GPU-composited (no paint, no layout) */
 @keyframes marker-breath-core {
-  0%, 100% { opacity: 0.8; box-shadow: 0 0 3px 1px rgba(0,212,255,0.6), 0 0 6px 2px rgba(0,180,220,0.3); }
-  50% { opacity: 0.95; box-shadow: 0 0 5px 2px rgba(0,212,255,0.9), 0 0 10px 3px rgba(0,180,220,0.5); }
+  0%, 100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.15); }
 }
 
 @keyframes marker-flare-appear {
@@ -2259,6 +2259,4 @@ html, body {
   font-size: 0.94rem !important;
   line-height: 1.45 !important;
 }
-.marker-occlusion {
-  display: none !important;
-}
+/* PERF: marker-occlusion hidden in its main rule (line ~2172) */
