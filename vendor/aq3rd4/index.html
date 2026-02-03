@@ -23,8 +23,9 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
+        html, body {
             height: auto;
+            min-height: 100%;
         }
 
         body {
@@ -35,38 +36,16 @@
             background-size: 50px 50px;
             color: var(--text-main);
             font-family: var(--font-main);
-            min-height: 950px;
-            display: flex;
-            flex-direction: column;
             position: relative;
         }
 
-        /* Blueprint Layout */
+        /* Blueprint Layout - decorative lines */
         .center-line {
-            position: absolute;
-            left: 50%;
-            top: 100px;
-            height: 600px;
-            width: 1px;
-            background: var(--line-bright);
-            z-index: 1;
-            pointer-events: none;
+            display: none;
         }
-
-        .center-line::before, .center-line::after {
-            content: ''; position: absolute; left: -4px; width: 9px; height: 1px; background: var(--accent);
-        }
-        .center-line::before { top: 0; } .center-line::after { bottom: 0; }
 
         .horizontal-line {
-            position: absolute;
-            top: 800px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--line-bright);
-            z-index: 1;
-            pointer-events: none;
+            display: none;
         }
 
         /* Header */
@@ -111,18 +90,14 @@
         /* Main Content */
         main {
             display: flex;
-            flex: 1;
             position: relative;
             z-index: 2;
-            min-height: 700px;
+            padding: 0;
         }
 
         .col {
-            flex: 1;
+            width: 50%;
             padding: 40px 60px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
         }
 
         /* Инженерные уголки для блоков */
@@ -348,7 +323,7 @@
         }
         
         .nda-note { 
-            margin-top: auto; 
+            margin-top: 20px; 
             padding: 15px; 
             font-size: 10px; 
             color: var(--text-dim); 
@@ -421,10 +396,8 @@
                 flex-direction: column;
             }
             .col {
+                width: 100%;
                 padding: 30px 40px;
-            }
-            .center-line {
-                display: none;
             }
         }
 
