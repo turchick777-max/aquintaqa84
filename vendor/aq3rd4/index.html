@@ -23,6 +23,10 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
+        html {
+            height: auto;
+        }
+
         body {
             background-color: var(--bg);
             background-image: 
@@ -31,9 +35,10 @@
             background-size: 50px 50px;
             color: var(--text-main);
             font-family: var(--font-main);
-            min-height: 100%;
+            min-height: 950px;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         /* Blueprint Layout */
@@ -41,10 +46,11 @@
             position: absolute;
             left: 50%;
             top: 100px;
-            bottom: 150px;
+            height: 600px;
             width: 1px;
             background: var(--line-bright);
             z-index: 1;
+            pointer-events: none;
         }
 
         .center-line::before, .center-line::after {
@@ -54,12 +60,13 @@
 
         .horizontal-line {
             position: absolute;
-            bottom: 150px;
+            top: 800px;
             left: 0;
             right: 0;
             height: 1px;
             background: var(--line-bright);
             z-index: 1;
+            pointer-events: none;
         }
 
         /* Header */
