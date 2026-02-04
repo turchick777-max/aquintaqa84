@@ -559,10 +559,11 @@
         <!-- Right Column: Quality Table -->
         <div class="col">
             <div class="badge-row">
-                <span class="badge" id="badge-who" title="World Health Organization (WHO)">WHO</span>
-                <span class="badge" id="badge-eu" title="European Union (EU)">EU</span>
-                <span class="badge" id="badge-epa" title="U.S. Environmental Protection Agency (US EPA)">US EPA</span>
-                <span class="badge" id="badge-lab" title="Independent lab verification. Reports & protocols in the Data Room after e-NDA.">Lab-verified</span>
+                <span class="badge" id="badge-who" title="World Health Organization — Public drinking-water guidance used here as a reference benchmark.">WHO</span>
+                <span class="badge" id="badge-eu" title="European Union — Reference drinking-water limits/benchmarks (jurisdiction-dependent).">EU</span>
+                <span class="badge" id="badge-epa" title="United States Environmental Protection Agency — Public drinking-water standards/benchmarks used here for reference.">US EPA</span>
+                <span class="badge" id="badge-lab" title="Measured by independent laboratories. Full reports & methods: e-NDA (Data Room). (Not a certification claim.)">LAB-VERIFIED</span>
+                <span class="badge" id="badge-coc" title="Sample origin and handling are documented (tracking & logs). Full package: e-NDA (Data Room).">CoC-VERIFIED</span>
             </div>
 
             <h2 class="table-h" id="txt-table-h">LAB EXTRACT — BEFORE / AFTER</h2>
@@ -615,10 +616,11 @@
                 dualLegend: "Raw — raw sample • After — after AQUINTAQA • Guideline — WHO/EU/US EPA benchmark",
                 expandBtn: "Show more parameters",
                 collapseBtn: "Show less",
-                badgeWho: "World Health Organization (WHO)",
-                badgeEu: "European Union (EU)",
-                badgeEpa: "U.S. Environmental Protection Agency (US EPA)",
-                badgeLab: "Independent lab verification. Reports & protocols in the Data Room after e-NDA.",
+                badgeWho: "World Health Organization — Public drinking-water guidance used here as a reference benchmark.",
+                badgeEu: "European Union — Reference drinking-water limits/benchmarks (jurisdiction-dependent).",
+                badgeEpa: "United States Environmental Protection Agency — Public drinking-water standards/benchmarks used here for reference.",
+                badgeLab: "Measured by independent laboratories. Full reports & methods: e-NDA (Data Room). (Not a certification claim.)",
+                badgeCoc: "Sample origin and handling are documented (tracking & logs). Full package: e-NDA (Data Room).",
                 partH: "Particle removal (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "Feed salinity tolerance (pilot)", salM: "(basis: TDS; feed/config dependent)",
                 tableH: "LAB EXTRACT — BEFORE / AFTER",
@@ -655,10 +657,11 @@
                 dualLegend: "Raw — исходная проба • After — после AQUINTAQA • Guideline — ориентир WHO/EU/US EPA",
                 expandBtn: "Показать больше параметров",
                 collapseBtn: "Свернуть",
-                badgeWho: "Всемирная организация здравоохранения (ВОЗ)",
-                badgeEu: "Европейский союз (ЕС)",
-                badgeEpa: "Агентство по охране окружающей среды США (EPA)",
-                badgeLab: "Независимое лабораторное подтверждение. Отчёты и протоколы — в Data Room после e-NDA.",
+                badgeWho: "Всемирная организация здравоохранения — Рекомендации по питьевой воде используются здесь как референсный ориентир.",
+                badgeEu: "Европейский союз — Референсные лимиты/ориентиры для питьевой воды (зависит от юрисдикции).",
+                badgeEpa: "Агентство по охране окружающей среды США — Стандарты/ориентиры для питьевой воды используются здесь как референс.",
+                badgeLab: "Измерено независимыми лабораториями. Полные отчёты и методы: e-NDA (Data Room). (Не является заявлением о сертификации.)",
+                badgeCoc: "Происхождение и обработка образца задокументированы (трекинг и логи). Полный пакет: e-NDA (Data Room).",
                 partH: "Удаление частиц (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "Допустимая минерализация фида (pilot)", salM: "(basis: TDS; feed/config dependent)",
                 tableH: "ЛАБОРАТОРНАЯ ВЫЖИМКА — ДО / ПОСЛЕ",
@@ -734,6 +737,7 @@
             document.getElementById('badge-eu').title = l.badgeEu;
             document.getElementById('badge-epa').title = l.badgeEpa;
             document.getElementById('badge-lab').title = l.badgeLab;
+            document.getElementById('badge-coc').title = l.badgeCoc;
 
             const tbody = document.getElementById('table-body');
             tbody.innerHTML = '';
