@@ -373,30 +373,29 @@
             align-items: center;
             justify-content: center;
             overflow: visible;
-            box-shadow: 0 0 30px rgba(74, 200, 220, 0.4);
+            box-shadow: 0 0 40px rgba(74, 200, 220, 0.5), 0 0 60px rgba(74, 200, 220, 0.3);
         }
 
         .logo-glow {
             position: absolute;
             inset: -60px;
-            background: radial-gradient(circle, rgba(74, 200, 220, 0.4) 0%, rgba(74, 200, 220, 0.2) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(74, 200, 220, 0.15) 0%, rgba(74, 200, 220, 0.08) 40%, transparent 70%);
             border-radius: 50%;
             animation: pulse 3s ease-in-out infinite;
             z-index: 0;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.08); }
         }
 
         .logo-img {
             position: relative;
-            width: 90px;
-            height: 90px;
+            width: 105px;
+            height: 105px;
             object-fit: contain;
             z-index: 1;
-            filter: drop-shadow(0 0 8px rgba(74, 200, 220, 0.5));
         }
 
         /* Tooltip styles */
