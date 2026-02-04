@@ -41,11 +41,30 @@
 
         /* Blueprint Layout - decorative lines */
         .center-line {
-            display: none;
+            position: absolute;
+            left: 50%;
+            top: 100px;
+            bottom: 120px;
+            width: 1px;
+            background: var(--line-bright);
+            z-index: 1;
+            pointer-events: none;
         }
 
+        .center-line::before, .center-line::after {
+            content: ''; position: absolute; left: -4px; width: 9px; height: 1px; background: var(--accent);
+        }
+        .center-line::before { top: 0; } .center-line::after { bottom: 0; }
+
         .horizontal-line {
-            display: none;
+            position: absolute;
+            bottom: 120px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--line-bright);
+            z-index: 1;
+            pointer-events: none;
         }
 
         /* Header */
@@ -336,30 +355,30 @@
         footer {
             height: 120px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             position: relative;
             z-index: 2;
-            margin-top: 20px;
+            padding-top: 30px;
         }
 
         .logo-container {
             position: relative;
-            width: 70px;
-            height: 70px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            background: rgba(74, 200, 220, 0.05);
-            border: 2px solid rgba(74, 200, 220, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(74, 200, 220, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .logo-glow {
             position: absolute;
-            inset: -30px;
-            background: radial-gradient(circle, rgba(74, 200, 220, 0.4) 0%, transparent 70%);
+            inset: -40px;
+            background: radial-gradient(circle, rgba(74, 200, 220, 0.5) 0%, transparent 70%);
             border-radius: 50%;
             animation: pulse 3s ease-in-out infinite;
             z-index: 0;
@@ -367,13 +386,13 @@
 
         @keyframes pulse {
             0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.15); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
 
         .logo-img {
             position: relative;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             object-fit: contain;
             z-index: 1;
         }
@@ -407,6 +426,9 @@
             .col {
                 width: 100%;
                 padding: 30px 40px;
+            }
+            .center-line {
+                display: none;
             }
         }
 
