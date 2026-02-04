@@ -15,8 +15,8 @@
             --text-main: #ffffff;
             --text-dim: #888888;
             --text-micro: #444444;
-            --green: #44cc88;
-            --red: #ff4444;
+            --green: #3a8060;
+            --red: #8b4a4a;
             --font-main: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -214,7 +214,12 @@
         }
 
         /* Right Side Table */
-        .badge-row { display: flex; gap: 8px; margin-bottom: 25px; }
+        .badge-row { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 8px; 
+            margin-bottom: 25px; 
+        }
 
         .table-container {
             margin-bottom: 15px;
@@ -284,17 +289,33 @@
         /* Badge styling */
         .badge { 
             border: 1px solid var(--line); 
-            padding: 3px 8px; 
+            padding: 6px 12px; 
             font-size: 9px; 
             color: var(--text-dim); 
             font-family: var(--font-mono);
             text-transform: uppercase;
             position: relative;
-            cursor: help;
+            cursor: pointer;
             transition: all 0.3s ease;
+            background: transparent;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .badge:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(74, 200, 220, 0.05);
+        }
+
+        .badge:active {
+            background: rgba(74, 200, 220, 0.1);
+            transform: translateY(1px);
+        }
+
+        .badge.active {
             border-color: var(--accent);
             color: var(--accent);
         }
@@ -343,11 +364,12 @@
             font-family: var(--font-mono); 
             font-size: 10px; 
             letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.45);
         }
         
         .dot { width: 6px; height: 6px; border-radius: 0; transform: rotate(45deg); }
-        .dot.red { background: var(--red); box-shadow: 0 0 8px var(--red); }
-        .dot.green { background: var(--green); box-shadow: 0 0 8px var(--green); }
+        .dot.red { background: var(--red); }
+        .dot.green { background: var(--green); }
 
         .table-label {
             font-size: 10px;
@@ -474,6 +496,13 @@
             .metric-value {
                 font-size: 24px;
             }
+            .badge-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .badge {
+                font-size: 8px;
+                padding: 5px 8px;
+            }
         }
     </style>
 </head>
@@ -559,11 +588,11 @@
         <!-- Right Column: Quality Table -->
         <div class="col">
             <div class="badge-row">
-                <span class="badge" id="badge-who" title="World Health Organization — Public drinking-water guidance used here as a reference benchmark.">WHO</span>
-                <span class="badge" id="badge-eu" title="European Union — Reference drinking-water limits/benchmarks (jurisdiction-dependent).">EU</span>
-                <span class="badge" id="badge-epa" title="United States Environmental Protection Agency — Public drinking-water standards/benchmarks used here for reference.">US EPA</span>
-                <span class="badge" id="badge-lab" title="Measured by independent laboratories. Full reports & methods: e-NDA (Data Room). (Not a certification claim.)">LAB-VERIFIED</span>
-                <span class="badge" id="badge-coc" title="Sample origin and handling are documented (tracking & logs). Full package: e-NDA (Data Room).">CoC-VERIFIED</span>
+                <span class="badge active" id="badge-who" title="World Health Organization — Public drinking-water guidance used here as a reference benchmark.">WHO</span>
+                <span class="badge active" id="badge-eu" title="European Union — Reference drinking-water limits/benchmarks (jurisdiction-dependent).">EU</span>
+                <span class="badge active" id="badge-epa" title="United States Environmental Protection Agency — Public drinking-water standards/benchmarks used here for reference.">US EPA</span>
+                <span class="badge active" id="badge-lab" title="Measured by independent laboratories. Full reports & methods: e-NDA (Data Room). (Not a certification claim.)">LAB-VERIFIED</span>
+                <span class="badge active" id="badge-coc" title="Sample origin and handling are documented (tracking & logs). Full package: e-NDA (Data Room).">CoC-VERIFIED</span>
             </div>
 
             <h2 class="table-h" id="txt-table-h">LAB EXTRACT — BEFORE / AFTER</h2>
@@ -591,7 +620,7 @@
             </button>
 
             <div class="table-label" id="txt-table-label">Trends: public status view (no numbers)</div>
-            <div class="table-notes" id="txt-table-notes">red = elevated baseline • green = within benchmark • blue = above benchmark. Full before/after tables, methods & reports after e-NDA (Data Room).</div>
+            <div class="table-notes" id="txt-table-notes">RED = outside benchmark • GREEN = within benchmark. Full before/after tables, methods & reports available under e-NDA (Data Room).</div>
         </div>
     </main>
 
@@ -627,22 +656,22 @@
                 tableSubtitle: "Representative pilot sample; results vary by feed and operating conditions. Full dataset available under e-NDA (Data Room).",
                 thP: "Parameter", thR: "Raw (status)", thA: "After (status)", thB: "Benchmark: WHO / EU / US EPA",
                 tableLabel: "Trends: public status view (no numbers)",
-                tableNotes: "red = elevated baseline • green = within benchmark • blue = above benchmark. Full before/after tables, methods & reports after e-NDA (Data Room).",
+                tableNotes: "RED = outside benchmark • GREEN = within benchmark. Full before/after tables, methods & reports available under e-NDA (Data Room).",
                 rows: [
-                    ["TDS (total dissolved solids)", "RED HIGH", "GREEN OK"],
-                    ["Hardness (Ca/Mg)", "RED HIGH", "GREEN OK"],
-                    ["Nitrates/nitrites", "RED HIGH", "GREEN OK"],
-                    ["Chlorides", "RED HIGH", "GREEN OK"],
-                    ["NTU (turbidity)", "RED HIGH", "GREEN OK"],
-                    ["Sulfates (SO₄²⁻)", "RED HIGH", "GREEN OK"],
-                    ["Alkalinity", "RED HIGH", "GREEN OK"],
-                    ["Calcium/magnesium", "RED HIGH", "GREEN OK"],
-                    ["Sodium", "RED HIGH", "GREEN OK"],
-                    ["Ammonium (NH₄⁺)", "RED HIGH", "GREEN OK"],
-                    ["Color", "RED HIGH", "GREEN OK"],
-                    ["Odor/taste (organoleptics)", "RED HIGH", "GREEN OK"],
-                    ["Scaling tendency (indicator)", "RED HIGH", "GREEN OK"],
-                    ["Corrosion potential (indicator)", "RED HIGH", "GREEN OK"]
+                    ["TDS (total dissolved solids)", "HIGH", "OK"],
+                    ["Hardness (Ca/Mg)", "HIGH", "OK"],
+                    ["Nitrates/nitrites", "HIGH", "OK"],
+                    ["Chlorides", "HIGH", "OK"],
+                    ["NTU (turbidity)", "HIGH", "OK"],
+                    ["Sulfates (SO₄²⁻)", "HIGH", "OK"],
+                    ["Alkalinity", "HIGH", "OK"],
+                    ["Calcium/magnesium", "HIGH", "OK"],
+                    ["Sodium", "HIGH", "OK"],
+                    ["Ammonium (NH₄⁺)", "HIGH", "OK"],
+                    ["Color", "HIGH", "OK"],
+                    ["Odor/taste (organoleptics)", "HIGH", "OK"],
+                    ["Scaling tendency (indicator)", "HIGH", "OK"],
+                    ["Corrosion potential (indicator)", "HIGH", "OK"]
                 ]
             },
             ru: {
@@ -668,22 +697,22 @@
                 tableSubtitle: "Репрезентативная пилотная проба; результаты варьируются в зависимости от фида и условий. Полный датасет доступен под e-NDA (Data Room).",
                 thP: "Parameter", thR: "Raw (status)", thA: "After (status)", thB: "Benchmark: WHO / EU / US EPA",
                 tableLabel: "Trends: public status view (no numbers)",
-                tableNotes: "red = повышенный baseline • green = в пределах ориентира • blue = выше ориентира. Полные \"до/после\" таблицы, методики и отчёты — после e-NDA (Data Room).",
+                tableNotes: "RED = outside benchmark • GREEN = within benchmark. Полные \"до/после\" таблицы, методики и отчёты доступны под e-NDA (Data Room).",
                 rows: [
-                    ["TDS (общая минерализация)", "RED HIGH", "GREEN OK"],
-                    ["Жёсткость (Ca/Mg)", "RED HIGH", "GREEN OK"],
-                    ["Нитраты/нитриты", "RED HIGH", "GREEN OK"],
-                    ["Хлориды", "RED HIGH", "GREEN OK"],
-                    ["NTU (мутность)", "RED HIGH", "GREEN OK"],
-                    ["Сульфаты (SO₄²⁻)", "RED HIGH", "GREEN OK"],
-                    ["Щёлочность", "RED HIGH", "GREEN OK"],
-                    ["Кальций/магний", "RED HIGH", "GREEN OK"],
-                    ["Натрий", "RED HIGH", "GREEN OK"],
-                    ["Аммоний (NH₄⁺)", "RED HIGH", "GREEN OK"],
-                    ["Цветность", "RED HIGH", "GREEN OK"],
-                    ["Запах/вкус (органолептика)", "RED HIGH", "GREEN OK"],
-                    ["Склонность к накипи (indicator)", "RED HIGH", "GREEN OK"],
-                    ["Коррозионный потенциал (indicator)", "RED HIGH", "GREEN OK"]
+                    ["TDS (общая минерализация)", "HIGH", "OK"],
+                    ["Жёсткость (Ca/Mg)", "HIGH", "OK"],
+                    ["Нитраты/нитриты", "HIGH", "OK"],
+                    ["Хлориды", "HIGH", "OK"],
+                    ["NTU (мутность)", "HIGH", "OK"],
+                    ["Сульфаты (SO₄²⁻)", "HIGH", "OK"],
+                    ["Щёлочность", "HIGH", "OK"],
+                    ["Кальций/магний", "HIGH", "OK"],
+                    ["Натрий", "HIGH", "OK"],
+                    ["Аммоний (NH₄⁺)", "HIGH", "OK"],
+                    ["Цветность", "HIGH", "OK"],
+                    ["Запах/вкус (органолептика)", "HIGH", "OK"],
+                    ["Склонность к накипи (indicator)", "HIGH", "OK"],
+                    ["Коррозионный потенциал (indicator)", "HIGH", "OK"]
                 ]
             }
         };
