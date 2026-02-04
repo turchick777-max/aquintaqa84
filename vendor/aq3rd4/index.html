@@ -226,7 +226,7 @@
         .table-container {
             margin-bottom: 15px;
             border: 1px solid rgba(74, 144, 164, 0.1);
-            max-height: 250px;
+            max-height: 180px;
             overflow-y: auto;
         }
 
@@ -470,7 +470,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
             main {
                 flex-direction: column;
             }
@@ -483,8 +483,8 @@
             }
         }
 
-        /* Tablet optimization (768px - 1024px) */
-        @media (min-width: 768px) and (max-width: 1024px) {
+        /* Tablet optimization (768px - 1200px) */
+        @media (min-width: 768px) and (max-width: 1200px) {
             body {
                 background-size: 40px 40px;
             }
@@ -548,6 +548,15 @@
             .logo-img {
                 width: 70px;
                 height: 70px;
+            }
+            
+            footer {
+                height: 100px;
+                padding-top: 10px;
+            }
+            
+            .horizontal-line {
+                bottom: 100px;
             }
         }
 
