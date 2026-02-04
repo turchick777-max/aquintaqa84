@@ -203,13 +203,8 @@
         .table-container {
             margin-bottom: 15px;
             border: 1px solid rgba(74, 144, 164, 0.1);
-            max-height: 280px;
+            max-height: 250px;
             overflow-y: auto;
-            transition: max-height 0.3s ease;
-        }
-
-        .table-container.expanded {
-            max-height: 500px;
         }
 
         .table-container::-webkit-scrollbar { 
@@ -230,6 +225,10 @@
         }
 
         tbody tr.hidden-row {
+            display: none;
+        }
+
+        .table-container.expanded tbody tr.hidden-row {
             display: table-row;
         }
 
