@@ -349,7 +349,7 @@
             font-family: var(--font-mono);
             font-size: 10px;
             color: rgba(255, 255, 255, 0.45);
-            white-space: normal;
+            white-space: pre-line;
             max-width: 280px;
             width: max-content;
             text-align: left;
@@ -363,6 +363,14 @@
 
         .badge[data-tooltip]:hover::after {
             opacity: 1;
+        }
+
+        /* Position tooltip to the right for last two badges to prevent overflow */
+        .badge-row .badge:nth-child(4)[data-tooltip]::after,
+        .badge-row .badge:nth-child(5)[data-tooltip]::after {
+            left: auto;
+            right: 0;
+            transform: none;
         }
 
         h2.table-h { 
@@ -757,11 +765,11 @@
                 dualLegend: "Raw — raw sample • After — after AQUINTAQA • Guideline — WHO/EU/US EPA benchmark",
                 expandBtn: "Show more parameters",
                 collapseBtn: "Show less",
-                badgeWho: "World Health Organization — Public drinking-water guidance used here as a reference benchmark.",
-                badgeEu: "European Union — Reference drinking-water limits/benchmarks (jurisdiction-dependent).",
-                badgeEpa: "United States Environmental Protection Agency — Public drinking-water standards/benchmarks used here for reference.",
-                badgeLab: "Measured by independent laboratories. Full reports & methods: e-NDA (Data Room). (Not a certification claim.)",
-                badgeCoc: "Sample origin and handling are documented (tracking & logs). Full package: e-NDA (Data Room).",
+                badgeWho: "World Health Organization\nPublic drinking-water guidance used here as a reference benchmark.",
+                badgeEu: "European Union\nReference drinking-water limits/benchmarks (jurisdiction-dependent).",
+                badgeEpa: "United States Environmental Protection Agency\nPublic drinking-water standards/benchmarks used here for reference.",
+                badgeLab: "Measured by independent laboratories. Full reports & methods: e-NDA (Data Room).\n(Not a certification claim.)",
+                badgeCoc: "Sample origin and handling are documented (tracking & logs). Full package: e-NDA\n(Data Room).",
                 partH: "Particle removal (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "FEED TDS LIMIT (PILOT)", salM: "(basis: TDS; feed/config dependent)",
                 tableH: "LAB EXTRACT — BEFORE / AFTER",
@@ -798,11 +806,11 @@
                 dualLegend: "Raw — исходная проба • After — после AQUINTAQA • Guideline — ориентир WHO/EU/US EPA",
                 expandBtn: "Показать больше параметров",
                 collapseBtn: "Свернуть",
-                badgeWho: "Всемирная организация здравоохранения — Рекомендации по питьевой воде используются здесь как референсный ориентир.",
-                badgeEu: "Европейский союз — Референсные лимиты/ориентиры для питьевой воды (зависит от юрисдикции).",
-                badgeEpa: "Агентство по охране окружающей среды США — Стандарты/ориентиры для питьевой воды используются здесь как референс.",
-                badgeLab: "Измерено независимыми лабораториями. Полные отчёты и методы: e-NDA (Data Room). (Не является заявлением о сертификации.)",
-                badgeCoc: "Происхождение и обработка образца задокументированы (трекинг и логи). Полный пакет: e-NDA (Data Room).",
+                badgeWho: "Всемирная организация здравоохранения\nРекомендации по питьевой воде используются здесь как референсный ориентир.",
+                badgeEu: "Европейский союз\nРеференсные лимиты/ориентиры для питьевой воды (зависит от юрисдикции).",
+                badgeEpa: "Агентство по охране окружающей среды США\nСтандарты/ориентиры для питьевой воды используются здесь как референс.",
+                badgeLab: "Измерено независимыми лабораториями. Полные отчёты и методы: e-NDA (Data Room).\n(Не является заявлением о сертификации.)",
+                badgeCoc: "Происхождение и обработка образца задокументированы (трекинг и логи). Полный пакет: e-NDA\n(Data Room).",
                 partH: "Удаление частиц (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "Допустимая минерализация фида (pilot)", salM: "(basis: TDS; feed/config dependent)",
                 tableH: "ЛАБОРАТОРНАЯ ВЫЖИМКА — ДО / ПОСЛЕ",
