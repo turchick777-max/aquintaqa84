@@ -302,9 +302,19 @@
         h2.table-h { 
             font-size: 16px; 
             font-weight: 300; 
-            margin-bottom: 15px; 
+            margin-bottom: 10px; 
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-align: left;
+        }
+
+        .table-subtitle {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-align: left;
+            font-family: var(--font-main);
         }
 
         table { width: 100%; border-collapse: collapse; }
@@ -555,7 +565,8 @@
                 <span class="badge" id="badge-lab" title="Independent lab verification. Reports & protocols in the Data Room after e-NDA.">Lab-verified</span>
             </div>
 
-            <h2 class="table-h" id="txt-table-h">Quality trends before/after</h2>
+            <h2 class="table-h" id="txt-table-h">LAB EXTRACT — BEFORE / AFTER</h2>
+            <p class="table-subtitle" id="txt-table-subtitle">Representative pilot sample; results vary by feed and operating conditions. Full dataset available under e-NDA (Data Room).</p>
 
             <div class="table-container" id="table-container">
                 <table>
@@ -610,7 +621,8 @@
                 badgeLab: "Independent lab verification. Reports & protocols in the Data Room after e-NDA.",
                 partH: "Particle removal (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "Feed salinity tolerance (pilot)", salM: "(basis: TDS; feed/config dependent)",
-                tableH: "Quality trends before/after",
+                tableH: "LAB EXTRACT — BEFORE / AFTER",
+                tableSubtitle: "Representative pilot sample; results vary by feed and operating conditions. Full dataset available under e-NDA (Data Room).",
                 thP: "Parameter", thR: "Raw (status)", thA: "After (status)", thB: "Benchmark: WHO / EU / US EPA",
                 tableLabel: "Trends: public status view (no numbers)",
                 tableNotes: "red = elevated baseline • green = within benchmark • blue = above benchmark. Full before/after tables, methods & reports after e-NDA (Data Room).",
@@ -649,7 +661,8 @@
                 badgeLab: "Независимое лабораторное подтверждение. Отчёты и протоколы — в Data Room после e-NDA.",
                 partH: "Удаление частиц (pilot)", partM: "(proxy: particle-size / turbidity; feed/config dependent)",
                 salH: "Допустимая минерализация фида (pilot)", salM: "(basis: TDS; feed/config dependent)",
-                tableH: "Тренды качества до/после",
+                tableH: "ЛАБОРАТОРНАЯ ВЫЖИМКА — ДО / ПОСЛЕ",
+                tableSubtitle: "Репрезентативная пилотная проба; результаты варьируются в зависимости от фида и условий. Полный датасет доступен под e-NDA (Data Room).",
                 thP: "Parameter", thR: "Raw (status)", thA: "After (status)", thB: "Benchmark: WHO / EU / US EPA",
                 tableLabel: "Trends: public status view (no numbers)",
                 tableNotes: "red = повышенный baseline • green = в пределах ориентира • blue = выше ориентира. Полные \"до/после\" таблицы, методики и отчёты — после e-NDA (Data Room).",
@@ -709,6 +722,7 @@
             document.getElementById('txt-sal-h').innerText = l.salH;
             document.getElementById('txt-sal-m').innerText = l.salM;
             document.getElementById('txt-table-h').innerText = l.tableH;
+            document.getElementById('txt-table-subtitle').innerText = l.tableSubtitle;
             document.getElementById('th-p').innerText = l.thP; 
             document.getElementById('th-r').innerText = l.thR; 
             document.getElementById('th-a').innerText = l.thA;
