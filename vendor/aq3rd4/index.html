@@ -182,6 +182,12 @@
             letter-spacing: 1px;
             font-family: var(--font-mono);
         }
+
+        /* Cyan only for these two section headings */
+        #txt-cl-h,
+        #txt-na-h {
+            color: var(--accent);
+        }
         
         .data-point { 
             display: flex; 
@@ -198,11 +204,11 @@
         
         .data-point > span:last-child {
             font-size: 15px;
-            color: rgba(74, 200, 220, 0.85);
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .val-green { 
-            color: rgba(74, 200, 220, 0.85) !important; 
+            color: var(--green) !important; 
         }
         
         .status-check { 
