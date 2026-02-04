@@ -44,7 +44,7 @@
             position: absolute;
             left: 50%;
             top: 100px;
-            bottom: 120px;
+            bottom: 180px;
             width: 1px;
             background: var(--line-bright);
             z-index: 1;
@@ -57,14 +57,7 @@
         .center-line::before { top: 0; } .center-line::after { bottom: 0; }
 
         .horizontal-line {
-            position: absolute;
-            bottom: 120px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--line-bright);
-            z-index: 1;
-            pointer-events: none;
+            display: none;
         }
 
         /* Header */
@@ -153,6 +146,7 @@
             font-size: 35px; 
             font-weight: 300; 
             color: rgba(255, 255, 255, 0.9);
+            white-space: nowrap;
         }
 
         /* Dual Columns for Chloride/Sodium */
@@ -401,13 +395,13 @@
 
         /* Footer with Logo */
         footer {
-            height: 120px;
+            height: 180px;
             display: flex;
             align-items: flex-start;
             justify-content: center;
             position: relative;
             z-index: 2;
-            padding-top: 15px;
+            padding-top: 30px;
         }
 
         .logo-container {
