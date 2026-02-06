@@ -63,14 +63,9 @@
       pointer-events: none; 
     }
     
-    /* Force desktop view on all devices including tablets */
+    /* Force desktop view on all devices - viewport only, no scroll */
     html, body {
-      min-width: 1440px !important;
-      width: 100% !important;
-      overflow-x: auto !important;
-    }
-    body {
-      min-width: 1440px !important;
+      overflow-x: hidden !important;
     }
   </style>
 </head>
