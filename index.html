@@ -231,6 +231,11 @@
     var isLoaded = false;
     var isVisible = true;
 
+    // Ensure sphere is visible on page load
+    if (splineContainer) {
+      splineContainer.classList.remove('hidden');
+    }
+
     // Lazy-load Spline when hero section enters viewport
     function initSpline() {
       if (isLoaded || !splineUrl) return;
@@ -272,8 +277,8 @@
     // Use IntersectionObserver for visibility detection
     if ('IntersectionObserver' in window) {
       var observer = new IntersectionObserver(handleVisibility, {
-        rootMargin: '-100px',
-        threshold: 0
+        rootMargin: '0px',
+        threshold: 0.1
       });
       observer.observe(splineEl);
     } else {
