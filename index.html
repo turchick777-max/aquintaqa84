@@ -45,6 +45,13 @@
     .navbar .w-dropdown, .navbar .div-block-11, .navbar .menu-button { height: 24px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
     .navbar .menu-button { padding: 0 !important; margin: 0 !important; transform: translateY(-6px) !important; }
     .navbar .w-dropdown { transform: translateY(-6px) !important; }
+    
+    /* PERF: Performance optimizations */
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    iframe { will-change: transform; contain: content; }
+    .spline-scene { will-change: transform; contain: layout style paint; }
+    section { contain: layout; }
   </style>
 </head>
 <body class="body">
@@ -135,10 +142,10 @@
     </div>
 
     <!-- HOW IT WORKS Section (embedded via iframe for pixel-perfect isolation) -->
-    <section id="how-it-works-embed" style="width:100%;overflow:hidden;background:#F4F7FA;position:relative;z-index:10;">
+    <section id="how-it-works-embed" style="width:100%;overflow:hidden;background:#F4F7FA;position:relative;z-index:10;min-height:870px;">
       <iframe 
         id="hiw-iframe"
-        src="vendor/aq2nd7/index.html"
+        data-src="vendor/aq2nd7/index.html"
         loading="lazy"
         style="width:100%;height:870px;border:none;display:block;"
         scrolling="no"
@@ -148,10 +155,10 @@
     </section>
 
     <!-- QUALITY & STANDARDS Section (embedded via iframe for pixel-perfect isolation) -->
-    <section id="quality-standards-embed" style="width:100%;overflow:hidden;background:#000000;position:relative;z-index:10;">
+    <section id="quality-standards-embed" style="width:100%;overflow:hidden;background:#000000;position:relative;z-index:10;min-height:850px;">
       <iframe 
         id="quality-iframe"
-        src="vendor/aq3rd4/index.html"
+        data-src="vendor/aq3rd4/index.html"
         loading="lazy"
         style="width:100%;height:850px;border:none;display:block;"
         scrolling="no"
@@ -161,10 +168,10 @@
     </section>
 
     <!-- VALIDATION & FAQ Section (embedded via iframe for pixel-perfect isolation) -->
-    <section id="validation-faq-embed" style="width:100%;overflow:hidden;background:#000000;position:relative;z-index:10;">
+    <section id="validation-faq-embed" style="width:100%;overflow:hidden;background:#000000;position:relative;z-index:10;min-height:900px;">
       <iframe 
         id="validation-iframe"
-        src="vendor/aq4th-validation/index.html"
+        data-src="vendor/aq4th-validation/index.html"
         loading="lazy"
         style="width:100%;height:900px;border:none;display:block;"
         scrolling="no"
@@ -250,6 +257,33 @@
         canvas.style.visibility = document.hidden ? 'hidden' : (isVisible ? 'visible' : 'hidden');
       }
     }, false);
+  })();
+
+  // PERF: Lazy load iframes only when they become visible
+  (function() {
+    'use strict';
+    if (!('IntersectionObserver' in window)) return;
+
+    var iframeObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var iframe = entry.target;
+          var src = iframe.getAttribute('data-src');
+          if (src && !iframe.src) {
+            iframe.src = src;
+            iframeObserver.unobserve(iframe);
+          }
+        }
+      });
+    }, {
+      rootMargin: '200px',
+      threshold: 0
+    });
+
+    // Observe all iframes with data-src
+    document.querySelectorAll('iframe[data-src]').forEach(function(iframe) {
+      iframeObserver.observe(iframe);
+    });
   })();
   </script>
 
