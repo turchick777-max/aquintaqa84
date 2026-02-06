@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1440, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title>AQUINTAQA | Quality & Standards</title>
     <!-- Шрифты: Inter для текстов и JetBrains Mono для цифр -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -509,119 +509,23 @@
             margin-bottom: 5px;
         }
 
-        /* Responsive */
+        /* Force desktop view on all devices including tablets */
+        html, body {
+            min-width: 1440px !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+        }
+
+        /* Disabled responsive media queries - always show desktop version */
+        /*
         @media (max-width: 1200px) {
-            main {
-                flex-direction: column;
-            }
-            .col {
-                width: 100%;
-                padding: 30px 40px;
-            }
-            .center-line {
-                display: none;
-            }
+            main { flex-direction: column; }
+            .col { width: 100%; padding: 30px 40px; }
+            .center-line { display: none; }
         }
-
-        /* Tablet optimization (768px - 1200px) */
-        @media (min-width: 768px) and (max-width: 1200px) {
-            body {
-                background-size: 40px 40px;
-            }
-            
-            h1 {
-                font-size: 18px;
-                letter-spacing: 8px;
-            }
-            
-            .col {
-                padding: 30px 35px;
-            }
-            
-            .metric-label .headline {
-                font-size: 16px;
-            }
-            
-            .metric-value {
-                font-size: 28px;
-            }
-            
-            .dual-metrics {
-                gap: 30px;
-            }
-            
-            .dual-col h3 {
-                font-size: 15px;
-            }
-            
-            .badge-row {
-                grid-template-columns: repeat(5, 1fr);
-                gap: 6px;
-            }
-            
-            .badge {
-                font-size: 8px;
-                padding: 4px 6px;
-            }
-            
-            .table-h {
-                font-size: 14px;
-            }
-            
-            .table-subtitle {
-                font-size: 10px;
-            }
-            
-            th {
-                font-size: 9px;
-            }
-            
-            td {
-                font-size: 10px;
-            }
-            
-            .logo-container {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .logo-img {
-                width: 70px;
-                height: 70px;
-            }
-            
-            footer {
-                height: 80px;
-            }
-            
-            .horizontal-line {
-                bottom: 80px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 16px;
-                letter-spacing: 6px;
-            }
-            .col {
-                padding: 20px;
-            }
-            .dual-metrics {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .metric-value {
-                font-size: 24px;
-            }
-            .badge-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .badge {
-                font-size: 8px;
-                padding: 5px 8px;
-            }
-        }
+        @media (min-width: 768px) and (max-width: 1200px) { ... }
+        @media (max-width: 768px) { ... }
+        */
     </style>
 </head>
 <body>

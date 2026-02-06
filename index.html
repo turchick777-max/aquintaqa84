@@ -11,7 +11,7 @@
   <meta content="A proven, scalable approach to desalination — eliminating membrane fouling, energy-intensive steps, and concentrated brine discharge. Independently validated. Full technical and commercial details available to qualified partners." property="twitter:description">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="width=1440, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta content="Webflow" name="generator">
   <!-- PERF: Preconnect to external origins for faster resource fetching -->
   <link rel="preconnect" href="https://d3e54v103j8qbb.cloudfront.net" crossorigin>
@@ -61,6 +61,16 @@
       opacity: 0; 
       visibility: hidden; 
       pointer-events: none; 
+    }
+    
+    /* Force desktop view on all devices including tablets */
+    html, body {
+      min-width: 1440px !important;
+      width: 100% !important;
+      overflow-x: auto !important;
+    }
+    body {
+      min-width: 1440px !important;
     }
   </style>
 </head>

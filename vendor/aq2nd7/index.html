@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1440, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <title>HOW IT WORKS - AQUINTAQA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,6 +351,15 @@ body {
 .coreBoundary { fill: none; stroke: rgba(0,158,186,.45); stroke-width: 1; stroke-dasharray: 6 4; }
 .module.is-active .moduleBox { stroke-width: 1.5; stroke: var(--accent); filter: drop-shadow(0 0 6px rgba(0,158,186,0.2)); }
 
+/* Force desktop view on all devices including tablets */
+html, body {
+  min-width: 1440px !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+}
+
+/* Disabled responsive media queries - always show desktop version */
+/*
 @media (max-width: 1100px) {
   .hiw__main { flex-direction: column; }
   .hiw__left-sidebar { width: 100%; flex-direction: row; }
@@ -361,6 +370,7 @@ body {
   .hiw__title { font-size: 20px; letter-spacing: 0.2em; }
   .hiw__legend { align-items: flex-start; }
 }
+*/
 </style>
 </head>
 <body>
