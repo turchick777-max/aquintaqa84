@@ -100,29 +100,33 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      height: 44px;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,215,255,.55);
-      background: rgba(0,215,255,.12);
-      color: rgba(255,255,255,.92);
-      font-size: 13px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 0.5px solid rgba(8, 145, 178, 0.5);
+      background: transparent;
+      color: #fff;
+      font-size: 0.95rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      font-weight: 400;
       text-decoration:none;
       user-select:none;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
-      box-shadow: 0 0 0 1px rgba(0,0,0,.35) inset;
+      white-space: nowrap;
+      transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
     }
     .cta:hover{
-      background: rgba(0,215,255,.18);
-      border-color: rgba(0,215,255,.75);
-      box-shadow: 0 0 0 1px rgba(0,0,0,.35) inset, 0 10px 26px rgba(0,215,255,.10);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(8, 145, 178, 0.8);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+      transform: translateY(-1px);
     }
-    .cta:active{ transform: scale(.98); }
+    .cta:active{ transform: translateY(0); }
     .cta:focus-visible{
-      outline: 1.5px solid rgba(0,215,255,.95);
+      outline: 1.5px solid rgba(8, 145, 178, 0.95);
       outline-offset: 3px;
     }
 
@@ -215,7 +219,7 @@
           </div>
 
           <a class="cta" href="#" target="_self" rel="noopener">
-            OPEN INVESTOR PAGE
+            Open Investor Page
           </a>
         </div>
 
