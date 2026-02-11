@@ -208,46 +208,35 @@ body {
 
 /* Interactive panel */
 .hiw__panel {
-  position: absolute;
-  top: 600px;
-  left: 0;
-  width: calc(100% - 200px);
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 0;
 }
 
 .hiw__panel-header {
   position: relative;
   width: 320px;
-  padding: 45px 20px;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid rgba(15,23,42,0.1);
-  border-bottom: none;
+  flex-shrink: 0;
+  padding: 15px 20px;
+  background: transparent;
+  border: none;
 }
 
 .hiw__panel-header::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255,255,255,0.5);
+  display: none;
 }
 
 .hiw__panel-body {
   position: relative;
   padding: 15px 20px;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid rgba(15,23,42,0.1);
+  background: transparent;
+  border: none;
+  border-left: 1px solid rgba(15,23,42,0.1);
 }
 
 .hiw__panel-body::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 320px;
-  height: 2px;
-  background: rgba(255,255,255,0.5);
+  display: none;
 }
 
 .hiw__detail-kicker {
