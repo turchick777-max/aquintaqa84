@@ -120,6 +120,33 @@
       outline-offset: 3px;
     }
 
+    .btns{ display:inline-flex; gap:8px; align-items:center; }
+
+    .cta-icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 0.5px solid rgba(8, 145, 178, 0.5);
+      background: transparent;
+      text-decoration:none;
+      transition:
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
+    }
+    .cta-icon:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(8, 145, 178, 0.8);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+      transform: translateY(-1px);
+    }
+    .cta-icon:active{ transform: translateY(0); }
+    .cta-icon svg{ width:16px; height:16px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
     /* RIGHT */
     .right{
       padding-top: 0;
@@ -205,9 +232,14 @@
             An international team of engineers and researchers. Process architecture is established; key operating modes have been demonstrated on prototypes and verified by independent labs (before/after). We are ready to move from prototypes to industrial engineering design and scale-up. Investor materials and next steps — on the Investor Page.
           </div>
 
-          <a class="cta" href="#" target="_self" rel="noopener">
-            Open Investor Page
-          </a>
+          <div class="btns">
+            <a class="cta" href="executive-summary.pdf" target="_blank" rel="noopener">
+              Executive Summary
+            </a>
+            <a class="cta-icon" href="executive-summary.pdf" download title="Download PDF">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </div>
         </div>
 
         <!-- RIGHT VIDEO -->
